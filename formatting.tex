@@ -1,0 +1,318 @@
+%%%% Useful Packages loaded without much configuration %%%%%%
+\usepackage[margin=2.54 cm]{geometry} % Set dimensions for page layout
+\usepackage{kpfonts}	    % Fonts used in the title page
+\usepackage{eso-pic}        % Background pictures in the title page
+\usepackage{tcolorbox}		% Fancy Math equations	
+\usepackage{tabularx}		% Tabulars with adjustable-width columns
+\tcbuselibrary{skins} 	% used with tcolorbox 
+\usepackage{transparent}	% Create transparent background images
+\usepackage{lipsum}  % Garbage text
+\usepackage{url}	 % links to websites
+\usepackage{pdfpages} % to include pdf pages
+\usepackage{booktabs}	% Make high quality tables
+\usepackage{colortbl}	% Color tables
+\usepackage{xfrac}		% Make fractions nice in tables
+\usepackage{enumitem}	% itemize, enumerate
+\usepackage{array}
+\usepackage{setspace}   % double spacing as required in UVIC co-op reports
+\usepackage{titlesec} % Select alternative section titles
+\titlespacing*{\section}
+{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}	% Not sure about this spacing
+\usepackage{multirow} % Create tabular cells spanning multiple rows.
+
+%CHANGE Link colours as needed
+\definecolor{linkColor}{HTML}{453737}	
+
+\usepackage{hyperref}	% Create links in document
+\hypersetup{linktocpage}	% Allow clickable links
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Work Term Report},    % title
+    pdfauthor={David Li},     % author	
+    %linktoc=all,     %set to all if you want both sections and subsections linked
+	colorlinks   = true, %Colours links instead of ugly boxes
+	urlcolor     = linkColor, %Colour for external hyperlinks
+	linkcolor    = linkColor, %Colour of internal links
+	citecolor   = linkColor %Colour of citations
+}
+
+
+\usepackage{float}    % used for float­ing ob­jects such as fig­ures and ta­bles.
+\usepackage[figurename=Figure]{caption}
+\captionsetup[figure]{labelfont=sf,textfont={sf}}
+\captionsetup[table]{labelfont=sf,textfont={sf}}
+
+\usepackage{parskip} % no indents
+\usepackage{tikz}	 % for drawings and cool graphics
+
+%% Math packages %%
+\usepackage{siunitx}	% SI units
+\usepackage{mathtools}	% LOAD MATH
+\usepackage{amssymb}  	% MATH Symbols
+
+
+%%%%%%%%%% COLORS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CODE STYLINGS %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings} % For source code
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{titlepagecolor}{\parbox{1\textwidth}{#1#2 \quad #3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont={white,sf}} % for fancy boxes
+
+\lstdefinestyle{default}{frame=tb,
+	aboveskip=3mm,
+	backgroundcolor=\color{cornsilk},
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{red},
+	keywordstyle=\color{blue},
+	commentstyle=\color{green},
+	stringstyle=\color{purple},
+	morekeywords={fclose, exit, printf, fscanf, strcpy, strlen,
+		strcmp, fprintf},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	captionpos=t,
+	columns=flexible,
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% SQL style setup %%%%%%%%
+\makeatletter
+\newcommand{\lstuppercase}{\uppercase\expandafter{\expandafter\lst@token
+		\expandafter{\the\lst@token}}}	%%%UPPERCASE SQL%%%%
+\newcommand{\lstlowercase}{\lowercase\expandafter{\expandafter\lst@token
+		\expandafter{\the\lst@token}}} %%% REGULAR CASE %%%%
+\makeatother
+
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstdefinestyle{Oracle}{basicstyle=\ttfamily,
+	keywordstyle=\lstuppercase,
+	backgroundcolor=\color{cornsilk},
+	emphstyle=\itshape,
+	showstringspaces=false,
+	morekeywords={ACCESS, MOD, NLS_DATE_FORMAT, NVL, REPLACE, SYSDATE,
+		TO_CHAR, TO_NUMBER, TRUNC},
+	numberstyle=\tiny\color{black},
+	keywordstyle=\color{red},
+	commentstyle=\color{green},
+	stringstyle=\color{mauve},
+	columns=flexible,
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%JAVA %%%%%%%%%%%%%%%%%%%%%%
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+\lstdefinestyle{myJava}{frame=tb,
+	basicstyle=\ttfamily,
+	backgroundcolor=\color{cornsilk},
+	keywordstyle=\color{javapurple}\bfseries,
+	stringstyle=\color{javared},
+	commentstyle=\color{javagreen},
+	morecomment=[s][\color{javadocblue}]{/**}{*/},	% Make comments blue
+	morecomment=[is]{/*}{*/},  % Remove comments
+	stepnumber=2,
+	numbers=left,    % print line numbers
+	numbersep=10pt,
+	tabsize=4,
+	showspaces=false,
+	showstringspaces=false,
+	linewidth=\textwidth,
+	columns=flexible,			% Important for keeping text in the frame
+	breaklines=true,
+}
+
+%%%%%%%%%%%%%%%%%% ENDJAVA %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% JAVASCRIPT%%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{JavaScript}{frame=tb,
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+\definecolor{cornsilk}{rgb}{1.0, 0.97, 0.86}
+\lstdefinestyle{myJavaScript}{
+	language=JavaScript,
+	backgroundcolor=\color{cornsilk},
+	extendedchars=true,
+	basicstyle=\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	tabsize=2,
+	breaklines=true,
+	showtabs=false,
+	captionpos=t,
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% END CODE STYLINGS %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% FORMATTING %%%%%%%%%%%%%%%%%%%%%%%
+% Format TOC, header, footers and chapters
+%% tocloft settings
+\usepackage[titles]{tocloft}	% Pro­vides con­trol over the ty­pog­ra­phy of the Ta­ble of Con­tents, List of Fig­ures and List of Tables
+\setlength{\cftbeforesecskip}{3pt}
+% End tocloft settings
+
+\usepackage{sectsty} % used to color chapter and sections
+%\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+%\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections, if you really want! (It is default in report and book class (So you may not need it).
+% ----------------------------------------------------------------
+%\renewcommand{\cftdotsep}{0}	 % dots in the title page
+% \renewcommand{\cftsectleader}{\bfseries\cftdotfill{\cftsecdotsep}}% dot leaders in bold 
+
+
+   % NUMBERING IN TOC FOR SUMMARY SECTION %%%%%%%%
+   \newcommand{\mysection}[2]{
+   	\setcounter{section}{#1}
+   	\setcounter{subsection}{0}
+   	\section*{#2}
+   	\addcontentsline{toc}{section}{#2}
+   }
+  
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %CHAPTER Title formatting
+	\definecolor{myText}{HTML}{2B2B2B}
+	\definecolor{myChap}{HTML}{000066}
+	\definecolor{mySect}{HTML}{336699}
+	\definecolor{mySubSect}{HTML}{2088B2}
+
+    \renewcommand{\sectionmark}[1]{\markboth{\thesection.\ #1}{}}
+    
+    % SET UP COLOURS FOR HEADINGS IN THE REPORT
+    \sectionfont{\color{mySect}}  % sets colour of sections
+    \subsectionfont{\color{mySubSect}}  % sets colour of subsections
+    \subsubsectionfont{\color{mySubSect}}  % sets colour of subsubsections
+    \subparagraphfont{\color{red}}		    % sets colour of paragraphs
+
+   	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   	%CHANGE  GLOBAL TEXT COLOR %%%%%%%%%%%%%%%%%%%%%
+   	\makeatletter
+   	\newcommand{\globalcolor}[1]{%
+   		\color{#1}\global\let\default@color\current@color
+   	}
+   	\makeatother
+   	
+   	% Edit the global text colour, make the report easier to read for digital screens or print.
+   	\AtBeginDocument{\globalcolor{myText}}
+   	
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   % SET UP COMBINED LOT and LOF 	%%%%%%%
+   %	CONFIG LOL					%%%%%%%
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   \makeatletter
+%   \def\ext@figure{lot}
+%   \makeatother\
+
+%	\setcounter{tocdepth}{4} % INCLUDE SUBSUBSECTIONS IN TOC
+  % \renewcommand{\lstlistingname}{Listing}	% Change caption in code listing
+   %\renewcommand{\lstlistlistingname}{List of Scripts}     % CHANGE THE HEADER IN TOC
+   
+   % Create List of Figures and Tables in LATEX
+%   \renewcommand*\listtablename{List of Figures and Tables}
+%   \renewcommand{\cftfigpresnum}{Figure~}
+%   \renewcommand{\cftfigaftersnum}{:}
+%   \setlength{\cftfignumwidth}{5.5em}
+%   \renewcommand{\cfttabpresnum}{Table~}		
+%   \renewcommand{\cfttabaftersnum}{:}
+%   \setlength{\cfttabnumwidth}{5.5em}
+   
+%   %CONFIG SCRIPTS in TOC %%%%%%
+%   \makeatletter
+%   \AtBeginDocument{%	Add the word Program in front of the caption in TOC and listing
+%   	\renewcommand\lstlistoflistings{\bgroup
+%   		\let\contentsname\lstlistlistingname
+%	\def\l@lstlisting##1##2{\@dottedtocline{1}{1.3em}{3em}{\bfseries Script 
+%				##1}{##2}}
+%   		\let\lst@temp\@starttoc \def\@starttoc##1{\lst@temp{lol}}%
+%   		\tableofcontents \egroup}
+%   }
+%   \makeatother
+%   
+%   %MAKE SPACING THE SAME AS IN THE LOT AND LOF in Programs %%%%%%
+%%   \makeatletter
+%%   \let\my@chapter\@chapter
+%%   \renewcommand*{\@chapter}{%
+%%   	\addtocontents{lol}{\protect\addvspace{10pt}}%
+%%   	\my@chapter}
+%%   \makeatother
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% SET UP BIBLIOGRAPHY  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[backend=bibtex,sorting=none]{biblatex}	% Sort by citation order
+\addbibresource{bibliography.bib}		% Load bibliography
+\usepackage[nottoc,numbib]{tocbibind}	% Label the Biblography in the TOC
+\usepackage[titletoc]{appendix}	%% appendix will be in the toc
+\defbibheading{bibliography}[\bibname]{%
+  	\section{#1}%	% set up bibliography as a section 
+  	\markboth{\thesection.\ #1}{}}	%label at upper right corner in header
+\newcommand{\onlineCite}{[Online] Available: }	% Used in BIBLIOGRAPHY 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% CUSTOMIZE GLOSSARY %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[toc,nopostdot,xindy]{glossaries} % included in toc and keep track of technical words and definition and remove dots at the end
+
+% glossary definitions as bold
+\defglsentryfmt{\color{black}\bfseries\glsgenentryfmt}
+
+% custom glossary style that contains the pages that contains the glossary terms, and bolded glossary entries.
+\newglossarystyle{myGloss}{%
+	\setglossarystyle{list}
+	\renewcommand*{\glossentry}[2]{%
+		\item[\textbf{\glsentryitem{##1}}%
+		\textbf{\glstarget{##1}}{\textbf{\glossentryname{##1}:}}]
+		\glossentrydesc{##1}\glspostdescription\space See p.\space ##2} 
+}
+%\setglossarystyle{listhypergroup}
+\setglossarystyle{myGloss}
+
+% Set up roman numercals page numbering for front matter, letter of transmittal, and table of contents.
+\newcommand\frontmatter{%
+	\cleardoublepage
+	%\@mainmatterfalse
+	\pagenumbering{roman}}
+\renewcommand{\familydefault}{\sfdefault} % Nice font formatting
+
+\let\cleardoublepage\clearpage % prevent book from create extra pages bewteen chapters
+
+%%% Set up verbatim for WYSIWYG formatting for letter
+\usepackage[T1]{fontenc}%  selects EC fonts
+\usepackage{verbatim}%     configurable verbatim
+\makeatletter
+\def\verbatim@font{\normalfont% select the font
+	\let\do\do@noligs
+	\verbatim@nolig@list}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% END PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

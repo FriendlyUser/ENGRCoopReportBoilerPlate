@@ -1,0 +1,33 @@
+# LaTeX temporary files
+*.aux
+*.log
+*.toc
+*.xdy
+*.glo
+*.lof
+*.lot
+*.run.xml
+*-blx.bib
+
+# Zip files
+*.zip
+
+# Latexmk
+*.fdb_latexmk
+
+# SyncTeX
+*.synctex.gz
+
+# LaTeX Beamer
+*.snm
+*.vrb
+*.nav
+*.out
+*.ilg
+
+# BibTeX
+*.bbl
+*.blg
+
+# SVN Files, and text files
+*.svn
