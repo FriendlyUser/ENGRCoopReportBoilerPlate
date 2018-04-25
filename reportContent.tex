@@ -1,4 +1,5 @@
 \documentclass[12pt,tightenlines,letterpaper]{scrartcl}
+\input{lwarpPreamble.tex}
 \newcommand{\printTitle}{Insert a title Here} 
 \usepackage{graphicx} % Required for including pictures
 \graphicspath{{Images/}} % Specifies the directory where pictures are stored
@@ -7,47 +8,26 @@
 \input{glossaries.tex}
 
 
+\linespread{1.25}
+
+% Reason: the standard line skip means a factor of 1.2 (such as font height 10pt, base line skip 12pt). Multiply with \linespread, so you get 1.25*1.2 = 1.5, so one-half.
+
+\renewcommand{\printTitle}{Determining Potential Uses of JIRA and Confluence}
+
 \begin{document}
 %% Use roman numercals page numbering for front matter, letter of transmittal, and table of contents.
-\frontmatter
+\frontmatterNumbering
 
 % Manually modified the word front page template, and then save to pdf and include using includepdf.
 %\includepdf{TitlePage.pdf}
 %%%% Add the required double spacing %%%
-%%% LETTER OF TRANMISSAL %%%%
- \begin{verbatim}
- 940 Blanshard Street
- Victoria, British Columbia
- V8W 3E6
- Susan Fiddler
- Co-op Coordinator
- Faculty of Engineering
- University of Victoria
- P.O. Box 1700
- Victoria, B.C.
- V8W 2Y2
- 
- Dear Susan, 
- 
- Please accept the accompanying Work Term Report entitled "Determining uses of JIRA and Confluence at MOTI IMB."
- 
- This report is the result of work completed at the SOME GENEriC ORGANIZATION. During my first work 
- term as a University of Victoria student, I used charts and tables to display information about issue, complied documentation for critical applications in a wiki and researched add-ons to extend functionality. In the course of work, I gained exposure to a technical environment, and learned how software can integrate together. 
- 
- Through the course of the term, I was given the opportunity to learn much agile software development, testing applications, and software products. I feel that this knowledge will be helpful in future work terms, and in my career.
- 
- I would like to thank my manager, MISTER MAN, for his patience and good judgement, as well as
- the RANDOM FOLK who were always willing to help.
- Sincerely,
-
- David Li
- \end{verbatim}
+\input{letteroftransmittal.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% TABLE OF CONTENTS %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Stop page breaks for list of figures and list of tables
 %{\listoffigures \let\cleardoublepage\clearpage \listoftables}
-\renewcommand{\printTitle}{Determining Potential Uses of JIRA and Confluence}
+
 \begingroup
 \cleardoublepage
 \phantomsection
@@ -62,7 +42,7 @@
 \listoftables					  %List of Tables
 
 \clearpage
-%\lstlistoflistings				  %List of Code listings
+\lstlistoflistings				  %List of Code listings
 %\addcontentsline{toc}{section}{{Listings}}	% ADD HEADING TO TOC
 \endgroup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -72,11 +52,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% SUMMARY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section*{Summary } 
-  \addcontentsline{toc}{section}{Summary} % Manually add the unlabelled section, summary is not numbered as specified in university co-op report standards.
-  
- In the continuing effort to organize high-quality reliable information, the \gls{MOTI} \gls{IMB} is presently experimenting with \gls{JIRA}, an \gls{issue} tracking tool and \gls{Confluence}, \gls{wiki} software for technical documentation. Although good quality information is critical to operations, \gls{sd} is inconsistent and scattered across multiple sources, some of which require access permissions.\gls{JIRA} and Confluence are software tools that improve productivity and organization within MOTI IMB. \\ \\
- Benefits from connecting \gls{JIRA} and \gls{Confluence} include common user management, reporting on existing JIRA \glspl{issue} in \gls{Confluence} and switching between application quickly. Extending the functionality of these tools by installing add-ons will assist in improving \gls{sd}. Purchasing software such as \gls{Confluence} to solve the \gls{sd} problem is inadequate because software can be poorly designed or implemented. These software tools assist in information management, but full utilization and proper implementation is required to improve documentation.
+
+
+\input{summary.tex}
  
  % Uncomment to enable double spacing %
  % \doublespacing
@@ -114,7 +92,8 @@
 % \nocite{*}
  \printbibliography
  
-\singlespacing
+\linespread{1}
+
 \begin{appendices}
 \section{Code Listings}
 \lstinputlisting[
