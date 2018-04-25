@@ -36,18 +36,17 @@
     pdfauthor={David Li},     % author	
     %linktoc=all,     %set to all if you want both sections and subsections linked
 	colorlinks   = true, %Colours links instead of ugly boxes
-	urlcolor     = linkColor, %Colour for external hyperlinks
-	linkcolor    = linkColor, %Colour of internal links
-	citecolor   = linkColor %Colour of citations
+	urlcolor     = blue, %Colour for external hyperlinks
+	linkcolor    = red, %Colour of internal links
+	citecolor   = green %Colour of citations
 }
 
 
 \usepackage{float}    % used for float­ing ob­jects such as fig­ures and ta­bles.
-\usepackage[figurename=Figure]{caption}
-\captionsetup[figure]{labelfont=sf,textfont={sf}}
-\captionsetup[table]{labelfont=sf,textfont={sf}}
-
-\usepackage{parskip} % no indents
+\usepackage{caption}
+%\captionsetup[figure]{labelfont=sf,textfont={sf}}
+%\captionsetup[table]{labelfont=sf,textfont={sf}}
+% \usepackage{parskip} % no indents, don't use in lwarp
 \usepackage{tikz}	 % for drawings and cool graphics
 
 %% Math packages %%
@@ -285,18 +284,19 @@
 \defglsentryfmt{\color{black}\bfseries\glsgenentryfmt}
 
 % custom glossary style that contains the pages that contains the glossary terms, and bolded glossary entries.
-\newglossarystyle{myGloss}{%
-	\setglossarystyle{list}
-	\renewcommand*{\glossentry}[2]{%
-		\item[\textbf{\glsentryitem{##1}}%
-		\textbf{\glstarget{##1}}{\textbf{\glossentryname{##1}:}}]
-		\glossentrydesc{##1}\glspostdescription\space See p.\space ##2} 
-}
+%\newglossarystyle{myGloss}{%
+%	\setglossarystyle{list}
+%	\renewcommand*{\glossentry}[2]{%
+%		\item[\textbf{\glsentryitem{##1}}%
+%		\textbf{\glstarget{##1}}{\textbf{\glossentryname{##1}:}}]
+%		\glossentrydesc{##1}\glspostdescription\space See p.\space ##2} 
+%}
 %\setglossarystyle{listhypergroup}
-\setglossarystyle{myGloss}
+%\setglossarystyle{myGloss}
 
 % Set up roman numercals page numbering for front matter, letter of transmittal, and table of contents.
-\newcommand\frontmatter{%
+% Commentout for lwarp
+\newcommand\frontmatterNumbering{%
 	\cleardoublepage
 	%\@mainmatterfalse
 	\pagenumbering{roman}}

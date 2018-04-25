@@ -31,3 +31,11 @@
 
 # SVN Files, and text files
 *.svn
+
+# Lwarp files
+*.out
+*.gz
+*.conf
+
+# latexmk files
+*.fdb_latexmk

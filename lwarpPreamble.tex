@@ -1,0 +1,40 @@
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+
+%%% Needed to write listtodonotes, and listofalgorithms, but the problem is listoftodonotes
+% \usepackage{morewrites}
+\usepackage[
+HomeHTMLFilename=index,     % Filename of the homepage.
+%HTMLFilename={node-},       % Filename prefix of other pages.
+%IndexLanguage=english,      % Language for xindy index, glossary.
+latexmk,                    % Use latexmk to compile.
+%   OSWindows,                  % Force Windows. (Usually automatic.)
+mathjax,                    % Use MathJax to display math.
+]{lwarp}
+
+
+\title{Block Chain Notes}
+\author{David Li}
+\setcounter{tocdepth}{2} % Include subsections in the \TOC.
+\setcounter{secnumdepth}{2} % Number down to subsections.
+\setcounter{FileDepth}{0} % Split \HTML\ files at sections, in this case chapters?, 0 for chapters?
+\booltrue{CombineHigherDepths} % Combine parts/chapters/sections
+\setcounter{SideTOCDepth}{1} % Include subsections in the side\TOC
+\HTMLAuthor{David Li} % Sets the HTML meta author tag.
+\HTMLLanguage{en-US} % Sets the HTML meta language.
+\HTMLDescription{A list of cheatsheets for courses at the University of Victoria}% Sets the HTML meta description.
+\HTMLFirstPageTop{ CheatSheets \fbox{\includegraphics[width=1\linewidth]{Images/Ethereum-Cover.png}}}
+\HTMLPageTop{\fbox{\includegraphics[width=1\linewidth]{Images/Ethereum-Cover.png}}}
+\HTMLPageBottom{Made by David Li}
