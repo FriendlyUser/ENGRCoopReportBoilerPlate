@@ -8,6 +8,8 @@
 *.lot
 *.run.xml
 *-blx.bib
+#*.lol
+#*.idx
 
 # Zip files
 *.zip
@@ -36,6 +38,12 @@
 *.out
 *.gz
 *.conf
+*.sidetoc
 
 # latexmk files
 *.fdb_latexmk
+
+# Glossary files
+*.glg
+*.gls
+*.glo
