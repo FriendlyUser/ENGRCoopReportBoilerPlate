@@ -13,7 +13,8 @@ For this report, the following packages of interest
 To view the download the basic latex version (no lwarp), click
 [at commit 2.](https://github.com/FriendlyUser/ENGRCoopReportBoilerPlate/archive/194149a318fbc24933cebd162d1741dc8b693f42.zip]) should be identical to the sample found at overleaf.
 
-A sample of lwarp output can be viewed on [github pages]( https://friendlyuser.github.io/ENGRCoopReportBoilerPlate/).
+A sample of lwarp output can be viewed on [github pages]( https://friendlyuser.github.io/ENGRCoopReportTemplate/)
+
 
 #### Getting started
 
