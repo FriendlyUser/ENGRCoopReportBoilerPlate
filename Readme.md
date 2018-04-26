@@ -19,7 +19,7 @@ A sample of lwarp output can be viewed on [github pages]( https://friendlyuser.g
 
 To get started clone or download this repo, and update/replace my summary in reportContent.tex, as well as the letter of transmittal. Manually modify the word front page template (WTR Title Page Template.docx), and then save to pdf and include using includepdf.
 
-See `WTR Title Page Template.pdf` and WTR Title Page Template.pdf
+See `Images/WTR Title Page Template.pdf` and `Images/WTR Title Page Template.pdf`
 
 The letter of transmittal must be typed in using the verbatim tags, so that you can not worry about indents and line breaks, for example
 
@@ -38,6 +38,8 @@ If created html files is desired, then uncomment lwarp preamble and that should 
 
 For more details please view https://ctan.org/pkg/lwarp?lang=en
 
+Within `lwarpPreamble.tex` modify properties of interest, including title, author, front page image and so on.
+
 ###### Useful Links
 
 This report template cannot be used without some understand of useful features for report writing available in latex, in particular glossary and reference management.
@@ -53,4 +55,17 @@ Keep in mind that summary must appear in the table of contents, this is done usi
 \addcontentsline{toc}{section}{Summary}
 ```
 
+##### How to Compile
+
+Using bash.
+```bash
+lualatex reportContent.tex
+lualatex reportContent_html.tex
+lwarpmk limages
+lwarpmk htmlglossary
+lualatex reportContent_html.tex
+lwarpmk pdftohtml
+./moveFiles.sh
+./latex-clean.sh
+```
 

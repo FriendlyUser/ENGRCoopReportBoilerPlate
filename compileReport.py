@@ -19,7 +19,7 @@ else:
 	
 print('Cleaning up some auxillary files')
 lwarpmk_clean = ' '.join(['lwarpmk',
-                    'clean',
+                    'cleanall',
                     input_name])
 latexmk_clean = ' '.join(['latexmk',
                           '-C'
@@ -88,7 +88,6 @@ try:
 				'htmlglossary'])
 	subprocess.check_call(cmd_images)
 	subprocess.check_call(cmd_htmlglossary)
-	subprocess.check_call(cmd_str1)
 	print('Creating glossary and images again for HTML.')
 except subprocess.CalledProcessError:
 	print('Error occured, check the command')
@@ -97,7 +96,6 @@ except OSError:
 	print('Executable not found')
 	pass # executable not found
 
-# recompile reportContent_html.tex for glossary and images
 try:
     subprocess.check_call(cmd_str2)
     print('Calling: %s' % cmd_str2)
@@ -107,10 +105,29 @@ except subprocess.CalledProcessError:
 except OSError:
     print('Executable not found')
     pass # executable not found
+print('Script created final pdf with limages and glossaries.')
+# recompile reportContent_html.tex for glossary and images
+
+# Produce an pdf to be converted to html
+cmd_finalpdfout = ' '.join(['lualatex',
+					'-synctex=1',
+					'-interaction=nonstopmode',
+                    lwarpHTMLFile])
+					
+try:
+    subprocess.check_call(cmd_finalpdfout)
+    print('Calling: %s' % cmd_finalpdfout)
+except subprocess.CalledProcessError:
+    print('Error occured, check the command')
+    pass # handle errors in the called executable
+except OSError:
+    print('Executable not found')
+    pass # executable not found
 print('Script is creating lwarp files, moving on to html creation.')
-				
+
 cmd_str3 = ' '.join(['lwarpmk',
                     'pdftohtml'])
+
 try:
     subprocess.check_call(cmd_str3)
     print('Calling: %s' % cmd_str3)
@@ -120,26 +137,29 @@ except subprocess.CalledProcessError:
 except OSError:
     print('Executable not found')
     pass # executable not found
-print('Script is done producing the documents')
+print('Script is creating lwarp files, moving on to html creation.')	
+				
+### Call shell script to move files
+print('Moving files to correct directory')
 
-### Delete docs if exists, updating this section later
-import shutil
-if os.path.exists('docs'):
-	shutil.rmtree('docs')
+try:
+	print('sh movefiles.sh')
+	subprocess.call('sh movefiles.sh')
+except subprocess.CalledProcessError:
+    print('Error occured, check the command')
+    pass # handle errors in the called executable
+except OSError:
+    print('shell not working')
+    pass # executable not found
 
-import os
-source = os.listdir()
-destination = "docs/"
-for files in source:
-    if files.endswith(".html") or files.endswith(".css"):
-        shutil.copy(files,destination)
+### Call shell script to clean up files
+print('Calling script to clean up files')
 
-## Copy images over
-
-from distutils.dir_util import copy_tree
-
-# copy subdirectory example
-fromDirectory = "Images/"
-toDirectory = "docs/Images"
-
-copy_tree(fromDirectory, toDirectory)
+# try:
+    # subprocess.call('sh latex-clean.sh')
+# except subprocess.CalledProcessError:
+    # print('Error occured, check the command')
+    # pass # handle errors in the called executable
+# except OSError:
+    # print('shell script not working')
+    # pass # executable not found
