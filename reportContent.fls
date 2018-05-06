@@ -975,6 +975,10 @@ INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/listings.cfg
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/listings.cfg
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/listings.cfg
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/listings.cfg
+INPUT ./solidity-highlighting.tex
+INPUT ./solidity-highlighting.tex
+INPUT ./solidity-highlighting.tex
+INPUT ./solidity-highlighting.tex
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/tocloft/tocloft.sty
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/tocloft/tocloft.sty
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/tocloft/tocloft.sty
@@ -1765,6 +1769,18 @@ INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttmn8t.vf
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttmn8t.vf
 INPUT ./Diagrams/verifySig.png
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmn8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmn8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttmn8t.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttmn8t.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttbn8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttbn8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttbn8t.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttbn8t.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttbn8r.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttbn8r.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttbne.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttbne.tfm
 INPUT ./Code/cipher.c
 INPUT ./Code/cipher.c
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/lstlang1.sty
@@ -1792,5 +1808,7 @@ INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpssmne.pfb
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpssmne.pfb
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpssmsc8a.pfb
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpssmsc8a.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpttbn8a.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpttbn8a.pfb
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpttmn8a.pfb
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpttmn8a.pfb

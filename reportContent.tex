@@ -111,6 +111,22 @@
 
 \begin{appendices}
 \section{Code Listings}
+\begin{lstlisting}[language=Solidity,caption=Example of Solidity Code]
+pragma solidity 0.4.16;
+
+contract TestContract {
+    
+	string private myString = "foo";
+	
+	function getString() constant returns (string) {
+	    return myString;
+	}
+	
+	function setString (string _string) {
+	    myString = _string;
+	}
+}
+\end{lstlisting}
 \lstinputlisting[
 language   = C,
 basicstyle = \ttfamily,
