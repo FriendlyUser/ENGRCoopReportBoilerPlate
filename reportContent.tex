@@ -1,4 +1,4 @@
-\documentclass[12pt,tightenlines,letterpaper]{scrartcl}
+\documentclass[12pt,tightenlines,letterpaper,listof=totoc]{scrartcl}
 \input{lwarpPreamble.tex}
 \newcommand{\printTitle}{Insert a title Here} 
 \usepackage{graphicx} % Required for including pictures
@@ -6,12 +6,24 @@
 
 \input{formatting.tex}
 \addbibresource{references.bib}	% Load bibliography
+% Print out references that are not cited
+\nocite{*}
 \input{glossary.tex}
 \makeglossaries
 \linespread{1.25}
 % Reason: the standard line skip means a factor of 1.2 (such as font height 10pt, base line skip 12pt). Multiply with \linespread, so you get 1.25*1.2 = 1.5, so one-half.
 
 \renewcommand{\printTitle}{Determining Potential Uses of JIRA and Confluence}
+
+%\makeatletter
+%\newcommand\mytoc{%
+%    \tableofcontents
+%    \section*{Figures}%
+%    \@starttoc{lof}%
+%    \bigskip
+%    \section*{Tables}%
+%    \@starttoc{lot}}
+%\makeatother
 
 \begin{document}
 %% Use roman numercals page numbering for front matter, letter of transmittal, and table of contents.
@@ -41,7 +53,7 @@
 \listoftables					  %List of Tables
 
 \clearpage
-\lstlistoflistings				  %List of Code listings
+% \lstlistoflistings				  %List of Code listings
 %\addcontentsline{toc}{section}{{Listings}}	% ADD HEADING TO TOC
 \endgroup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,7 +63,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% SUMMARY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \input{summary.tex}
  
@@ -63,7 +74,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 % Alternative usage of glossary
 %\printglossary[title=List of Terms,toctitle=Terms and abbreviations] 
-\newpage
+\clearpage
  \printglossaries	%%% PRINT GLOSSARIES %%%%
  \clearpage 
  
@@ -92,7 +103,7 @@
 \section{References}
 % nocite prints all references even if they were not used
 \subsubsection*{Cited References}
- \printbibliography[heading=none,category=cited]
+\printbibliography[heading=none,category=cited]
 
 \subsubsection*{General References}
 \printbibliography[heading=none,notcategory=cited,resetnumbers=true] 

@@ -246,24 +246,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % See https://tex.stackexchange.com/questions/6967/how-to-split-bibliography-into-works-cited-and-works-not-cited?noredirect=1&lq=1
 % https://tex.stackexchange.com/questions/128959/multiple-bibiographies-using-biblatex-and-resetting-numbers
-\usepackage[defernumbers=true,backend=bibtex,sorting=none]{biblatex}	% Sort by citation order
+\usepackage[defernumbers=true,backend=bibtex,style=numeric,sorting=none]{biblatex}	% Sort by citation order
 \DeclareBibliographyCategory{cited}
 \AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
-\defbibheading{bibliography}[\bibname]{%
-  	\subsubsection*{#1}}%	% set up bibliography as a section 
+%\defbibheading{bibliography}[\bibname]{%
+%  	\subsubsection*{#1}}%	% set up bibliography as a section 
   	%\markboth{\thesection.\ #1}{}}	%label at upper right corner in header
 
 \usepackage[titletoc]{appendix}	%% appendix will be in the toc
 % What I want is References and subsections or paragraphs 
 
 % This created 5. Cited References and 6. General References
+\usepackage[nottoc]{tocbibind}
 %\usepackage[nottoc,numbib]{tocbibind}	% Label the Biblography in the TOC
 %\defbibheading{bibliography}[\bibname]{%
 %  	\section{#1}%	% set up bibliography as a section 
 %  	\markboth{\thesection.\ #1}{}}	%label at upper right corner in header
 \newcommand{\onlineCite}{[Online] Available: }	% Used in BIBLIOGRAPHY
 % Load all references 
-\nocite{*}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% CUSTOMIZE GLOSSARY %%%%%%%%%%%%%%%%%%%%%%%%
