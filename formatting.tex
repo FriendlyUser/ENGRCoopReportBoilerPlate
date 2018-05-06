@@ -20,28 +20,6 @@
 {0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}	% Not sure about this spacing
 \usepackage{multirow} % Create tabular cells spanning multiple rows.
 
-%CHANGE Link colours as needed
-\definecolor{linkColor}{HTML}{453737}	
-
-\usepackage{hyperref}	% Create links in document
-\hypersetup{linktocpage}	% Allow clickable links
-\hypersetup{
-    bookmarks=true,         % show bookmarks bar?
-    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
-    pdfmenubar=true,        % show Acrobat’s menu?
-    pdffitwindow=false,     % window fit to page when opened
-    pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={Work Term Report},    % title
-    pdfauthor={David Li},     % author	
-    %linktoc=all,     %set to all if you want both sections and subsections linked
-	colorlinks   = true, %Colours links instead of ugly boxes
-	urlcolor     = blue, %Colour for external hyperlinks
-	linkcolor    = red, %Colour of internal links
-	citecolor   = green %Colour of citations
-}
-
-
 \usepackage{float}    % used for float­ing ob­jects such as fig­ures and ta­bles.
 \usepackage{caption}
 %\captionsetup[figure]{labelfont=sf,textfont={sf}}
@@ -220,7 +198,7 @@
    	\makeatother
    	
    	% Edit the global text colour, make the report easier to read for digital screens or print.
-   	\AtBeginDocument{\globalcolor{myText}}
+   	%\AtBeginDocument{\globalcolor{myText}}
    	
    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    % SET UP COMBINED LOT and LOF 	%%%%%%%
@@ -266,22 +244,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% SET UP BIBLIOGRAPHY  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[backend=bibtex,sorting=none]{biblatex}	% Sort by citation order
-\addbibresource{bibliography.bib}		% Load bibliography
-\usepackage[nottoc,numbib]{tocbibind}	% Label the Biblography in the TOC
-\usepackage[titletoc]{appendix}	%% appendix will be in the toc
+% See https://tex.stackexchange.com/questions/6967/how-to-split-bibliography-into-works-cited-and-works-not-cited?noredirect=1&lq=1
+% https://tex.stackexchange.com/questions/128959/multiple-bibiographies-using-biblatex-and-resetting-numbers
+\usepackage[defernumbers=true,backend=bibtex,sorting=none]{biblatex}	% Sort by citation order
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
 \defbibheading{bibliography}[\bibname]{%
-  	\section{#1}%	% set up bibliography as a section 
-  	\markboth{\thesection.\ #1}{}}	%label at upper right corner in header
-\newcommand{\onlineCite}{[Online] Available: }	% Used in BIBLIOGRAPHY 
+  	\subsubsection*{#1}}%	% set up bibliography as a section 
+  	%\markboth{\thesection.\ #1}{}}	%label at upper right corner in header
 
+\usepackage[titletoc]{appendix}	%% appendix will be in the toc
+% What I want is References and subsections or paragraphs 
+
+% This created 5. Cited References and 6. General References
+%\usepackage[nottoc,numbib]{tocbibind}	% Label the Biblography in the TOC
+%\defbibheading{bibliography}[\bibname]{%
+%  	\section{#1}%	% set up bibliography as a section 
+%  	\markboth{\thesection.\ #1}{}}	%label at upper right corner in header
+\newcommand{\onlineCite}{[Online] Available: }	% Used in BIBLIOGRAPHY
+% Load all references 
+\nocite{*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% CUSTOMIZE GLOSSARY %%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[toc,nopostdot,xindy]{glossaries} % included in toc and keep track of technical words and definition and remove dots at the end
 
 % glossary definitions as bold
-\defglsentryfmt{\color{black}\bfseries\glsgenentryfmt}
+%\defglsentryfmt{\color{black}\bfseries\glsgenentryfmt}
 
 % custom glossary style that contains the pages that contains the glossary terms, and bolded glossary entries.
 %\newglossarystyle{myGloss}{%
@@ -313,6 +302,68 @@
 	\verbatim@nolig@list}
 \makeatother
 
+
+
+%%%% Set up headers %%%%
+\usepackage{fancyhdr}	% Controls headers and footers
+   \fancypagestyle{plain}{
+   	\fancyhf{}
+   	\setlength{\headheight}{15pt} 
+   	\fancyhead[L]{ \textsf{Creating transparent and efficient transactions through smart contracts and blockchain}}
+   	%\fancyhead[R]{\textsf{\leftmark}}
+   	\fancyfoot[C]{\textsf{ENGR 446: Technical Report}}
+   	\fancyfoot[L]{\textsf{David Li}}
+   	\fancyfoot[R]{\textsf{\thepage}}
+   	\renewcommand{\headrulewidth}{0.4pt}
+   	\renewcommand{\footrulewidth}{0.4pt}
+   }
+   
+    % NUMBERING IN TOC FOR SUMMARY SECTION %%%%%%%%
+      \newcommand{\mychapter}[2]{
+      	\setcounter{chapter}{#1}
+      	\setcounter{section}{0}
+      	\chapter*{#2}
+      	\addcontentsline{toc}{chapter}{#2}
+      }
+     
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      % Remove Footer on select pages
+      \fancypagestyle{nofooter}{%
+      	\fancyfoot{}%
+      	\fancyhead{}%
+      }
+
+% Diagram, adjust big picture
+\usepackage{adjustbox}
+
+%\usepackage[x11names,table]{xcolor}
+%\DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
+
+\newcommand{\foo}{\color{blue}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+
+
+
+%%% Following lwarps documentation hyperref will be loaded last
+%CHANGE Link colours as needed
+\definecolor{linkColor}{HTML}{453737}	
+
+\usepackage{hyperref}	% Create links in document
+\hypersetup{linktocpage}	% Allow clickable links
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={ENGR 446: Smart Contracts},    % title
+    pdfauthor={David Li},     % author	
+    %linktoc=all,     %set to all if you want both sections and subsections linked
+	colorlinks   = true, %Colours links instead of ugly boxes
+	urlcolor     = blue, %Colour for external hyperlinks
+	linkcolor    = blue, %Colour of internal links
+	citecolor   = black %Colour of citations
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%% END PREAMBLE %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

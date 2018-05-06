@@ -5,11 +5,10 @@
 \graphicspath{{Images/}} % Specifies the directory where pictures are stored
 
 \input{formatting.tex}
-\input{glossaries.tex}
-
-
+\addbibresource{references.bib}	% Load bibliography
+\input{glossary.tex}
+\makeglossaries
 \linespread{1.25}
-
 % Reason: the standard line skip means a factor of 1.2 (such as font height 10pt, base line skip 12pt). Multiply with \linespread, so you get 1.25*1.2 = 1.5, so one-half.
 
 \renewcommand{\printTitle}{Determining Potential Uses of JIRA and Confluence}
@@ -64,6 +63,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 % Alternative usage of glossary
 %\printglossary[title=List of Terms,toctitle=Terms and abbreviations] 
+\newpage
  \printglossaries	%%% PRINT GLOSSARIES %%%%
  \clearpage 
  
@@ -75,6 +75,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Inserting Main Content %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}
 \input{introduction.tex}
 \input{discussion.tex}
 \input{conclusion.tex}
@@ -86,12 +87,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% BACK MATTER, printing References %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\bibname{References} % Change bibliography to references
+%\renewcommand\bibname{References} % Change bibliography to references
 
+\section{References}
 % nocite prints all references even if they were not used
-% \nocite{*}
- \printbibliography
- 
+\subsubsection*{Cited References}
+ \printbibliography[heading=none,category=cited]
+
+\subsubsection*{General References}
+\printbibliography[heading=none,notcategory=cited,resetnumbers=true] 
 \linespread{1}
 
 \begin{appendices}
