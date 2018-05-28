@@ -1,10 +1,36 @@
 %%%% Useful Packages loaded without much configuration %%%%%%
 \usepackage[margin=2.54 cm]{geometry} % Set dimensions for page layout
 \usepackage{kpfonts}	    % Fonts used in the title page
+
+% Fancy table print settings
+\warpprintonly{
+	\usepackage[table]{xcolor}
+	\usepackage{tabularx}		% Tabulars with adjustable-width columns
+	\definecolor{lightgoldenrodyellow}{rgb}{1, 0.93, 0.55}
+	\definecolor{firebrick}{rgb}{0.7, 0.13, 0.13}
+	\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+	\definecolor{almostWhite}{rgb}{0.95, 0.95, 0.95}
+	\definecolor{purpleMix}{rgb}{0.35, 0.07, 0.57}
+	\newcommand*{\arraycolor}[1]{\protect\leavevmode\color{#1}}
+	\newcolumntype{A}{>{\columncolor{blue!50!white}}c}
+	%\newcolumntype{B}{>{\columncolor{lightgoldenrodyellow}}c}
+	\newcolumntype{B}{>{\columncolor{purpleMix!75}}c}
+	\newcolumntype{C}{>{\columncolor{firebrick!50}}c}
+	\newcolumntype{D}{>{\columncolor{lightgoldenrodyellow}}c}
+	\newcolumntype{E}{>{\columncolor{white!60!purple!20!green!20}}c} 
+}
+\warpHTMLonly{
+	\usepackage{tabularx} % xcolor loaded by eso-pic
+}
+% load xcolor before eso-pic
 \usepackage{eso-pic}        % Background pictures in the title page
 \usepackage{tcolorbox}		% Fancy Math equations	
-\usepackage{tabularx}		% Tabulars with adjustable-width columns
 \tcbuselibrary{skins} 	% used with tcolorbox 
+
+%\DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
+
+\newcommand{\foo}{\color{blue}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+
 \usepackage{transparent}	% Create transparent background images
 \usepackage{lipsum}  % Garbage text
 \usepackage{url}	 % links to websites
@@ -13,6 +39,10 @@
 \usepackage{colortbl}	% Color tables
 \usepackage{xfrac}		% Make fractions nice in tables
 \usepackage{enumitem}	% itemize, enumerate
+% Custom list environment
+\newlist{arrowlist}{itemize}{1}
+\setlist[arrowlist]{label=$\spadesuit$}
+
 \usepackage{array}
 \usepackage{setspace}   % double spacing as required in UVIC co-op reports
 \usepackage{titlesec} % Select alternative section titles
@@ -337,13 +367,6 @@
 
 % Diagram, adjust big picture
 \usepackage{adjustbox}
-
-%\usepackage[x11names,table]{xcolor}
-%\DeclareCaptionFont{blue}{\color{LightSteelBlue3}}
-
-\newcommand{\foo}{\color{blue}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
-
-
 
 %%% Following lwarps documentation hyperref will be loaded last
 %CHANGE Link colours as needed

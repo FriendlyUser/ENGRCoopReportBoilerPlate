@@ -4,6 +4,7 @@ Created on Sun Dec 31 09:50:49 2017
 
 @author: David Li
 Helper script to create lwarpnotes, latex file should be set to \nonstopmode
+Run from git bash, else the bash scripts will not work.
 """
 
 import subprocess,os,sys
@@ -27,8 +28,8 @@ latexmk_clean = ' '.join(['latexmk',
 try:
     subprocess.check_call(lwarpmk_clean)
     print('Calling: %s' % lwarpmk_clean)
-    subprocess.check_call(latexmk_clean)
-    print('Calling: %s' % latexmk_clean)
+    #subprocess.check_call(latexmk_clean)
+    #print('Calling: %s' % latexmk_clean)
 except subprocess.CalledProcessError:
     print('Error occured, check the command')
     pass # handle errors in the called executable
@@ -64,7 +65,7 @@ except OSError:
     pass # executable not found
 
 lwarpHTMLFile = input_name +'_html' + '.tex'
-print('making lwarp HTML FILE' + lwarpHTMLFile)
+print('making lwarp HTML FILE: ' + lwarpHTMLFile)
 cmd_str2 = ' '.join(['lualatex',
 					'-synctex=1',
 					'-interaction=nonstopmode',
@@ -82,19 +83,30 @@ print('Script created final pdf without limages and glossaries.')
 
 ### Consider calling lwarpmk limages and lwarpmk htmlglossary at this point and then compiling
 try:
-	cmd_images = ' '.join(['lwarpmk',
-				'limages'])
-	cmd_htmlglossary = ' '.join(['lwarpmk',
+    cmd_htmlglossary = ' '.join(['lwarpmk',
 				'htmlglossary'])
-	subprocess.check_call(cmd_images)
-	subprocess.check_call(cmd_htmlglossary)
-	print('Creating glossary and images again for HTML.')
+    subprocess.check_call(cmd_htmlglossary)
+    cmd_printglossary = ' '.join(['lwarpmk',
+				'printglossary'])
+    subprocess.check_call(cmd_printglossary)
+    print('Creating glossary and images again for HTML.')
 except subprocess.CalledProcessError:
 	print('Error occured, check the command')
 	pass # handle errors in the called executable
 except OSError:
 	print('Executable not found')
 	pass # executable not found
+
+try:
+    subprocess.check_call(cmd_str1)
+    print('Calling: %s' % cmd_str1)
+except subprocess.CalledProcessError:
+    print('Error occured, check the command')
+    pass # handle errors in the called executable
+except OSError:
+    print('Executable not found')
+    pass # executable not found
+print('Script created final print pdf with glossaries.')
 
 try:
     subprocess.check_call(cmd_str2)
@@ -123,6 +135,31 @@ except subprocess.CalledProcessError:
 except OSError:
     print('Executable not found')
     pass # executable not found
+    
+# Get images
+
+import time
+
+cmd_images = ' '.join(['lwarpmk',
+				'limages'])
+
+# lwarp 0.56 pdf to svgs or command 
+# in bash shell lwarpmk pdftosvg Diagrams/*.pdf
+
+cmd_images = ' '.join(['lwarpmk',
+				'limages'])
+try:
+    subprocess.check_call(cmd_images)
+except subprocess.CalledProcessError:
+    print('Error occured when trying to process images')
+    pass # handle errors in the called executable
+except OSError:
+    print('Executable not found for limages')
+    pass # executable not found
+# wait for images to load
+time.sleep(7)    
+    
+    
 print('Script is creating lwarp files, moving on to html creation.')
 
 cmd_str3 = ' '.join(['lwarpmk',
@@ -143,8 +180,8 @@ print('Script is creating lwarp files, moving on to html creation.')
 print('Moving files to correct directory')
 
 try:
-	print('sh movefiles.sh')
-	subprocess.call('sh movefiles.sh')
+	print('./movefiles.sh')
+	subprocess.call('./movefiles.sh')
 except subprocess.CalledProcessError:
     print('Error occured, check the command')
     pass # handle errors in the called executable

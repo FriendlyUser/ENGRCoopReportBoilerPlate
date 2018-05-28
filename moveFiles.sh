@@ -17,5 +17,6 @@ for f1 in *.css
        fi
 done
 
-cp -R Images docs/
-cp -R lateximages docs/
+cp Diagrams/*.svg #docs/Diagrams
+#cp -R Images docs/
+#cp -R lateximages docs/

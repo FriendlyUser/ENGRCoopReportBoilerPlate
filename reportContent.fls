@@ -106,28 +106,38 @@ INPUT C:/Program Files/MiKTeX 2.9/tex/latex/l3kernel/expl3-code.tex
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/l3kernel/expl3-code.tex
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/l3kernel/expl3-code.tex
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/l3kernel/expl3-code.tex
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/UnicodeData.txt
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/UnicodeData.txt
 INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/UnicodeData.txt
 INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/UnicodeData.txt
 INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/CaseFolding.txt
 INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/CaseFolding.txt
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/CaseFolding.txt
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/CaseFolding.txt
 INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/SpecialCasing.txt
 INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/SpecialCasing.txt
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
-INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/SpecialCasing.txt
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/unicode-data/SpecialCasing.txt
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/l3kernel/l3pdfmode.def
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/l3kernel/l3pdfmode.def
 INPUT C:/Program Files/MiKTeX 2.9/tex/latex/l3kernel/l3pdfmode.def
@@ -1555,12 +1565,6 @@ INPUT ./summary.tex
 INPUT ./summary.tex
 INPUT ./summary.tex
 INPUT ./summary.tex
-INPUT ./reportContent.gls
-INPUT ./reportContent.gls
-INPUT ./reportContent.gls
-INPUT ./reportContent.gls
-INPUT ./reportContent.gls
-INPUT ./reportContent.gls
 INPUT ./introduction.tex
 INPUT ./introduction.tex
 INPUT ./introduction.tex
@@ -1593,17 +1597,6 @@ INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpssmn8t.vf
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpssmn8t.vf
-INPUT ./Diagrams/blockchainInSimpleApp.pdf
-INPUT ./Diagrams/blockchainInSimpleApp.pdf
-INPUT ./Diagrams/blockchainInSimpleApp.pdf
-INPUT ./Diagrams/blockchainInSimpleApp.pdf
-INPUT ./Diagrams/blockchainInSimpleApp.pdf
-INPUT ./Diagrams/verifySig.png
-INPUT ./Diagrams/verifySig.png
-INPUT ./Diagrams/verifySig.png
-INPUT ./Diagrams/verifySig.png
-INPUT ./Diagrams/verifySig.png
-INPUT ./Diagrams/verifySig.png
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpssmn8t.vf
@@ -1732,6 +1725,15 @@ INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpssmn8t.vf
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpssmn8t.vf
+INPUT ./Diagrams/smartContractsExp.pdf
+INPUT ./Diagrams/smartContractsExp.pdf
+INPUT ./Diagrams/smartContractsExp.pdf
+INPUT ./Diagrams/smartContractsExp.pdf
+INPUT ./Diagrams/smartContractsExp.pdf
+INPUT ./discussion.tex
+INPUT ./discussion.tex
+INPUT ./discussion.tex
+INPUT ./discussion.tex
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssbn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssbn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpssbn8t.vf
@@ -1740,10 +1742,11 @@ INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssbn8r.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssbn8r.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssbne.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpssbne.tfm
-INPUT ./discussion.tex
-INPUT ./discussion.tex
-INPUT ./discussion.tex
-INPUT ./discussion.tex
+INPUT ./Diagrams/blockchainInSimpleApp.pdf
+INPUT ./Diagrams/blockchainInSimpleApp.pdf
+INPUT ./Diagrams/blockchainInSimpleApp.pdf
+INPUT ./Diagrams/blockchainInSimpleApp.pdf
+INPUT ./Diagrams/blockchainInSimpleApp.pdf
 INPUT ./conclusion.tex
 INPUT ./conclusion.tex
 INPUT ./conclusion.tex
@@ -1768,7 +1771,6 @@ INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttmn8t.vf
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttmn8t.vf
-INPUT ./Diagrams/verifySig.png
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmn8t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttmn8t.vf
