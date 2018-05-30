@@ -2,17 +2,9 @@
 \section{Discussion}
 As shown in 
 		Figure \ref{fig:DApp} \gls{DApp}, a user's transactions on the application is publicly broadcasting to the blockchain. 
-		Implementing architecture for blockchain 
-		applications 
-		
-		\footnote{Although, server blockchain architecture with an abstraction layer resemble traditional applications, other approaches are available such as offline signing with a public node, and client-blockchain in serverless apps and leveraging cloud infrastructure.} 
-		
-		adds an third layer to the standard client-server architecture 	\footnote{ \textbf{Signing Transactions}: One approach involves interacting with the JSON RPC interface of the \gls{Ethereum} node from the application to perform all blockchain operations.}.
-		 Disadvantages of blockchain data storage include difficult retrieving relevant information (without an abstraction layer, the entire blockchain or a single transaction is returned), users will experience latency before transactions are validated, 	\footnote{For bitcoin, it takes 10 minutes before blocks of transactions are validated because of the mining process.}
-		 
-		  and writing to the blockchain is relatively expensive compared to traditional systems. Usage of interfaces such as the JSON RPC and/or cloud hosting 
-	 solutions	
-	 	 serve as a abstraction layer allowing databases to load publicly available data on the blockchain
+		Implementing architecture for blockchain applications \footnote{Although, server blockchain architecture with an abstraction layer resemble traditional applications, other approaches are available such as offline signing with a public node, and client-blockchain in serverless apps and leveraging cloud infrastructure.} adds an third layer to the standard client-server architecture 	\footnote{ \textbf{Signing Transactions}: One approach involves interacting with the JSON RPC interface of the \gls{Ethereum} node from the application to perform all blockchain operations.}.
+		 Disadvantages of blockchain data storage include difficult retrieving relevant information (without an abstraction layer, the entire blockchain or a single transaction is returned), users will experience latency before transactions are validated, 	\footnote{For bitcoin, it takes 10 minutes before blocks of transactions are validated (mining process)} and writing to the blockchain is relatively expensive compared to traditional systems. Usage of interfaces such as the JSON RPC and/or cloud hosting 
+	 solutions serve as a abstraction layer allowing databases to load publicly available data on the blockchain
 	 	 % rewrite later 
 	 	 for more efficient user interactions with that information. 
 

@@ -72,7 +72,8 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 	Blockchain technology is revolutionizing the internet by establishing trust in shared data. \cite{book:bchainForDummies}.
 	Additionally, transactions recorded on the blockchain are practically impossible to remove or change. 
 	A decentralized application, or DApp are deployed on peer to peer networks such as Ethereum or on the cloud \footnotemark. A decentralized system (peer to peer) has many advantages over a conventional centralized network including no single points of failure, cheaper distribution (servers are expensive), faster upload speeds. 
-	\footnotetext[1]{Amazon recently started offering blockchain templates on AWS. \cite{ethereumWhitePaper:Online}}
+	\footnotetext[1]{Amazon recently started offering blockchain templates on AWS. %\cite{ethereumWhitePaper:Online}
+	}
 	
 	\paragraph{Types of Blockchains}
 	\begin{itemize}
@@ -90,7 +91,7 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 	  In a Dapp, this can be used for:
 	 \begin{enumerate}
 		\item Recovering the public key (ethereum account address) of the Author.
-		\item Verify if the raw data is the same as the one signed by Author using the public key. 
+		\item Verify if the raw data is identical  using the Author's public key. 
 	\end{enumerate}
 	
 	%In order to sign something, a mathematical function is used to "sign" a piece of document/data. A digital signature of a document/data is a number generated using a private key. The private key has a corresponding public key. 
@@ -112,6 +113,41 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 %		To access websites on the Ethereum blockchain and use dapps a specialized browser is needed, or a plugin like metamask. 
 
 \subsection{Smart Contracts}
+	\begin{minipage}[h]{0.5\linewidth}
+		Traditional legal contracts are written to represent the contracting parties. In a smart contract, self-executing source code is used to automatic transactions that are publicly available on the blockchain.
+		Furthermore, smart contracts allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. This allows validation of complex transactions swiftly while maintaining transparency. Although the benefits of using smart contracts are obvious, legal enforceability is difficult because "no central administering authority to decide a dispute" exists \cite{keyfindings:Online}. In addition, irreversible and immutable transactions are a disadvantage that hackers can exploit. For example, an amateur coder killed the contract that allowed users to transfer Ether for the Parity Ethereum Wallet, rendering 150 to 300 million dollars completely useless \cite{funnyJoke:Online}. This highlights the need to scrutinize smart contracts and the frequency of bugs in production level code.
+	\end{minipage}
+	\begin{minipage}[h]{0.5\linewidth}
+		\begin{lstlisting}[language=Solidity,caption=Smart contract in Solidity]
+		// pragma is used to specifc version of Solidity
+		pragma solidity ^0.4.16;
+		contract HelloWorld {
+		 uint256 counter = 5; 
+		 //state variable we assigned earlier
+		 address owner = msg.sender; 
+		 //set owner as msg.sender
+		function add() public {  //increases counter by 1
+	  		counter++;
+		 }
+		 function subtract() public { //decreases counter by 1
+		  counter--;
+		 }
+		 function getCounter() public constant returns (uint256) {
+		  return counter;
+		 } 
+		 function kill() public { //self-destruct function, 
+		   if(msg.sender == owner) {
+		    selfdestruct(owner); 
+		   }
+		}
+		
+		// Fallback function
+		function () public payable {
+		
+		 }
+		\end{lstlisting}
+	\end{minipage}
+
 	\begin{warpprint}
 	\begin{figure}[ht]
 		\centering
