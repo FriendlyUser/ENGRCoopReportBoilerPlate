@@ -1,0 +1,686 @@
+<html><head><style type="text/css">pre { margin: 1px }
+.fmt0 {  } /* normal */
+.fmt1 {  } /* background */
+.fmt2 { background-color: #ffcabf; } /* line:error */
+.fmt3 { background-color: #fffbbf; } /* line:warning */
+.fmt4 { background-color: #bfd6ff; } /* line:badbox */
+.fmt5 {  } /* line:bookmark */
+.fmt6 {  } /* line:bookmark0 */
+.fmt7 {  } /* line:bookmark1 */
+.fmt8 {  } /* line:bookmark2 */
+.fmt9 {  } /* line:bookmark3 */
+.fmt10 {  } /* line:bookmark4 */
+.fmt11 {  } /* line:bookmark5 */
+.fmt12 {  } /* line:bookmark6 */
+.fmt13 {  } /* line:bookmark7 */
+.fmt14 {  } /* line:bookmark8 */
+.fmt15 {  } /* line:bookmark9 */
+.fmt16 { font-style: italic;color: #555580; } /* magicComment */
+.fmt17 { background-color: #a8cf83; } /* commentTodo */
+.fmt18 { font-style: italic;color: #808080; } /* comment */
+.fmt19 { color: #800000; } /* keyword */
+.fmt20 { font-weight: 700;color: #0095ff; } /* extra-keyword */
+.fmt21 { color: #808000; } /* math-keyword */
+.fmt22 { border-bottom: 1px solid #0000ff;color: #0000ff; } /* link */
+.fmt23 { font-weight: 700;color: #0055ff; } /* align-ampersand */
+.fmt24 { color: #008080; } /* verbatim */
+.fmt25 { color: #800000; } /* sweave-block */
+.fmt26 { font-weight: 700;color: #0095ff; } /* sweave-delimiter */
+.fmt27 { color: #800000; } /* pweave-block */
+.fmt28 { font-weight: 700;color: #0095ff; } /* pweave-delimiter */
+.fmt29 { color: #804000; } /* picture */
+.fmt30 { color: #c06000; } /* picture-keyword */
+.fmt31 { font-weight: 700;background-color: #ffff7f; } /* braceMatch */
+.fmt32 { font-weight: 700;color: #ffff7f;background-color: #c00000; } /* braceMismatch */
+.fmt33 { color: #000000;background-color: #ffef0b; } /* search */
+.fmt34 { color: #008000; } /* numbers */
+.fmt35 { color: #509600; } /* math-delimiter */
+.fmt36 { color: #ff0000; } /* text */
+.fmt37 { color: #ff0088; } /* escapeseq */
+.fmt38 { border-bottom: 1px dashed #ff0000; } /* spellingMistake */
+.fmt39 { border-bottom: 1px dashed #008000; } /* wordRepetition */
+.fmt40 { border-bottom: 1px dashed #008000; } /* wordRepetitionLongRange */
+.fmt41 { text-decoration: line-through; } /* badWord */
+.fmt42 { border-bottom: 1px dashed #000080; } /* grammarMistake */
+.fmt43 { background-color: #00ffa0; } /* grammarMistakeSpecial1 */
+.fmt44 { background-color: #00c0ff; } /* grammarMistakeSpecial2 */
+.fmt45 { background-color: #00ff00; } /* grammarMistakeSpecial3 */
+.fmt46 { background-color: #c8ff61; } /* grammarMistakeSpecial4 */
+.fmt47 { background-color: #ffbf9f; } /* latexSyntaxMistake */
+.fmt48 { font-style: italic;color: #0000ff; } /* temporaryCodeCompletion */
+.fmt49 { color: #000080; } /* environment */
+.fmt50 { color: #008000; } /* referencePresent */
+.fmt51 { border-bottom: 1px dashed #008000;color: #008000; } /* referenceMissing */
+.fmt52 { border-bottom: 1px dashed #800080;color: #800080; } /* referenceMultiple */
+.fmt53 { color: #008000; } /* citationPresent */
+.fmt54 { border-bottom: 1px dashed #008000;color: #008000; } /* citationMissing */
+.fmt55 { color: #008000; } /* packagePresent */
+.fmt56 { border-bottom: 1px dashed #008000;color: #008000; } /* packageMissing */
+.fmt57 { font-weight: 700;color: #000000; } /* structure */
+.fmt58 { background-color: #eeeeff; } /* current */
+.fmt59 { background-color: #b2d8ff; } /* selection */
+.fmt60 { background-color: #ffaaaa; } /* replacement */
+.fmt61 { text-decoration: line-through;background-color: #ffaaaa; } /* diffDelete */
+.fmt62 { background-color: #aaffaa; } /* diffAdd */
+.fmt63 { background-color: #ffff50; } /* diffReplace */
+.fmt64 { background-color: #ddffcc; } /* previewSelection */
+.fmt65 { font-weight: 700;color: #0095ff; } /* txs-test */
+.fmt66 { font-weight: 700; } /* txs-test-summary */
+.fmt67 { color: #008000; } /* txs-test-pass */
+.fmt68 { color: #c00000; } /* txs-test-fail */
+.fmt69 { color: #ea8800; } /* txs-test-warn */
+.fmt70 { color: #808000; } /* txs-test-qdebug */
+.fmt71 { color: #ffa500; } /* dtx:guard */
+.fmt72 { font-weight: 700;color: #006400; } /* dtx:macro */
+.fmt73 { color: #008080; } /* dtx:verbatim */
+.fmt74 { color: #cc8100; } /* dtx:specialchar */
+.fmt75 { font-weight: 700;color: #10c010; } /* dtx:commands */
+.fmt76 { color: #b200ff; } /* lua:keyword */
+.fmt77 { color: #808080; } /* lua:comment */
+.fmt78 { color: #804000; } /* asymptote:block */
+.fmt79 { color: #800080; } /* asymptote:keyword */
+.fmt80 { color: #808000; } /* asymptote:type */
+.fmt81 { color: #008000; } /* asymptote:numbers */
+.fmt82 { color: #000080; } /* asymptote:string */
+.fmt83 { color: #808080; } /* asymptote:comment */
+.fmt84 { color: #808080; } /* qtscript:comment */
+.fmt85 { color: #008000; } /* qtscript:string */
+.fmt86 { color: #000080; } /* qtscript:number */
+.fmt87 { color: #808000; } /* qtscript:keyword */
+.fmt88 { color: #800000; } /* qtscript:txs-variable */
+.fmt89 { font-style: italic; } /* qtscript:txs-function */
+.fmt90 { background-color: #ffff7f; } /* preedit */
+</style></head><body><pre><span class="fmt19">\documentclass</span>[12pt,tightenlines,letterpaper,listof=totoc]{<span class="fmt55">scrartcl</span>} </pre>
+<pre><span class="fmt19">\input</span>{lwarpPreamble.tex} </pre>
+<pre><span class="fmt19">\newcommand</span>{<span class="fmt19">\printTitle</span>}{Insert a title Here}  </pre>
+<pre><span class="fmt19">\usepackage</span>{<span class="fmt55">graphicx</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Required</span><span class="fmt18"> </span><span class="fmt18">for</span><span class="fmt18"> </span><span class="fmt18">including</span><span class="fmt18"> </span><span class="fmt18">pictures</span> </pre>
+<pre><span class="fmt19">\graphicspath</span>{{Images/}} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Specifies</span><span class="fmt18"> </span><span class="fmt18">the</span><span class="fmt18"> </span><span class="fmt18">directory</span><span class="fmt18"> </span><span class="fmt18">where</span><span class="fmt18"> </span><span class="fmt18">pictures</span><span class="fmt18"> </span><span class="fmt18">are</span><span class="fmt18"> </span><span class="fmt18">stored</span> </pre>
+<pre> </pre>
+<pre><span class="fmt19">\input</span>{formatting.tex} </pre>
+<pre><span class="fmt19"><span class="fmt47">\addbibresource</span></span>{references.bib}	<span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Load</span><span class="fmt18"> </span><span class="fmt18">bibliography</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Print</span><span class="fmt18"> </span><span class="fmt18">out</span><span class="fmt18"> </span><span class="fmt18">references</span><span class="fmt18"> </span><span class="fmt18">that</span><span class="fmt18"> </span><span class="fmt18">are</span><span class="fmt18"> </span><span class="fmt18">not</span><span class="fmt18"> </span><span class="fmt18">cited</span> </pre>
+<pre><span class="fmt19">\nocite</span>{<span class="fmt54">*</span>} </pre>
+<pre><span class="fmt19">\input</span>{glossary.tex} </pre>
+<pre><span class="fmt19"><span class="fmt47">\makeglossaries</span></span> </pre>
+<pre><span class="fmt19">\linespread</span>{1.25} </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Reason:</span><span class="fmt18"> </span><span class="fmt18">the</span><span class="fmt18"> </span><span class="fmt18">standard</span><span class="fmt18"> </span><span class="fmt18">line</span><span class="fmt18"> </span><span class="fmt18">skip</span><span class="fmt18"> </span><span class="fmt18">means</span><span class="fmt18"> </span><span class="fmt18">a</span><span class="fmt18"> </span><span class="fmt18">factor</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">1.2</span><span class="fmt18"> </span><span class="fmt18">(such</span><span class="fmt18"> </span><span class="fmt18">as</span><span class="fmt18"> </span><span class="fmt18">font</span><span class="fmt18"> </span><span class="fmt18">height</span><span class="fmt18"> </span><span class="fmt18">10pt,</span><span class="fmt18"> </span><span class="fmt18">base</span><span class="fmt18"> </span><span class="fmt18">line</span><span class="fmt18"> </span><span class="fmt18">skip</span><span class="fmt18"> </span><span class="fmt18">12pt).</span><span class="fmt18"> </span><span class="fmt18">Multiply</span><span class="fmt18"> </span><span class="fmt18">with</span><span class="fmt18"> </span><span class="fmt18">\linespread,</span><span class="fmt18"> </span><span class="fmt18">so</span><span class="fmt18"> </span><span class="fmt18">you</span><span class="fmt18"> </span><span class="fmt18">get</span><span class="fmt18"> </span><span class="fmt18">1.25*1.2</span><span class="fmt18"> </span><span class="fmt18">=</span><span class="fmt18"> </span><span class="fmt18">1.5,</span><span class="fmt18"> </span><span class="fmt18">so</span><span class="fmt18"> </span><span class="fmt18">one-half.</span> </pre>
+<pre> </pre>
+<pre><span class="fmt19">\renewcommand</span>{<span class="fmt19">\printTitle</span>}{Determining Potential Uses of JIRA and Confluence} </pre>
+<pre> </pre>
+<pre><span class="fmt18">%\makeatletter</span> </pre>
+<pre><span class="fmt18">%\newcommand\mytoc{%</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18">    </span><span class="fmt18">\tableofcontents</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18">    </span><span class="fmt18">\section*{Figures}%</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18">    </span><span class="fmt18">\@starttoc{lof}%</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18">    </span><span class="fmt18">\bigskip</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18">    </span><span class="fmt18">\section*{Tables}%</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18">    </span><span class="fmt18">\@starttoc{lot}}</span> </pre>
+<pre><span class="fmt18">%\makeatother</span> </pre>
+<pre> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">document</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt18">%%</span><span class="fmt18"> </span><span class="fmt18">Use</span><span class="fmt18"> </span><span class="fmt18">roman</span><span class="fmt18"> </span><span class="fmt18">numercals</span><span class="fmt18"> </span><span class="fmt18">page</span><span class="fmt18"> </span><span class="fmt18">numbering</span><span class="fmt18"> </span><span class="fmt18">for</span><span class="fmt18"> </span><span class="fmt18">front</span><span class="fmt18"> </span><span class="fmt18">matter,</span><span class="fmt18"> </span><span class="fmt18">letter</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">transmittal,</span><span class="fmt18"> </span><span class="fmt18">and</span><span class="fmt18"> </span><span class="fmt18">table</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">contents.</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\frontmatterNumbering</span></span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Manually</span><span class="fmt18"> </span><span class="fmt18">modified</span><span class="fmt18"> </span><span class="fmt18">the</span><span class="fmt18"> </span><span class="fmt18">word</span><span class="fmt18"> </span><span class="fmt18">front</span><span class="fmt18"> </span><span class="fmt18">page</span><span class="fmt18"> </span><span class="fmt18">template,</span><span class="fmt18"> </span><span class="fmt18">and</span><span class="fmt18"> </span><span class="fmt18">then</span><span class="fmt18"> </span><span class="fmt18">save</span><span class="fmt18"> </span><span class="fmt18">to</span><span class="fmt18"> </span><span class="fmt18">pdf</span><span class="fmt18"> </span><span class="fmt18">and</span><span class="fmt18"> </span><span class="fmt18">include</span><span class="fmt18"> </span><span class="fmt18">using</span><span class="fmt18"> </span><span class="fmt18">includepdf.</span> </pre>
+<pre><span class="fmt18">%\includepdf{TitlePage.pdf}</span> </pre>
+<pre><span class="fmt18">%%%%</span><span class="fmt18"> </span><span class="fmt18">Add</span><span class="fmt18"> </span><span class="fmt18">the</span><span class="fmt18"> </span><span class="fmt18">required</span><span class="fmt18"> </span><span class="fmt18">double</span><span class="fmt18"> </span><span class="fmt18">spacing</span><span class="fmt18"> </span><span class="fmt18">%%%</span> </pre>
+<pre><span class="fmt19">\input</span>{letteroftransmittal.tex} </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%</span><span class="fmt18"> </span><span class="fmt18">TABLE</span><span class="fmt18"> </span><span class="fmt18">OF</span><span class="fmt18"> </span><span class="fmt18">CONTENTS</span><span class="fmt18"> </span><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Stop</span><span class="fmt18"> </span><span class="fmt18">page</span><span class="fmt18"> </span><span class="fmt18">breaks</span><span class="fmt18"> </span><span class="fmt18">for</span><span class="fmt18"> </span><span class="fmt18">list</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">figures</span><span class="fmt18"> </span><span class="fmt18">and</span><span class="fmt18"> </span><span class="fmt18">list</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">tables</span> </pre>
+<pre><span class="fmt18">%{\listoffigures</span><span class="fmt18"> </span><span class="fmt18">\let\cleardoublepage\clearpage</span><span class="fmt18"> </span><span class="fmt18">\listoftables}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt19">\begingroup</span> </pre>
+<pre><span class="fmt19">\cleardoublepage</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\phantomsection</span></span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%\setcounter{tocdepth}{0}</span><span class="fmt18">  </span><span class="fmt18">0</span><span class="fmt18"> </span><span class="fmt18">means</span><span class="fmt18"> </span><span class="fmt18">only</span><span class="fmt18"> </span><span class="fmt18">chapters</span><span class="fmt18"> </span><span class="fmt18">in</span><span class="fmt18"> </span><span class="fmt18">toc,</span><span class="fmt18"> </span><span class="fmt18">1</span><span class="fmt18"> </span><span class="fmt18">includes</span><span class="fmt18"> </span><span class="fmt18">sections,</span><span class="fmt18"> </span><span class="fmt18">2</span><span class="fmt18"> </span><span class="fmt18">includes</span><span class="fmt18"> </span><span class="fmt18">subsections,</span><span class="fmt18"> </span><span class="fmt18">etc.</span> </pre>
+<pre> </pre>
+<pre><span class="fmt19">\renewcommand</span>{<span class="fmt19">\contentsname</span>}{Table of Contents} </pre>
+<pre><span class="fmt19">\tableofcontents</span>   <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Print</span><span class="fmt18"> </span><span class="fmt18">table</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">contents</span> </pre>
+<pre><span class="fmt19">\cleardoublepage</span> <span class="fmt18">%\cleardoublepage</span><span class="fmt18"> </span><span class="fmt18">%for</span><span class="fmt18"> </span><span class="fmt18">openright</span> </pre>
+<pre><span class="fmt19">\listoffigures</span>					  <span class="fmt18">%List</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">Figures</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\phantomsection</span></span> </pre>
+<pre><span class="fmt19">\listoftables</span>					  <span class="fmt18">%List</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">Tables</span> </pre>
+<pre> </pre>
+<pre><span class="fmt19">\clearpage</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">\lstlistoflistings</span><span class="fmt18">				  </span><span class="fmt18">%List</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">Code</span><span class="fmt18"> </span><span class="fmt18">listings</span> </pre>
+<pre><span class="fmt18">%\addcontentsline{toc}{section}{{Listings}}</span><span class="fmt18">	</span><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">ADD</span><span class="fmt18"> </span><span class="fmt18">HEADING</span><span class="fmt18"> </span><span class="fmt18">TO</span><span class="fmt18"> </span><span class="fmt18">TOC</span> </pre>
+<pre><span class="fmt19">\endgroup</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%</span><span class="fmt18"> </span><span class="fmt18">END</span><span class="fmt18"> </span><span class="fmt18">TABLE</span><span class="fmt18"> </span><span class="fmt18">OF</span><span class="fmt18"> </span><span class="fmt18">CONTENTS</span><span class="fmt18"> </span><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%</span><span class="fmt18"> </span><span class="fmt18">SUMMARY</span><span class="fmt18"> </span><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre> </pre>
+<pre><span class="fmt19">\input</span>{summary.tex} </pre>
+<pre>  </pre>
+<pre> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Uncomment</span><span class="fmt18"> </span><span class="fmt18">to</span><span class="fmt18"> </span><span class="fmt18">enable</span><span class="fmt18"> </span><span class="fmt18">double</span><span class="fmt18"> </span><span class="fmt18">spacing</span><span class="fmt18"> </span><span class="fmt18">%</span> </pre>
+<pre> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">\doublespacing</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%</span><span class="fmt18"> </span><span class="fmt18">GLOSSARY</span><span class="fmt18"> </span><span class="fmt18">%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Alternative</span><span class="fmt18"> </span><span class="fmt18">usage</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">glossary</span> </pre>
+<pre><span class="fmt18">%\printglossary[title=List</span><span class="fmt18"> </span><span class="fmt18">of</span><span class="fmt18"> </span><span class="fmt18">Terms,toctitle=Terms</span><span class="fmt18"> </span><span class="fmt18">and</span><span class="fmt18"> </span><span class="fmt18">abbreviations]</span><span class="fmt18"> </span> </pre>
+<pre><span class="fmt19">\clearpage</span> </pre>
+<pre> <span class="fmt19"><span class="fmt47">\printglossaries</span></span>	<span class="fmt18">%%%</span><span class="fmt18"> </span><span class="fmt18">PRINT</span><span class="fmt18"> </span><span class="fmt18">GLOSSARIES</span><span class="fmt18"> </span><span class="fmt18">%%%%</span> </pre>
+<pre> <span class="fmt19">\clearpage</span>  </pre>
+<pre>  </pre>
+<pre>  </pre>
+<pre> <span class="fmt18">%%%</span><span class="fmt18"> </span><span class="fmt18">Set</span><span class="fmt18"> </span><span class="fmt18">page</span><span class="fmt18"> </span><span class="fmt18">numbers</span><span class="fmt18"> </span><span class="fmt18">for</span><span class="fmt18"> </span><span class="fmt18">introduction</span><span class="fmt18"> </span><span class="fmt18">%%</span> </pre>
+<pre><span class="fmt19">\addtocounter</span>{section}{0}	<span class="fmt18">%%%</span><span class="fmt18"> </span><span class="fmt18">start</span><span class="fmt18"> </span><span class="fmt18">at</span><span class="fmt18"> </span><span class="fmt18">page</span><span class="fmt18"> </span><span class="fmt18">#1</span><span class="fmt18"> </span><span class="fmt18">Introduction.</span> </pre>
+<pre><span class="fmt19">\setcounter</span>{page}{1}<span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Start</span><span class="fmt18"> </span><span class="fmt18">page</span><span class="fmt18"> </span><span class="fmt18">number</span><span class="fmt18"> </span><span class="fmt18">with</span><span class="fmt18"> </span><span class="fmt18">1</span> </pre>
+<pre><span class="fmt19">\renewcommand</span>{<span class="fmt19">\thepage</span>}{<span class="fmt19">\arabic</span>{page}}<span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Arabic</span><span class="fmt18"> </span><span class="fmt18">numerals</span><span class="fmt18"> </span><span class="fmt18">for</span><span class="fmt18"> </span><span class="fmt18">page</span><span class="fmt18"> </span><span class="fmt18">counter</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%</span><span class="fmt18"> </span><span class="fmt18">Inserting</span><span class="fmt18"> </span><span class="fmt18">Main</span><span class="fmt18"> </span><span class="fmt18">Content</span><span class="fmt18"> </span><span class="fmt18">%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%</span><span class="fmt18"> </span><span class="fmt18">END</span><span class="fmt18"> </span><span class="fmt18">Main</span><span class="fmt18"> </span><span class="fmt18">Content</span><span class="fmt18"> </span><span class="fmt18">%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt19">\pagestyle</span>{plain} </pre>
+<pre><span class="fmt19">\input</span>{introduction.tex} </pre>
+<pre><span class="fmt19">\input</span>{discussion.tex} </pre>
+<pre><span class="fmt19">\input</span>{conclusion.tex} </pre>
+<pre><span class="fmt19">\input</span>{recommendations.tex} </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%</span><span class="fmt18"> </span><span class="fmt18">BACK</span><span class="fmt18"> </span><span class="fmt18">MATTER,</span><span class="fmt18"> </span><span class="fmt18">printing</span><span class="fmt18"> </span><span class="fmt18">References</span><span class="fmt18"> </span><span class="fmt18">%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%\renewcommand\bibname{References}</span><span class="fmt18"> </span><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Change</span><span class="fmt18"> </span><span class="fmt18">bibliography</span><span class="fmt18"> </span><span class="fmt18">to</span><span class="fmt18"> </span><span class="fmt18">references</span> </pre>
+<pre> </pre>
+<pre><span class="fmt20">\section</span>{<span class="fmt57">References</span>} </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">nocite</span><span class="fmt18"> </span><span class="fmt18">prints</span><span class="fmt18"> </span><span class="fmt18">all</span><span class="fmt18"> </span><span class="fmt18">references</span><span class="fmt18"> </span><span class="fmt18">even</span><span class="fmt18"> </span><span class="fmt18">if</span><span class="fmt18"> </span><span class="fmt18">they</span><span class="fmt18"> </span><span class="fmt18">were</span><span class="fmt18"> </span><span class="fmt18">not</span><span class="fmt18"> </span><span class="fmt18">used</span> </pre>
+<pre><span class="fmt20">\subsubsection</span>*{<span class="fmt57">Cited</span><span class="fmt57"> </span><span class="fmt57">References</span>} </pre>
+<pre><span class="fmt19"><span class="fmt47">\printbibliography</span></span>[heading=none,category=cited] </pre>
+<pre> </pre>
+<pre><span class="fmt20">\subsubsection</span>*{<span class="fmt57">General</span><span class="fmt57"> </span><span class="fmt57">References</span>} </pre>
+<pre><span class="fmt19"><span class="fmt47">\printbibliography</span></span>[heading=none,<span class="fmt38">notcategory</span>=cited]  </pre>
+<pre><span class="fmt19">\linespread</span>{1} </pre>
+<pre> </pre>
+<pre><span class="fmt20"><span class="fmt47">\begin</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">appendices</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt20">\section</span>{<span class="fmt57">Code</span><span class="fmt57"> </span><span class="fmt57">Listings</span>} </pre>
+<pre><span class="fmt20"><span class="fmt47">\begin</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">lstlisting</span></span><span class="fmt20">}</span><span class="fmt24">[language=Solidity,caption=Example</span><span class="fmt24"> </span><span class="fmt24">of</span><span class="fmt24"> </span><span class="fmt24">Solidity</span><span class="fmt24"> </span><span class="fmt24">Code]</span> </pre>
+<pre><span class="fmt24">pragma</span><span class="fmt24"> </span><span class="fmt24">solidity</span><span class="fmt24"> </span><span class="fmt24">0.4.16;</span> </pre>
+<pre> </pre>
+<pre><span class="fmt24">contract</span><span class="fmt24"> </span><span class="fmt24">TestContract</span><span class="fmt24"> </span><span class="fmt24">{</span> </pre>
+<pre><span class="fmt24">    </span> </pre>
+<pre><span class="fmt24">	</span><span class="fmt24">string</span><span class="fmt24"> </span><span class="fmt24">private</span><span class="fmt24"> </span><span class="fmt24">myString</span><span class="fmt24"> </span><span class="fmt24">=</span><span class="fmt24"> </span><span class="fmt24">"foo";</span> </pre>
+<pre><span class="fmt24">	</span> </pre>
+<pre><span class="fmt24">	</span><span class="fmt24">function</span><span class="fmt24"> </span><span class="fmt24">getString()</span><span class="fmt24"> </span><span class="fmt24">constant</span><span class="fmt24"> </span><span class="fmt24">returns</span><span class="fmt24"> </span><span class="fmt24">(string)</span><span class="fmt24"> </span><span class="fmt24">{</span> </pre>
+<pre><span class="fmt24">	    </span><span class="fmt24">return</span><span class="fmt24"> </span><span class="fmt24">myString;</span> </pre>
+<pre><span class="fmt24">	</span><span class="fmt24">}</span> </pre>
+<pre><span class="fmt24">	</span> </pre>
+<pre><span class="fmt24">	</span><span class="fmt24">function</span><span class="fmt24"> </span><span class="fmt24">setString</span><span class="fmt24"> </span><span class="fmt24">(string</span><span class="fmt24"> </span><span class="fmt24"><span class="fmt47">_</span></span><span class="fmt24">string)</span><span class="fmt24"> </span><span class="fmt24">{</span> </pre>
+<pre><span class="fmt24">	    </span><span class="fmt24">myString</span><span class="fmt24"> </span><span class="fmt24">=</span><span class="fmt24"> </span><span class="fmt24"><span class="fmt47">_</span></span><span class="fmt24">string;</span> </pre>
+<pre><span class="fmt24">	</span><span class="fmt24">}</span> </pre>
+<pre><span class="fmt24">}</span> </pre>
+<pre><span class="fmt20"><span class="fmt47">\end</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">lstlisting</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\lstinputlisting</span></span>[ </pre>
+<pre>language   = C, </pre>
+<pre><span class="fmt38">basicstyle</span> = <span class="fmt19">\ttfamily</span>, </pre>
+<pre>style		= default, </pre>
+<pre><span class="fmt18">%frame</span><span class="fmt18">      </span><span class="fmt18">=</span><span class="fmt18"> </span><span class="fmt18">single,</span> </pre>
+<pre>caption    = {Caesar Cipher for <span class="fmt38">CSC</span> 111},] </pre>
+<pre>{Code/cipher.c} </pre>
+<pre> </pre>
+<pre><span class="fmt20"><span class="fmt47">\end</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">appendices</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">document</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">https://www.coindesk.com/blockchain-must-adapt-build-trust-internet-things/</span> </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%</span> </pre>
+<pre>COMMON COMMANDS: </pre>
+<pre><span class="fmt18">%%%%%%%%%%%%%%%%</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">IMAGES</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">figure</span></span><span class="fmt20">}</span>[H] </pre>
+<pre>	<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>		<span class="fmt19">\includegraphics</span>[width=0.6<span class="fmt19">\textwidth</span>]{RTL_SCHEM.png} </pre>
+<pre>	<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{A <span class="fmt38">screenshot</span> of the <span class="fmt38">RTL</span> Schematics produced from the <span class="fmt38">Verilog</span> code.} </pre>
+<pre>	<span class="fmt19">\label</span>{<span class="fmt50">RTL</span>} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">figure</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">SUBFIGURES</span><span class="fmt18"> </span><span class="fmt18">IMAGES</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">figure</span></span><span class="fmt20">}</span>[H] </pre>
+<pre>	<span class="fmt19">\centering</span> </pre>
+<pre>	<span class="fmt19"><span class="fmt47">\subfloat</span></span>[LED4 Period]{<span class="fmt19">\label</span>{<span class="fmt50">fig:Per4</span>}<span class="fmt19">\includegraphics</span>[width=0.4<span class="fmt19">\textwidth</span>]{period_led4.png}} <span class="fmt19">\\</span>                 </pre>
+<pre>	<span class="fmt19"><span class="fmt47">\subfloat</span></span>[<span class="fmt39">LED</span>5 <span class="fmt39">Period</span>]{<span class="fmt19">\label</span>{<span class="fmt50">fig:Per5</span>}<span class="fmt19">\includegraphics</span>[width=0.4<span class="fmt19">\textwidth</span>]{period_led5.png}} </pre>
+<pre>	<span class="fmt19"><span class="fmt47">\subfloat</span></span>[<span class="fmt39">LED</span>6 <span class="fmt39">Period</span>]{<span class="fmt19">\label</span>{<span class="fmt50">fig:Per6</span>}<span class="fmt19">\includegraphics</span>[width=0.4<span class="fmt19">\textwidth</span>]{period_led6.png}} </pre>
+<pre>	<span class="fmt19">\caption</span>{<span class="fmt39">Period</span> of LED blink rate captured by <span class="fmt38">osciliscope</span>.} </pre>
+<pre>	<span class="fmt19">\label</span>{<span class="fmt50">fig:oscil</span>} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">figure</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">CITATIONS</span> </pre>
+<pre><span class="fmt19">\cite</span>{<span class="fmt54">CitationName</span>} </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">GLOSSARY</span><span class="fmt18"> </span><span class="fmt18">ENTRY</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\newglossaryentry</span></span>{<span class="fmt38">api</span>} </pre>
+<pre>{ </pre>
+<pre>	name={<span class="fmt38">API</span>}, </pre>
+<pre>	description={An Application Programming Interface (<span class="fmt38">API</span>) is a particular set </pre>
+<pre>		of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements <span class="fmt39">that</span> <span class="fmt38">API</span>}, </pre>
+<pre>	first={Application Programming Interface (<span class="fmt38">API</span>)}, </pre>
+<pre>	long={Application Programming Interface} </pre>
+<pre>} </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">INSERT</span><span class="fmt18"> </span><span class="fmt18">SOURCE</span><span class="fmt18"> </span><span class="fmt18">CODE</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\lstinputlisting</span></span>[ </pre>
+<pre>language=<span class="fmt38">SQL</span>, </pre>
+<pre><span class="fmt38">basicstyle</span> = <span class="fmt19">\ttfamily</span>, </pre>
+<pre>style=			Oracle, </pre>
+<pre><span class="fmt18">%frame</span><span class="fmt18">      </span><span class="fmt18">=</span><span class="fmt18"> </span><span class="fmt18">single,</span> </pre>
+<pre>caption    = {Sample <span class="fmt38">SQL</span> Query},] </pre>
+<pre>{Code/Data.<span class="fmt38">sql</span>} </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">FANCY</span><span class="fmt18"> </span><span class="fmt18">TABLE</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span>{@{} l *4c @{}} </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\toprule</span></span> </pre>
+<pre>		<span class="fmt19">\multicolumn</span>{1}{c}{Models}    <span class="fmt23">&amp;</span> A  <span class="fmt23"><span class="fmt47">&amp;</span></span> B  <span class="fmt23"><span class="fmt47">&amp;</span></span> C  <span class="fmt23"><span class="fmt47">&amp;</span></span> D  <span class="fmt19"><span class="fmt47">\\</span></span>  </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\midrule</span></span> </pre>
+<pre>		Model <span class="fmt35">$</span><span class="fmt34">X</span><span class="fmt35">$</span> <span class="fmt23">&amp;</span> <span class="fmt39">X</span>1 <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt39">X</span>2 <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt39">X</span>3 <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt39">X</span>4 <span class="fmt19"><span class="fmt47">\\</span></span>  </pre>
+<pre>		Model <span class="fmt35">$</span><span class="fmt34">Y</span><span class="fmt35">$</span> <span class="fmt23">&amp;</span> <span class="fmt39">Y</span>1 <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt39">Y</span>2 <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt39">Y</span>3 <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt39">Y</span>4 <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\bottomrule</span></span> </pre>
+<pre>	<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{Caption} </pre>
+<pre>	<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">TEXT</span><span class="fmt18"> </span><span class="fmt18">TABLE</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>		<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span>{|l|c|c|l|} </pre>
+<pre>			x <span class="fmt23">&amp;</span> <span class="fmt39">x</span> <span class="fmt23">&amp;</span> <span class="fmt39">x</span> <span class="fmt23">&amp;</span> <span class="fmt39">x</span> <span class="fmt19">\\</span> <span class="fmt19">\hline</span> </pre>
+<pre>			<span class="fmt39">x</span> <span class="fmt23">&amp;</span> <span class="fmt39">x</span> <span class="fmt23">&amp;</span> <span class="fmt39">x</span> <span class="fmt23">&amp;</span> <span class="fmt39">x</span> <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt39">x</span> <span class="fmt23">&amp;</span> <span class="fmt39">x</span> <span class="fmt23">&amp;</span> <span class="fmt39">x</span> <span class="fmt23">&amp;</span> <span class="fmt39">x</span> <span class="fmt19">\\</span> <span class="fmt19">\hline</span> </pre>
+<pre>		<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span> </pre>
+<pre>		<span class="fmt19">\caption</span>{Caption} </pre>
+<pre>		<span class="fmt19">\label</span>{<span class="fmt50">label</span>} </pre>
+<pre>	<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">MATHMATICAL</span><span class="fmt18"> </span><span class="fmt18">ENVIRONMENT</span> </pre>
+<pre><span class="fmt35">$</span><span class="fmt34"> </span><span class="fmt34">8</span><span class="fmt34"> </span><span class="fmt34">=</span><span class="fmt34"> </span><span class="fmt34">2</span><span class="fmt34"> </span><span class="fmt21">\times</span><span class="fmt34"> </span><span class="fmt34">4</span><span class="fmt34"> </span><span class="fmt35">$</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">CENTERED</span><span class="fmt18"> </span><span class="fmt18">FORMULA</span> </pre>
+<pre><span class="fmt35">\[</span><span class="fmt34">  </span><span class="fmt35">\]</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">NUMBERED</span><span class="fmt18"> </span><span class="fmt18">EQUATION</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">equation</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">equation</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">ARRAY</span><span class="fmt18"> </span><span class="fmt18">OF</span><span class="fmt18"> </span><span class="fmt18">EQUATIONS</span><span class="fmt18"> </span><span class="fmt18">(The</span><span class="fmt18"> </span><span class="fmt18">splat</span><span class="fmt18"> </span><span class="fmt18">supresses</span><span class="fmt18"> </span><span class="fmt18">the</span><span class="fmt18"> </span><span class="fmt18">numbering)</span> </pre>
+<pre><span class="fmt20"><span class="fmt47">\begin</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">align*</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt20"><span class="fmt47">\end</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">align*</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">NUMBERED</span><span class="fmt18"> </span><span class="fmt18">ARRAY</span><span class="fmt18"> </span><span class="fmt18">OF</span><span class="fmt18"> </span><span class="fmt18">EQUATIONS</span> </pre>
+<pre><span class="fmt20"><span class="fmt47">\begin</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">align</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt20"><span class="fmt47">\end</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">align</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">ACCENTS</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\dot</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">dot</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\ddot</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">double</span><span class="fmt18"> </span><span class="fmt18">dot</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\bar</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">bar</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\tilde</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">tilde</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\vec</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">vector</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\hat</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">hat</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\acute</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">acute</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\grave</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">grave</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\breve</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">breve</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\check</span></span>{x} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">dot</span><span class="fmt18"> </span><span class="fmt18">(cowboy</span><span class="fmt18"> </span><span class="fmt18">hat)</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">FONTS</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\mathrm</span></span>{text} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">roman</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\mathsf</span></span>{<span class="fmt39">text</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">sans</span><span class="fmt18"> </span><span class="fmt18">serif</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\mathtt</span></span>{<span class="fmt39">text</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Typewriter</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\mathbb</span></span>{text} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Blackboard</span><span class="fmt18"> </span><span class="fmt18">bold</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\mathcal</span></span>{<span class="fmt39">text</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Caligraphy</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\mathfrak</span></span>{text} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Fraktur</span> </pre>
+<pre> </pre>
+<pre><span class="fmt19">\textbf</span>{text} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">bold</span> </pre>
+<pre><span class="fmt19">\textit</span>{<span class="fmt39">text</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">italic</span> </pre>
+<pre><span class="fmt19">\textsl</span>{<span class="fmt39">text</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">slanted</span> </pre>
+<pre><span class="fmt19">\textsc</span>{<span class="fmt39">text</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">small</span><span class="fmt18"> </span><span class="fmt18">caps</span> </pre>
+<pre><span class="fmt19">\texttt</span>{<span class="fmt39">text</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">typewriter</span> </pre>
+<pre><span class="fmt19">\underline</span>{<span class="fmt39">text</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">underline</span> </pre>
+<pre><span class="fmt19">\emph</span>{<span class="fmt39">text</span>} <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">emphasized</span> </pre>
+<pre> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">tiny</span></span><span class="fmt20">}</span>text<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">tiny</span></span><span class="fmt20">}</span> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Tiny</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">scriptsize</span></span><span class="fmt20">}</span><span class="fmt39">text</span><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">scriptsize</span></span><span class="fmt20">}</span> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Script</span><span class="fmt18"> </span><span class="fmt18">Size</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">footnotesize</span></span><span class="fmt20">}</span><span class="fmt39">text</span><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">footnotesize</span></span><span class="fmt20">}</span> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Footnote</span><span class="fmt18"> </span><span class="fmt18">Size</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">small</span></span><span class="fmt20">}</span><span class="fmt39">text</span><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">small</span></span><span class="fmt20">}</span> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Small</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">normalsize</span></span><span class="fmt20">}</span><span class="fmt39">text</span><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">normalsize</span></span><span class="fmt20">}</span> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Normal</span><span class="fmt18"> </span><span class="fmt18">Size</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">large</span></span><span class="fmt20">}</span><span class="fmt39">text</span><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">large</span></span><span class="fmt20">}</span> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Large</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">Large</span></span><span class="fmt20">}</span><span class="fmt39">text</span><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">Large</span></span><span class="fmt20">}</span> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Larger</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">LARGE</span></span><span class="fmt20">}</span><span class="fmt39">text</span><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">LARGE</span></span><span class="fmt20">}</span> <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Very</span><span class="fmt18"> </span><span class="fmt18">Large</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">huge</span></span><span class="fmt20">}</span><span class="fmt39">text</span><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">huge</span></span><span class="fmt20">}</span>   <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Huge</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">Huge</span></span><span class="fmt20">}</span><span class="fmt39">text</span><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">Huge</span></span><span class="fmt20">}</span>   <span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">Very</span><span class="fmt18"> </span><span class="fmt18">Huge</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18">   </span><span class="fmt18">\Gls{agile}</span><span class="fmt18"> </span><span class="fmt18">software</span><span class="fmt18"> </span><span class="fmt18">development</span><span class="fmt18"> </span><span class="fmt18">uses</span><span class="fmt18"> </span><span class="fmt18">repeatable</span><span class="fmt18"> </span><span class="fmt18">brief</span><span class="fmt18"> </span><span class="fmt18">cycles</span><span class="fmt18"> </span><span class="fmt18">called</span><span class="fmt18"> </span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18">   </span><span class="fmt18">\glspl{sprint}</span><span class="fmt18"> </span><span class="fmt18">that</span><span class="fmt18"> </span><span class="fmt18">focus</span><span class="fmt18"> </span><span class="fmt18">on</span><span class="fmt18"> </span><span class="fmt18">short-term</span><span class="fmt18"> </span><span class="fmt18">deliverables.</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">figure</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{A picture323} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">figure</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span>[H] </pre>
+<pre>	<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>		<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span>{cccc} </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\toprule</span></span>  </pre>
+<pre>			Nucleus <span class="fmt23">&amp;</span> <span class="fmt19">\textit</span>{I} <span class="fmt23">&amp;</span> Natural Abundance / <span class="fmt19">\%</span> <span class="fmt23">&amp;</span> <span class="fmt38">Larmor</span> Frequency @ 7T <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\midrule</span></span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\rowcolor</span></span>{black!20} <span class="fmt19">\textsuperscript</span>{1}H <span class="fmt23">&amp;</span> <span class="fmt19"><span class="fmt47">\sfrac</span></span>{1}{2} <span class="fmt23">&amp;</span> 99.98 <span class="fmt23">&amp;</span> 298.0 <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19">\textsuperscript</span>{2}<span class="fmt39">H</span> <span class="fmt23">&amp;</span> 1 <span class="fmt23">&amp;</span> 0.02 <span class="fmt23">&amp;</span> 45.7 <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\rowcolor</span></span>{black!20} <span class="fmt19">\textsuperscript</span>{12}C <span class="fmt23">&amp;</span> 0 <span class="fmt23">&amp;</span> 98.90 <span class="fmt23">&amp;</span> - <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19">\textsuperscript</span>{13}<span class="fmt39">C</span> <span class="fmt23">&amp;</span> <span class="fmt19"><span class="fmt47">\sfrac</span></span>{1}{2} <span class="fmt23">&amp;</span> 1.10 <span class="fmt23">&amp;</span> 74.9 <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\rowcolor</span></span>{black!20} <span class="fmt19">\textsuperscript</span>{14}N <span class="fmt23">&amp;</span> 1 <span class="fmt23">&amp;</span> 99.60 <span class="fmt23">&amp;</span> 21.5 <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19">\textsuperscript</span>{15}<span class="fmt39">N</span> <span class="fmt23">&amp;</span> <span class="fmt19"><span class="fmt47">\sfrac</span></span>{1}{2} <span class="fmt23">&amp;</span> 0.40 <span class="fmt23">&amp;</span> 30.2 <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\rowcolor</span></span>{black!20} <span class="fmt19">\textsuperscript</span>{16}O <span class="fmt23">&amp;</span> 0 <span class="fmt23">&amp;</span> 99.96 <span class="fmt23">&amp;</span> - <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19">\textsuperscript</span>{17}<span class="fmt39">O</span> <span class="fmt23">&amp;</span> <span class="fmt19"><span class="fmt47">\sfrac</span></span>{1}{2} <span class="fmt23">&amp;</span> 0.04 <span class="fmt23">&amp;</span> 40.4 <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\bottomrule</span></span> </pre>
+<pre>		<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span> </pre>
+<pre>		<span class="fmt19">\caption</span>{Numbers232323} </pre>
+<pre>	<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%%%</span><span class="fmt18"> </span><span class="fmt18">COMPLETE</span><span class="fmt18"> </span><span class="fmt18">TABLE</span><span class="fmt18"> </span><span class="fmt18">EXAMPLE</span><span class="fmt18"> </span><span class="fmt18">%%%%</span> </pre>
+<pre><span class="fmt19">\newcommand</span>{<span class="fmt19">\head</span>}[1]{<span class="fmt19">\textnormal</span>{<span class="fmt19">\textbf</span>{#1}}} </pre>
+<pre><span class="fmt19">\newcommand</span>{<span class="fmt19">\normal</span>}[1]{<span class="fmt19">\multicolumn</span>{1}{l}{#1}} </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\centering</span> </pre>
+<pre>	<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span>{@{}l*2{>{<span class="fmt19">\textbackslash\ttfamily</span>}l}<span class="fmt18">%</span> </pre>
+<pre>			l&lt;{Example text}l@{}} </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\toprule</span></span>[1.5pt] </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\multicolumn</span></span>{2}{c}{<span class="fmt19">\head</span>{Input}} </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\multicolumn</span></span>{2}{c}{<span class="fmt19">\head</span>{Output}}<span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\normal</span>{<span class="fmt19">\head</span>{Command}} <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\normal</span>{<span class="fmt19">\head</span>{Declaration}} </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\normal</span>{<span class="fmt19">\head</span>{Single use}} <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\head</span>{Combined}<span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\cmidrule</span></span>(lr){2-3}<span class="fmt19"><span class="fmt47">\cmidrule</span></span>(l){4-5} </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\multirow</span></span>{3}{*}{Family} <span class="fmt23"><span class="fmt47">&amp;</span></span>  <span class="fmt38">textrm</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">rmfamily</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\rmfamily</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">textsf</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">sffamily</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\sffamily</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">texttt</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">ttfamily</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\ttfamily</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\cmidrule</span></span>(lr){2-3}<span class="fmt19"><span class="fmt47">\cmidrule</span></span>(<span class="fmt39">lr</span>){4-4} </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\multirow</span></span>{2}{1.1cm}{Weight} <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">textbf</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">bfseries</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\bfseries</span> </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\multirow</span></span>{2}{1.8cm}{<span class="fmt19">\sffamily\bfseries</span> Bold and sans-serif} <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">textmd</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">mdseries</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\mdseries</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\cmidrule</span></span>(lr){2-3}<span class="fmt19"><span class="fmt47">\cmidrule</span></span>(<span class="fmt39">lr</span>){4-4} </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\multirow</span></span>{4}{*}{Shape} <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">textit</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">itshape</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\itshape</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">textsl</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">slshape</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\slshape</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\multirow</span></span>{2}{1.8cm}{<span class="fmt19">\sffamily\slshape</span> Slanted and sans-serif}<span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">textsc</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">scshape</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\scshape</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">textup</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">upshape</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\upshape</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\cmidrule</span></span>(lr){2-3}<span class="fmt19"><span class="fmt47">\cmidrule</span></span>(<span class="fmt39">lr</span>){4-4} </pre>
+<pre>		Default <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">textnormal</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt38">normalfont</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\normalfont</span> <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19"><span class="fmt47">\\</span></span> </pre>
+<pre>		<span class="fmt19"><span class="fmt47">\bottomrule</span></span>[1.5pt] </pre>
+<pre>	<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{<span class="fmt19">\LaTeX</span>\ font selection} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt18">%%%%</span><span class="fmt18">    </span><span class="fmt18">END</span><span class="fmt18"> </span><span class="fmt18">TABLE</span><span class="fmt18"> </span><span class="fmt18">EXAMPLE</span><span class="fmt18">   </span><span class="fmt18">%%%%%</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%%%%</span><span class="fmt18"> </span><span class="fmt18">TABLE</span><span class="fmt18"> </span><span class="fmt18">EXAMPLE</span><span class="fmt18"> </span><span class="fmt18">%%%%</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\newcolumntype</span></span>{Y}{>{<span class="fmt19">\raggedleft</span><span class="fmt19"><span class="fmt47">\arraybackslash</span></span>}X} </pre>
+<pre> </pre>
+<pre><span class="fmt19"><span class="fmt47">\tcbset</span></span>{tab1/.style={<span class="fmt38">fonttitle</span>=<span class="fmt19">\bfseries\large</span>,<span class="fmt38">fontupper</span>=<span class="fmt19">\normalsize\sffamily</span>, </pre>
+<pre>		<span class="fmt38">colback</span>=yellow!10!white,<span class="fmt38">colframe</span>=red!75!black,<span class="fmt38">colbacktitle</span>=orange!40!white, </pre>
+<pre>		<span class="fmt38">coltitle</span>=black,center title,freelance,frame code={ </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\foreach</span></span> <span class="fmt19"><span class="fmt47">\n</span></span> in {north east,north west,south east,south west} </pre>
+<pre>			{<span class="fmt19"><span class="fmt47">\path</span></span> [fill=red!75!black] (interior.<span class="fmt19"><span class="fmt47">\n</span></span>) circle (3mm); };},}} </pre>
+<pre> </pre>
+<pre><span class="fmt19"><span class="fmt47">\tcbset</span></span>{tab2/.style={enhanced,<span class="fmt38">fonttitle</span>=<span class="fmt19">\bfseries</span>,<span class="fmt38">fontupper</span>=<span class="fmt19">\normalsize\sffamily</span>, </pre>
+<pre>		<span class="fmt38">colback</span>=yellow!10!white,<span class="fmt38">colframe</span>=red!50!black,<span class="fmt38">colbacktitle</span>=yellow!40!white, </pre>
+<pre>		<span class="fmt38">coltitle</span>=black,center title}} </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20"><span class="fmt47">\begin</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">tcolorbox</span></span><span class="fmt20">}</span>[<span class="fmt38">tabularx</span>={X||Y|Y|Y|Y||Y},<span class="fmt39">title</span>=My table] </pre>
+<pre>		Group <span class="fmt23"><span class="fmt47">&amp;</span></span> One <span class="fmt23"><span class="fmt47">&amp;</span></span> Two <span class="fmt23"><span class="fmt47">&amp;</span></span> Three <span class="fmt23"><span class="fmt47">&amp;</span></span> Four <span class="fmt23"><span class="fmt47">&amp;</span></span> Sum<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline\hline</span></span> </pre>
+<pre>		Red <span class="fmt23"><span class="fmt47">&amp;</span></span> 1000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 2000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 3000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 4000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 10000.00<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>		Green <span class="fmt23"><span class="fmt47">&amp;</span></span> 2000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 3000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 4000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 5000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 14000.00<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>		Blue <span class="fmt23"><span class="fmt47">&amp;</span></span> 3000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 4000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 5000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 6000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 18000.00<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline\hline</span></span> </pre>
+<pre>		Sum <span class="fmt23"><span class="fmt47">&amp;</span></span> 6000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 9000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 12000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 15000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 42000.00 </pre>
+<pre>	<span class="fmt20"><span class="fmt47">\end</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">tcolorbox</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{Another Great Table} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20"><span class="fmt47">\begin</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">tcolorbox</span></span><span class="fmt20">}</span>[tab1, <span class="fmt38">tabularx</span>={X||Y|Y|Y|Y||Y}] </pre>
+<pre>		Group <span class="fmt23"><span class="fmt47">&amp;</span></span> One <span class="fmt23"><span class="fmt47">&amp;</span></span> Two <span class="fmt23"><span class="fmt47">&amp;</span></span> Three <span class="fmt23"><span class="fmt47">&amp;</span></span> Four <span class="fmt23"><span class="fmt47">&amp;</span></span> Sum<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline\hline</span></span> </pre>
+<pre>		Red <span class="fmt23"><span class="fmt47">&amp;</span></span> 1000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 2000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 3000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 4000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 10000.00<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>		Green <span class="fmt23"><span class="fmt47">&amp;</span></span> 2000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 3000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 4000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 5000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 14000.00<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>		Blue <span class="fmt23"><span class="fmt47">&amp;</span></span> 3000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 4000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 5000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 6000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 18000.00<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline\hline</span></span> </pre>
+<pre>		Sum <span class="fmt23"><span class="fmt47">&amp;</span></span> 6000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 9000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 12000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 15000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 42000.00 </pre>
+<pre>	<span class="fmt20"><span class="fmt47">\end</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">tcolorbox</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{Great Table} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20"><span class="fmt47">\begin</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">tcolorbox</span></span><span class="fmt20">}</span>[tab2, <span class="fmt38">tabularx</span>={X||Y|Y|Y|Y||Y},title=My table] </pre>
+<pre>		Group <span class="fmt23"><span class="fmt47">&amp;</span></span> One <span class="fmt23"><span class="fmt47">&amp;</span></span> Two <span class="fmt23"><span class="fmt47">&amp;</span></span> Three <span class="fmt23"><span class="fmt47">&amp;</span></span> Four <span class="fmt23"><span class="fmt47">&amp;</span></span> Sum<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline\hline</span></span> </pre>
+<pre>		Red <span class="fmt23"><span class="fmt47">&amp;</span></span> 1000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 2000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 3000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 4000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 10000.00<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>		Green <span class="fmt23"><span class="fmt47">&amp;</span></span> 2000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 3000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 4000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 5000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 14000.00<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>		Blue <span class="fmt23"><span class="fmt47">&amp;</span></span> 3000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 4000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 5000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 6000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 18000.00<span class="fmt19">\\</span><span class="fmt19"><span class="fmt47">\hline\hline</span></span> </pre>
+<pre>		Sum <span class="fmt23"><span class="fmt47">&amp;</span></span> 6000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 9000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 12000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 15000.00 <span class="fmt23"><span class="fmt47">&amp;</span></span> 42000.00 </pre>
+<pre>	<span class="fmt20"><span class="fmt47">\end</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">tcolorbox</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{Good Table} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt18">%%%%</span><span class="fmt18"> </span><span class="fmt18">END</span><span class="fmt18"> </span><span class="fmt18">TABLE</span><span class="fmt18"> </span><span class="fmt18">EXAMPLE</span><span class="fmt18"> </span><span class="fmt18">%%%%</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%ANOTHER</span><span class="fmt18"> </span><span class="fmt18">TABLE</span><span class="fmt18"> </span><span class="fmt18">EXAMPLE</span> </pre>
+<pre><span class="fmt19"><span class="fmt47">\setlist</span></span>{<span class="fmt38">nolistsep</span>} </pre>
+<pre><span class="fmt19"><span class="fmt47">\definecolor</span></span>{green}{HTML}{66FF66} </pre>
+<pre><span class="fmt19"><span class="fmt47">\definecolor</span></span>{<span class="fmt38">myGreen</span>}{HTML}{009900} </pre>
+<pre> </pre>
+<pre><span class="fmt18">%\renewcommand{\familydefault}{\sfdefault}</span> </pre>
+<pre> </pre>
+<pre> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>		<span class="fmt20"><span class="fmt47">\begin</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">tabularx</span></span><span class="fmt20">}</span>{<span class="fmt19">\textwidth</span>}[t]{XX} </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\arrayrulecolor</span></span>{green}<span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>			<span class="fmt19">\textbf</span>{<span class="fmt19"><span class="fmt47">\textcolor</span></span>{<span class="fmt38">myGreen</span>}{Goal 1 Eradicate Extreme Poverty}} <span class="fmt23"><span class="fmt47">&amp;</span></span> <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>			Target 1.A Halve, between 1990 and 2015, the proportion of <span class="fmt39">the</span> people whose income is less than <span class="fmt19">\$</span>1 a day. <span class="fmt23"><span class="fmt47">&amp;</span></span>  </pre>
+<pre>			<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span>[t]{<span class="fmt19">\linewidth</span>}<span class="fmt18">%</span> </pre>
+<pre>				<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span> </pre>
+<pre>					<span class="fmt19">\item</span>[1.1] Proportion of population below <span class="fmt19">\$</span>1 purchasing power parity (<span class="fmt38">PPP</span>) a day<span class="fmt35">$</span><span class="fmt34">^a</span><span class="fmt35">$</span> </pre>
+<pre>					<span class="fmt19">\item</span>[1.2] Poverty Gap ratio [incidence x depth of <span class="fmt40">poverty</span>] </pre>
+<pre>					<span class="fmt19">\item</span>[1.3] Share <span class="fmt39">of</span> the poorest quintile in national consumption </pre>
+<pre>				<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span>  </pre>
+<pre>			<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span><span class="fmt19">\\</span> </pre>
+<pre>			 </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\arrayrulecolor</span></span>{black}<span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>			 </pre>
+<pre>			Target 1.B Achieve full and productive employment <span class="fmt39">and</span> decent work for all, including women and young people <span class="fmt23"><span class="fmt47">&amp;</span></span> </pre>
+<pre>			<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span>[t]{<span class="fmt19">\linewidth</span>}<span class="fmt18">%</span> </pre>
+<pre>				<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span> </pre>
+<pre>					<span class="fmt19">\item</span>[1.4] Growth of GDP per person employed  </pre>
+<pre>					<span class="fmt19">\item</span>[1.5] Employment to population ratio </pre>
+<pre>					<span class="fmt19">\item</span>[1.6] Proportion of <span class="fmt40">employed</span> people living below <span class="fmt19">\$</span>1 (PP) a day </pre>
+<pre>					<span class="fmt19">\item</span>[1.7] Proportion of own-account and contribution family workers in total employment </pre>
+<pre>				<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span>  </pre>
+<pre>			<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span><span class="fmt19">\\</span> </pre>
+<pre>			 </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>			 </pre>
+<pre>			Target 1.C Halve, between 1990 and 2015, the proportion of people who suffer from hunger <span class="fmt23"><span class="fmt47">&amp;</span></span> </pre>
+<pre>			<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span>[t]{<span class="fmt19">\linewidth</span>}<span class="fmt18">%</span> </pre>
+<pre>				<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span> </pre>
+<pre>					<span class="fmt19">\item</span>[1.8] Prevalence of underweight children under five years of age </pre>
+<pre>					<span class="fmt19">\item</span>[1.9] Proportion <span class="fmt39">of</span> population below minimum level of dietary energy consumption </pre>
+<pre>				<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span> </pre>
+<pre>			<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span><span class="fmt19">\\</span> </pre>
+<pre>			 </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\arrayrulecolor</span></span>{green}<span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>			<span class="fmt19">\textbf</span>{<span class="fmt19"><span class="fmt47">\textcolor</span></span>{<span class="fmt38">myGreen</span>}{Goal 2 Achieve universal primary education}} <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>			 </pre>
+<pre>			Target 2.A Ensure that by 2015 children everywhere, boy and girls alike, will be able to complete a full course of primary schooling. <span class="fmt23"><span class="fmt47">&amp;</span></span> </pre>
+<pre>			<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span>[t]{<span class="fmt19">\linewidth</span>}<span class="fmt18">%</span> </pre>
+<pre>				<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span> </pre>
+<pre>					<span class="fmt19">\item</span>[2.1] Net enrollment ratio in <span class="fmt40">primary</span> education </pre>
+<pre>					<span class="fmt19">\item</span>[2.2] Proportion of pupils starting grade 1 who reach last grade of primary education </pre>
+<pre>					<span class="fmt19">\item</span>[2.3] Literacy rate of 15- to 24-year-olds, women and men </pre>
+<pre>				<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span> </pre>
+<pre>			<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span><span class="fmt19">\\</span> </pre>
+<pre>			 </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>			<span class="fmt19">\multicolumn</span>{2}{l}{<span class="fmt18">%</span> </pre>
+<pre>				<span class="fmt19">\textbf</span>{<span class="fmt19"><span class="fmt47">\textcolor</span></span>{<span class="fmt38">myGreen</span>}{Goal 3 Promote gender equality and empower women}}} <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\hline</span></span> </pre>
+<pre>			 </pre>
+<pre>			Target 3.A Eliminate gender disparity in primary and secondary education, preferably by 2005, and in all levels of <span class="fmt40">education</span> no later than 2015 <span class="fmt23"><span class="fmt47">&amp;</span></span> </pre>
+<pre>			<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span>[t]{<span class="fmt19">\linewidth</span>}<span class="fmt18">%</span> </pre>
+<pre>				<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span> </pre>
+<pre>					<span class="fmt19">\item</span>[3.1] Ratios of girls to boys in primary, secondary and tertiary education </pre>
+<pre>					<span class="fmt19">\item</span>[3.2] Share of women in wage employment <span class="fmt39">in</span> the non-agricultural sector. </pre>
+<pre>				<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">itemize</span></span><span class="fmt20">}</span>  </pre>
+<pre>			<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">minipage</span></span><span class="fmt20">}</span> </pre>
+<pre>		<span class="fmt20"><span class="fmt47">\end</span></span><span class="fmt20">{</span><span class="fmt20"><span class="fmt49">tabularx</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{Great table to use} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">END</span><span class="fmt18"> </span><span class="fmt18">ANOTHER</span><span class="fmt18"> </span><span class="fmt18">TABLE</span><span class="fmt18"> </span><span class="fmt18">EXAMPLE</span> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">figure</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{Another picture2323} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">figure</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre> </pre>
+<pre><span class="fmt19"><span class="fmt47">\lstinputlisting</span></span>[ </pre>
+<pre>language=<span class="fmt38">SQL</span>, </pre>
+<pre><span class="fmt38">basicstyle</span> = <span class="fmt19">\ttfamily</span>, </pre>
+<pre>style=			Oracle, </pre>
+<pre>caption    = {Sample <span class="fmt38">SQL</span> Query},] </pre>
+<pre>{Code/Data.<span class="fmt38">sql</span>}	 </pre>
+<pre> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>		<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span>{ |l|l|l| } </pre>
+<pre>			<span class="fmt19">\hline</span> </pre>
+<pre>			<span class="fmt19">\multicolumn</span>{3}{ |c| }{Team sheet} <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19">\hline</span> </pre>
+<pre>			Goalkeeper <span class="fmt23">&amp;</span> GK <span class="fmt23">&amp;</span> Paul Robinson <span class="fmt19">\\</span> <span class="fmt19">\hline</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\multirow</span></span>{4}{*}{Defenders} <span class="fmt23">&amp;</span> LB <span class="fmt23">&amp;</span> Lucas <span class="fmt38">Radebe</span> <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt23">&amp;</span> DC <span class="fmt23">&amp;</span> Michael <span class="fmt38">Duburry</span> <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt23">&amp;</span> <span class="fmt39">DC</span> <span class="fmt23">&amp;</span> Dominic Matteo <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt23">&amp;</span> RB <span class="fmt23">&amp;</span> <span class="fmt38">Didier</span> <span class="fmt38">Domi</span> <span class="fmt19">\\</span> <span class="fmt19">\hline</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\multirow</span></span>{3}{*}{<span class="fmt38">Midfielders</span>} <span class="fmt23">&amp;</span> MC <span class="fmt23">&amp;</span> David Batty <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt23">&amp;</span> <span class="fmt39">MC</span> <span class="fmt23">&amp;</span> <span class="fmt38">Eirik</span> <span class="fmt38">Bakke</span> <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt23">&amp;</span> <span class="fmt39">MC</span> <span class="fmt23">&amp;</span> Jody Morris <span class="fmt19">\\</span> <span class="fmt19">\hline</span> </pre>
+<pre>			Forward <span class="fmt23">&amp;</span> FW <span class="fmt23">&amp;</span> Jamie <span class="fmt38">McMaster</span> <span class="fmt19">\\</span> <span class="fmt19">\hline</span> </pre>
+<pre>			<span class="fmt19"><span class="fmt47">\multirow</span></span>{2}{*}{Strikers} <span class="fmt23">&amp;</span> ST <span class="fmt23">&amp;</span> Alan Smith <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt23">&amp;</span> <span class="fmt39">ST</span> <span class="fmt23">&amp;</span> Mark <span class="fmt38">Viduka</span> <span class="fmt19">\\</span> </pre>
+<pre>			<span class="fmt19">\hline</span> </pre>
+<pre>		<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{Table Title} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span>  </pre>
+<pre>	<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>		<span class="fmt20">\begin{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span>{cccccccc} <span class="fmt19"><span class="fmt47">\toprule</span></span> </pre>
+<pre>			{<span class="fmt35">$</span><span class="fmt34">m</span><span class="fmt35">$</span>} <span class="fmt23">&amp;</span> {<span class="fmt35">$</span><span class="fmt21">\Re</span><span class="fmt34">\{</span><span class="fmt21">\underline</span><span class="fmt34">{</span><span class="fmt21"><span class="fmt47">\mathfrak</span></span><span class="fmt34">{X}}(m)\}</span><span class="fmt35">$</span>} <span class="fmt23">&amp;</span> {<span class="fmt35">$</span><span class="fmt34">-</span><span class="fmt21">\Im</span><span class="fmt34">\{</span><span class="fmt21">\underline</span><span class="fmt34">{</span><span class="fmt21"><span class="fmt47">\mathfrak</span></span><span class="fmt34">{X}}(m)\}</span><span class="fmt35">$</span>} <span class="fmt23">&amp;</span> {<span class="fmt35">$</span><span class="fmt21"><span class="fmt47">\mathfrak</span></span><span class="fmt34">{X}(m)</span><span class="fmt35">$</span>} <span class="fmt23">&amp;</span> {<span class="fmt35">$</span><span class="fmt21">\frac</span><span class="fmt34">{</span><span class="fmt21"><span class="fmt47">\mathfrak</span></span><span class="fmt34">{X}(m)}{23}</span><span class="fmt35">$</span>} <span class="fmt23">&amp;</span> {<span class="fmt35">$</span><span class="fmt34">A_m</span><span class="fmt35">$</span>} <span class="fmt23">&amp;</span> {<span class="fmt35">$</span><span class="fmt21">\varphi</span><span class="fmt34">(m)\</span><span class="fmt34"> </span><span class="fmt34">/\</span><span class="fmt34"> </span><span class="fmt34">^{</span><span class="fmt21">\circ</span><span class="fmt34">}</span><span class="fmt35">$</span>} <span class="fmt23">&amp;</span> {<span class="fmt35">$</span><span class="fmt21">\varphi</span><span class="fmt34">_m\</span><span class="fmt34"> </span><span class="fmt34">/\</span><span class="fmt34"> </span><span class="fmt34">^{</span><span class="fmt21">\circ</span><span class="fmt34">}</span><span class="fmt35">$</span>} <span class="fmt19">\\</span> <span class="fmt19"><span class="fmt47">\midrule</span></span> </pre>
+<pre>			1  <span class="fmt23">&amp;</span> 16.128 <span class="fmt23">&amp;</span> +8.872 <span class="fmt23">&amp;</span> 16.128 <span class="fmt23">&amp;</span> 1.402 <span class="fmt23">&amp;</span> 1.373 <span class="fmt23">&amp;</span> -146.6 <span class="fmt23">&amp;</span> -137.6 <span class="fmt19">\\</span> </pre>
+<pre>			2  <span class="fmt23">&amp;</span> 3.442  <span class="fmt23">&amp;</span> -2.509 <span class="fmt23">&amp;</span> 3.442  <span class="fmt23">&amp;</span> 0.299 <span class="fmt23">&amp;</span> 0.343 <span class="fmt23">&amp;</span> 133.2  <span class="fmt23">&amp;</span> 152.4  <span class="fmt19">\\</span> </pre>
+<pre>			3  <span class="fmt23">&amp;</span> 1.826  <span class="fmt23">&amp;</span> -0.363 <span class="fmt23">&amp;</span> 1.826  <span class="fmt23">&amp;</span> 0.159 <span class="fmt23">&amp;</span> 0.119 <span class="fmt23">&amp;</span> 168.5  <span class="fmt23">&amp;</span> -161.1 <span class="fmt19">\\</span> </pre>
+<pre>			4  <span class="fmt23">&amp;</span> 0.993  <span class="fmt23">&amp;</span> -0.429 <span class="fmt23">&amp;</span> 0.993  <span class="fmt23">&amp;</span> 0.086 <span class="fmt23">&amp;</span> 0.08  <span class="fmt23">&amp;</span> 25.6   <span class="fmt23">&amp;</span> 90     <span class="fmt19">\\</span> <span class="fmt19"><span class="fmt47">\midrule</span></span> </pre>
+<pre>			5  <span class="fmt23">&amp;</span> 1.29   <span class="fmt23">&amp;</span> +0.099 <span class="fmt23">&amp;</span> 1.29   <span class="fmt23">&amp;</span> 0.112 <span class="fmt23">&amp;</span> 0.097 <span class="fmt23">&amp;</span> -175.6 <span class="fmt23">&amp;</span> -114.7 <span class="fmt19">\\</span> </pre>
+<pre>			6  <span class="fmt23">&amp;</span> 0.483  <span class="fmt23">&amp;</span> -0.183 <span class="fmt23">&amp;</span> 0.483  <span class="fmt23">&amp;</span> 0.042 <span class="fmt23">&amp;</span> 0.063 <span class="fmt23">&amp;</span> 22.3   <span class="fmt23">&amp;</span> 122.5  <span class="fmt19">\\</span> </pre>
+<pre>			7  <span class="fmt23">&amp;</span> 0.766  <span class="fmt23">&amp;</span> -0.475 <span class="fmt23">&amp;</span> 0.766  <span class="fmt23">&amp;</span> 0.067 <span class="fmt23">&amp;</span> 0.039 <span class="fmt23">&amp;</span> 141.6  <span class="fmt23">&amp;</span> -122   <span class="fmt19">\\</span> </pre>
+<pre>			8  <span class="fmt23">&amp;</span> 0.624  <span class="fmt23">&amp;</span> +0.365 <span class="fmt23">&amp;</span> 0.624  <span class="fmt23">&amp;</span> 0.054 <span class="fmt23">&amp;</span> 0.04  <span class="fmt23">&amp;</span> -35.7  <span class="fmt23">&amp;</span> 90     <span class="fmt19">\\</span> <span class="fmt19"><span class="fmt47">\midrule</span></span> </pre>
+<pre>			9  <span class="fmt23">&amp;</span> 0.641  <span class="fmt23">&amp;</span> -0.466 <span class="fmt23">&amp;</span> 0.641  <span class="fmt23">&amp;</span> 0.056 <span class="fmt23">&amp;</span> 0.045 <span class="fmt23">&amp;</span> 133.3  <span class="fmt23">&amp;</span> -106.3 <span class="fmt19">\\</span> </pre>
+<pre>			10 <span class="fmt23">&amp;</span> 0.45   <span class="fmt23">&amp;</span> +0.421 <span class="fmt23">&amp;</span> 0.45   <span class="fmt23">&amp;</span> 0.039 <span class="fmt23">&amp;</span> 0.034 <span class="fmt23">&amp;</span> -69.4  <span class="fmt23">&amp;</span> 110.9  <span class="fmt19">\\</span> </pre>
+<pre>			11 <span class="fmt23">&amp;</span> 0.598  <span class="fmt23">&amp;</span> -0.597 <span class="fmt23">&amp;</span> 0.598  <span class="fmt23">&amp;</span> 0.052 <span class="fmt23">&amp;</span> 0.025 <span class="fmt23">&amp;</span> 92.3   <span class="fmt23">&amp;</span> -109.3 <span class="fmt19">\\</span> <span class="fmt19"><span class="fmt47">\bottomrule</span></span> </pre>
+<pre>		<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">tabular</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">center</span></span><span class="fmt20">}</span> </pre>
+<pre>	<span class="fmt19">\caption</span>{Table Title} </pre>
+<pre><span class="fmt20">\end{</span><span class="fmt20"><span class="fmt49">table</span></span><span class="fmt20">}</span> </pre>
+<pre> </pre>
+<pre><span class="fmt18">%</span><span class="fmt18"> </span><span class="fmt18">References</span><span class="fmt18"> </span><span class="fmt18">lol</span> </pre>
+<pre><span class="fmt38">https</span>://<span class="fmt38">blockstream</span>.com/<span class="fmt38">sidechains</span>.<span class="fmt38">pdf</span> </pre>
+<pre><span class="fmt38">https</span>://<span class="fmt38">www</span>.<span class="fmt38">forbes</span>.com/sites/<span class="fmt38">shermanlee</span>/2018/02/07/explaining-side-chains-the-next-breakthrough-in-blockchain/#cd12e0352eb9 </pre>
+<pre><span class="fmt18">%%</span><span class="fmt18"> </span><span class="fmt18">SHit</span><span class="fmt18"> </span><span class="fmt18">to</span><span class="fmt18"> </span><span class="fmt18">add</span><span class="fmt18"> </span><span class="fmt18">to</span><span class="fmt18"> </span><span class="fmt18">report</span> </pre>
+<pre> </pre>
+<pre>Blockchains are now recognized as the "fifth evolution" of computing, the missing trust layer for the Internet. This is one of the reasons that so many people have become excited about this topic. </pre>
+<pre> </pre>
+<pre>Blockchains can create trust in digital data. When information has been written into a blockchain database, it’s nearly impossible to remove or change it. This capability has never existed before. </pre>
+<pre> </pre>
+<pre>When data is permanent and reliable in a digital format, you can transact business <span class="fmt38">online</span> in ways that, in the past, were only possible <span class="fmt38">offline</span>. Everything that has stayed analog, including property rights and identity, can now be created and maintained <span class="fmt38">online</span>. Slow business and banking processes, such as money wires and fund settlements, can now be done nearly instantaneously. The implications for secure digital records are enormous for the global economy. </pre>
+<pre> </pre>
+<pre>The first applications created were designed to piggyback on the secure digital value transfer that blockchains enable through the trading of their native tokens. These included things like the movement of money and assets. But the possibilities of <span class="fmt39">the</span> blockchain networks go far beyond the movement of value. </pre>
+<pre> </pre>
+<pre>Public blockchains: <span class="fmt39">Public</span> <span class="fmt39">blockchains</span>, such as <span class="fmt38">Bitcoin</span>, are large distributed networks that are run through a native token. They’re open for anyone to participate at any level and have open-source code that their community maintains. </pre>
+<pre>Permissioned blockchains: <span class="fmt39">Permissioned</span> <span class="fmt39">blockchains</span>, such as Ripple, control roles that individuals can play within the network. They’re still large and distributed systems that use a native token. Their core code may or <span class="fmt39">may</span> not be open source. </pre>
+<pre>Private blockchains: <span class="fmt39">Private</span> <span class="fmt39">blockchains</span> tend to be smaller and do not utilize a token. Their membership is closely controlled. These types of blockchains are favored by consortiums that have trusted members and trade confidential information. </pre>
+<pre> </pre>
+<pre> </pre>
+<pre>Permissioned networks are viewable to the public, but participation is controlled. Many of them utilize a cryptocurrency, but they can have a lower cost for applications that are built on top of them. This feature makes it easier to scale project and increase transaction volume. Permissioned networks can be very fast with low latency and have higher storage capacity over public networks. </pre>
+<pre>Private <span class="fmt39">networks</span> are shared between trusted parties and may not be viewable to the public. They’re very fast and may have no latency. They also have a low cost to run and can be built in an industrious weekend. Most private networks do not utilize a cryptocurrency and do not have the same immutability and security of decentralized networks. Storage capacity may be unlimited. </pre>
+<pre>There are also hybrids between the at seek to find the right balance of security, <span class="fmt38">auditability</span>, scalability, and data storage for applications built on top <span class="fmt39">on</span> them </pre>
+<pre> </pre>
+<pre>Uncertainty: Many of the facts around blockchain technology may be unknown and untested. </pre>
+<pre>Complexity: Blockchains have many interrelated factors to consider. </pre>
+<pre>High-risk consequences: The impact of <span class="fmt39">the</span> decision may be significant to your organization. </pre>
+<pre>Alternatives: There may be alternative technologies and types of blockchains, each with its own set of uncertainties and consequences. </pre>
+<pre>Interpersonal issues: You need to understand how blockchain technology could affect different people within your organization. </pre>
+<pre> </pre>
+<pre>wo remarkable entrepreneurial pioneers are using <span class="fmt38">Bluemix</span> and the Hyperledger Fabric integration: </pre>
+<pre> </pre>
+<pre><span class="fmt38">Wanxiang</span>: The largest China-based automotive components company, <span class="fmt38"><span class="fmt40">Wanxiang</span></span> is working with IBM to deploy a private blockchain. They’re embedding property rights into things like electric cars. The goal is to reduce the costs to consumers for leasing equipment. <span class="fmt38">Wanxiang</span> will use its blockchain technology to track the lifespan of <span class="fmt39">the</span> components and refurbish used batteries. <span class="fmt38">Bluemix</span> will take care of everything else. </pre>
+<pre><span class="fmt38">KYCK</span>!: The financial technology (<span class="fmt38">fintech</span>) startup <span class="fmt38">KYCK</span>! is utilizing IBM’s blockchain integration as a novel way to address “know your customer” (<span class="fmt38">KYC</span>) needs for brokerages. This expense is limiting and costly for banks and other financial services. <span class="fmt38">KYC</span> is done to prevent money laundering and illicit trade, and to combat terrorism. <span class="fmt38">KYCK</span>! is building a video conference and encrypted document submissions platform. It will allow brokers to work with and authenticate clients the company has not met in person. </pre>
+<pre> </pre>
+<pre> </pre>
+<pre>Keep Your Contracts as Simple <span class="fmt39">as</span> Possible </pre>
+<pre>Decentralized autonomous organizations (<span class="fmt38">DAOs</span>), smart contracts, and <span class="fmt38">chaincode</span> are all the rage at <span class="fmt39">the</span> moment. <span class="fmt39">The</span> promise of cutting administration and legal cost is very enticing to many corporations. A sometimes overlooked characteristic of this technology is that it <span class="fmt39">is</span> just code. That means <span class="fmt39">that</span> there is no human being interpreting the rules that you’ve laid out for everyone to follow. The code becomes law, and the law only stretches to what is incorporated into the blockchain contract. <span class="fmt39">The</span> “fat” that was cut can sometimes be very important. </pre>
+<pre> </pre>
+<pre>There is no one to interpret the code. That means <span class="fmt39">that</span> if the code is executed in a fashion that you did not expect, there is also no one to enforce the intent of <span class="fmt39">the</span> contract. <span class="fmt39">The</span> code is law and nothing unlawful occurred. That’s why you should to keep your contracts simple and modular in nature to contain and predict the outcomes of contract fulfillment. It’s also a good idea to have your <span class="fmt40">contract</span> tested and beaten up even by other developers who are <span class="fmt38">incentivized</span> to break it. </pre>
+<pre> </pre>
+<pre>The reach of <span class="fmt39">the</span> blockchain you’re building your project on matters, too. You can think of it like jurisdictions. Sure, a smart contract can execute on outside data, but the smart <span class="fmt40">contract</span> cannot demand funds from accounts that they do not have access to. That means <span class="fmt39">that</span> all the value must be set aside in some manner, which may encumber cash flow. </pre>
+<pre> </pre>
+<pre>Another thing to think about is the source of information that your contract uses to execute against. If it’s weather data for an insurance contract, do you trust and agree on the source? Is it possible to manipulate the <span class="fmt40">source</span> data? A lot of thought should go into the oracle source before implementation. </pre>
+<pre> </pre>
+<pre>The whole point of blockchains is that once data is put in, it’s hard to take it out. That means <span class="fmt39">that</span> what you put in will be around for a long time. If you publish encrypted sensitive information, you need to be okay with the fact that <span class="fmt39">the</span> encrypted data may one day be broken and what you published may be readable to </pre>
+<pre> </pre>
+<pre><span class="fmt38">Sidechains</span> make it possible to practically trade company shares on a blockchain without worrying about transaction cost or slow network speeds. Distributed asset management infrastructure can also leverage the <span class="fmt38">Bitcoin</span> network, permitting individuals and organizations to issue different asset classes. </pre>
+<pre> </pre>
+<pre><span class="fmt38">ConsenSys</span> (<span class="fmt38">www</span>.<span class="fmt38"><span class="fmt39">consensys</span></span>.net) was created by one of the founders <span class="fmt39">of</span> Ethereum. It builds decentralized applications, enterprise blockchain solutions, and various developer tools for the Ethereum <span class="fmt40">blockchain</span> ecosystems. </pre>
+<pre> </pre>
+<pre><span class="fmt38">ConsenSys</span> is working with Microsoft to create an open-source blockchain identity system. This partnership came from the need set out by the United Nations ID2020, the goal of which is to curb crimes against humanity that come from a lack of identification. The plan is to have a legal identity for every person by the year 2020. </pre>
+<pre> </pre>
+<pre><span class="fmt38">ConsenSys</span> has developed the <span class="fmt38">uPort</span> identity solution, with integrated support for reputation systems and transactional security. The <span class="fmt38">uPort</span> system allows individuals to manage their identity elements in a portable and persistent manner on the Ethereum blockchain. </pre>
+<pre> </pre>
+<pre>Users in less developed areas of the world can bootstrap their identities and reputations. </pre>
+<pre> </pre>
+<pre>Insurance </pre>
+<pre>Title <span class="fmt39">insurance</span> is compensation for financial loss from defects in your title for a real estate purchase. It’s required if you take out a mortgage on your home or if you refinance it. Title insurance protects the bank’s investment against title problems that might not be found in the public records, are missed in the title search, or occur from fraud or forgery. </pre>
+<pre> </pre>
+<pre>Title insurance is necessary in places that use common law to govern their title systems. The buyer is responsible for ensuring that the seller’s title is good. Within these systems, a title search is done and insurance is bought. In areas that use a Torrens title system a buyer can rely on the information in <span class="fmt39">the</span> land register and <span class="fmt38">doesn</span>’t need to look beyond those records. </pre>
+<pre> </pre>
+<pre>Blockchain technology has been proposed as a supplement to help consumers in common law title systems. The idea is simple: Blockchains are fantastic public <span class="fmt38">recordkeeping</span> systems; they also can’t be backdated or changed without a record. In theory, blockchains could transform common law systems into distributed Torrens title <span class="fmt40">systems.</span> </pre>
+<pre> </pre>
+<pre>First, though, many challenges must be overcome. Each county in a common law system has its own land records office, where all the deeds or <span class="fmt40">records</span> that transfer title to any piece of land or any interest in <span class="fmt39">any</span> land <span class="fmt39">in</span> the county are recorded and noted. The United States alone has thousands of counties. The <span class="fmt40">thousands</span> of individual offices create silos of data. Blockchain <span class="fmt38">doesn</span>’t change the law or how the records are organized. </pre>
+<pre> </pre>
+<pre>New laws would need to be created that dictate <span class="fmt39">that</span> all interest and transfer of land must be recorded within a single system to be valid. Then it’s just a Torrens <span class="fmt40">system</span> and may make blockchain technology redundant. The exception would be in areas where there is a lot of fraud within the land registry. </pre>
+<pre> </pre>
+<pre>In the following sections, I dig into the real estate industry and where blockchains add value. </pre>
+<pre> </pre>
+<pre>Protected industries </pre>
+<pre>Every industry has self-protecting systems to keep new competition out. It might be a high regulatory burden, government-granted monopolies, or high startup costs. The industry that has built up around the buying and selling of real estate <span class="fmt38">hasn</span>’t changed much in the last 40 years and is ripe for disruption. Many different parties contribute to the process. </pre>
+<pre> </pre>
+<pre>Here are the different industries that are built around the buying and selling of homes: </pre>
+<pre> </pre>
+<pre>Real estate agents: A real <span class="fmt40">estate</span> agent helps you compare different neighborhoods and find a home. He often helps you negotiate a price and communicates with the seller on your behalf. This service is valuable, and it’s not likely to be displaced by blockchain technology. You can already buy a home without <span class="fmt39">a</span> real estate agent — people choose to work with them because they improve the process. </pre>
+<pre>Home inspectors: <span class="fmt39">Home</span> <span class="fmt39">inspectors</span> uncover defects with the house before you buy it — <span class="fmt40">defects</span> that could cost you money down the road. <span class="fmt39">The</span> <span class="fmt40">defects</span> home inspectors find can be used to negotiate with the seller for a better price. In the future, homes will continue to have wear and tear — that’ll never change. But blockchain technology could be used to record repairs <span class="fmt39">to</span> property and defects found in the inspection. </pre>
+<pre>Closing representatives: At <span class="fmt40">closing</span>, the final step is settlement. The <span class="fmt40">closing</span> representative supervises and coordinates the <span class="fmt40">closing</span> documents, records them, and releases the money to <span class="fmt39">the</span> appropriate parties. Closing representatives may be displaced by blockchain technology — the functions performed by closing representatives could be built into smart contracts or <span class="fmt38">chaincode</span>. </pre>
+<pre>Mortgage lenders and <span class="fmt38">servicers</span>: <span class="fmt40">Mortgage</span> <span class="fmt40">lenders</span> and <span class="fmt38"><span class="fmt40">servicers</span></span> provide funds for a <span class="fmt40">mortgage</span> and collect the ongoing <span class="fmt40">mortgage</span> payments. They won’t be displaced with blockchain software, but they may use <span class="fmt40">blockchain</span> technology to help them reduce costs with <span class="fmt38">recordkeeping</span> and auditing. </pre>
+<pre>Real estate appraisers: The real <span class="fmt40">estate</span> appraiser’s job is to look at a property and determine how much it’s worth. The appraisal process is done every time a property is bought or refinanced. Companies like <span class="fmt38">Zillow</span> have taken a lot of the legwork out of knowing the market value, but each home is unique and needs to be assessed periodically. Even in the real estate mortgage process, multiple appeals may be called for to meet everyone’s needs. It might be useful to record this data within a blockchain as <span class="fmt39">a</span> public witness. </pre>
+<pre>Loan officers: <span class="fmt39">Loan</span> <span class="fmt39">officers</span> use your credit, financial, and employment information to see if you qualify for a mortgage. They then match what you’re eligible for with products that they sell. Like a real estate agent, a loan officer helps you get the best option across a spectrum of choices. Blockchain software may be used to help loan officers keep track of documents that they give you and audit the process for fair lending law compliance. </pre>
+<pre>Loan processors: A loan processor assists <span class="fmt39">loan</span> officers in preparing mortgage loan information and the application for presentation to the underwriter. Software that pulls the buyer’s source information is being explored. It’s not blockchain technology, but it could be disruptive for this position. </pre>
+<pre>Mortgage underwriters: A <span class="fmt40">mortgage</span> underwriter determines whether you’re eligible for a <span class="fmt40">mortgage</span> loan. She approves or rejects your <span class="fmt40">mortgage</span> loan application based on your credit history, employment, assets, and debts. Organizations are exploring automating the underwriting process using artificial intelligence. It’s not blockchain technology, though. </pre>
+<pre>Each of these agents serves a core purpose that helps protect the buyer, seller, and mortgage provider. In most industries, the cost of doing business goes down over time — improvements in efficiency brought about by competition and innovation contribute to driving down cost. The mortgage industry is attractive as a candidate for blockchain innovation, because the opposite has occurred: The cost of business has gone up. The typical U.S. mortgage is over 500 pages and costs <span class="fmt19">\$</span>7,500 to originate. This is three times what it cost ten years ago. Blockchain technology can meet the needs of protecting the buyer, seller, and mortgage provider while reducing the cost to do so. </pre>
+<pre> </pre>
+<pre>Consumers and Fannie Mae </pre>
+<pre>The Federal National Mortgage Association (known as <span class="fmt40">Fannie</span> Mae) is both a government-sponsored enterprise and a publicly traded company. It’s currently the leading source of financing for mortgage lenders and has dominated the market post-recession as private money left. </pre>
+<pre> </pre>
+<pre>Since the recession, 95 percent of all home loans made in the United States have come through Fannie Mae. This is about <span class="fmt19">\$</span>5 trillion in mortgage assets. With few exceptions, loans that are not done through Fannie Mae or its close cousin, Freddie Mac, are jumbo loans (typically more than <span class="fmt19">\$</span>417,000 each). These loans are still funded through private money. </pre>
+<pre> </pre>
+<pre>Fannie Mae has an automated program used by loan originators to qualify a borrower. It helps them navigate guidelines for a conventional loan. Lenders run your loan application through Fannie Mae’s computer system, and it spits out an answer of either approve or decline for your loan. <span class="fmt38">Online</span> platforms are using this new software to reach consumers, allowing them to bypass traditional retail locations. Fannie Mae and Freddie Mac are exploring blockchain technology to even further streamline this process and reach customers directly. </pre></body></html>
