@@ -1,0 +1,81 @@
+
+%\usepackage[
+%HomeHTMLFilename=index,     % Filename of the homepage.
+%%HTMLFilename={node-},       % Filename prefix of other pages.
+%%IndexLanguage=english,      % Language for xindy index, glossary.
+%latexmk,                    % Use latexmk to compile.
+%%   OSWindows,                  % Force Windows. (Usually automatic.)
+%mathjax,                    % Use MathJax to display math.
+%]{lwarp}
+
+
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{float}
+%\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{caption}
+\usepackage[backend=bibtex]{biblatex}% Sort by citation order
+
+\addbibresource{references.bib,bibliography.bib}
+
+
+%\newcommand{\email}[1]{\texttt{\href{mailto:#1}{#1}}}
+
+%\title{ENGR 446: Milestone Report I: Project Background}
+%\author{David Li\footnote{Undergraduate student, Department of Electrical and Computer Engineering, University of Victoria, \email{lidavid@uvic.ca}}}
+
+%\makeatletter
+%\let\inserttitle\@title
+%\let\insertauthor\@author
+%\makeatother
+
+
+%% Print Title Page
+\makeatletter
+% Create \printauthor command which will display contact info                     
+\def\printauthor{%                  
+	{\large \@author}}              
+\makeatother
+% Honestly, if footcite works that would be adequate for me
+\author{%
+	\textbf{Name: }  David Li \\
+	\textbf{Student Number:} V00818631	\\
+	\textbf{Year}  Fourth Year Student  \\
+	\textit{Discipline:} Computer Engineering \\  \vspace{4pt}
+	\textit{Email:} \href{mailto:lidavid@uvic.ca}{lidavid@uvic.ca}
+}
+
+%\bibliography{references.bib}
+
+\usepackage[table]{xcolor}
+\usepackage{tabularx}		% Tabulars with adjustable-width columns
+\definecolor{lightgoldenrodyellow}{rgb}{1, 0.93, 0.55}
+\definecolor{firebrick}{rgb}{0.7, 0.13, 0.13}
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\definecolor{almostWhite}{rgb}{0.95, 0.95, 0.95}
+\definecolor{purpleMix}{rgb}{0.35, 0.07, 0.57}
+\newcommand*{\arraycolor}[1]{\protect\leavevmode\color{#1}}
+\newcolumntype{A}{>{\columncolor{blue!50!white}}c}
+%\newcolumntype{B}{>{\columncolor{lightgoldenrodyellow}}c}
+\newcolumntype{B}{>{\columncolor{purpleMix!75}}c}
+\newcolumntype{C}{>{\columncolor{firebrick!50}}c}
+\newcolumntype{D}{>{\columncolor{lightgoldenrodyellow}}c}
+\newcolumntype{E}{>{\columncolor{white!60!purple!20!green!20}}c} 
+
+\newcommand{\foo}{\color{blue}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+
+\usepackage{kpfonts}	    % Fonts used in the title page
+
+\newcommand{\onlineCite}{[Online] Available: }	% Used in BIBLIOGRAPHY
+
+\usepackage{tikz}
+
+\usepackage{url}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+\usepackage{hyperref}
+
+\usepackage[titletoc]{appendix}	%% appendix will be in the toc
+% What I want is References and subsections or paragraphs 
