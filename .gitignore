@@ -37,7 +37,6 @@
 # Lwarp files
 *.out
 *.gz
-*.conf
 *.sidetoc
 
 # latexmk files
