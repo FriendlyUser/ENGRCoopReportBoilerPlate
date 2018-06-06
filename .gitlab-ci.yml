@@ -5,14 +5,12 @@ image: blang/latex:ctanfull
 
 build:
   script:
-    - lwarpmk -h
-    - pdflatex  -synctex=1 -interaction=nonstopmode "reportContent".tex
-    - lwarpmk printglossary
+    - lwarpmk cleanall
     - lwarpmk print
-    - makeglossaries.exe "reportContent"
-    - pdflatex  -synctex=1 -interaction=nonstopmode "reportContent_html".tex
-    - bibtex.exe "reportContent_html"
-    - makeglossaries.exe "reportContent_html"
+    - lwarpmk html
+    - lwarpmk pdftohmtl
   artifacts:
     paths:
       - "*.pdf"
+      - "*.html"
+    allow_failure: true
