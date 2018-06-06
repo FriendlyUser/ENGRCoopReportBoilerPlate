@@ -5,8 +5,10 @@ image: blang/latex:ctanfull
 
 build:
   script:
+    - lwarpmk -h
     - pdflatex  -synctex=1 -interaction=nonstopmode "reportContent".tex
-    - bibtex.exe "reportContent"
+    - lwarpmk printglossary
+    - lwarpmk print
     - makeglossaries.exe "reportContent"
     - pdflatex  -synctex=1 -interaction=nonstopmode "reportContent_html".tex
     - bibtex.exe "reportContent_html"
