@@ -5,6 +5,7 @@ image: blang/latex:ctanfull
 
 build:
   script:
+    - cd /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I
     - lwarpmk print
     - lwarpmk html
     - lwarpmk pdftohtml
