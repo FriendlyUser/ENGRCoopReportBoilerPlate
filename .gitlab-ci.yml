@@ -11,4 +11,4 @@ build:
     - pdflatex "engr446milestone1".tex
   artifacts:
     paths:
-      - "*.pdf"
+      - "/builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/*.pdf"
