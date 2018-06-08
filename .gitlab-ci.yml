@@ -3,7 +3,12 @@
 # possible alternative: https://github.com/natlownes/docker-latex
 image: blang/latex:ctanfull
 
-build:
+stages:
+    - auxReports
+    - mainReport
+    
+projectBackground:
+  stage: auxReports
   script:
     - cd /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I
     - pdflatex "engr446milestone1".tex 
@@ -12,3 +17,14 @@ build:
   artifacts:
     paths:
       - "/builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/*.pdf"
+
+engineering-analysis-II:
+  stage: auxReports
+  script:
+    - cd /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II
+    - pdflatex "engr446milestone1".tex 
+    - bibtex "engr446milestone1"
+    - pdflatex "engr446milestone1".tex
+  artifacts:
+    paths:
+      - "/builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/*.pdf"
