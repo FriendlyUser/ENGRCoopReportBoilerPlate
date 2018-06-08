@@ -22,9 +22,9 @@ engineering-analysis-II:
   stage: auxReports
   script:
     - cd /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II
-    - pdflatex "engr446milestone1".tex 
-    - bibtex "engr446milestone1"
-    - pdflatex "engr446milestone1".tex
+    - pdflatex "engr446milestone2".tex 
+    - bibtex "engr446milestone2"
+    - pdflatex "engr446milestone2".tex
   artifacts:
     paths:
       - "/builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/*.pdf"
