@@ -71,7 +71,9 @@
 
 \usepackage{tikz}
 
+\usepackage{booktabs}
 \usepackage{hyperref}
+
 \begin{document}
 
 \makeatletter
@@ -92,17 +94,17 @@
 % Picture from https://pixabay.com/en/blockchain-block-chain-technology-3019120/
 
 \begin{titlepage}
-% \begin{tikzpicture}[remember picture, overlay]
-%  \node[opacity=0.05,inner sep=0pt] at (current page.center)
-%   {\includegraphics[width=\paperwidth,height=\paperheight]{bchainCOol.png}};
-%  \end{tikzpicture}
+ \begin{tikzpicture}[remember picture, overlay]
+  \node[opacity=0.05,inner sep=0pt] at (current page.center)
+   {\includegraphics[width=\paperwidth,height=\paperheight]{bchainCOol.png}};
+  \end{tikzpicture}
 	\begin{center}
 		{\vspace*{3pt} }
 		{\Large University of Victoria \\ \vspace{4pt}}
 		{\Large Faculty of Engineering \\ \vspace{4pt}}
 		{\Large ENGR 446: Milestone Report I: Project Background \\ \vspace{4pt}}  
 		\rule[13pt]{1\textwidth}{1pt} \\ \vspace{1pt}
-		{\LARGE \textbf{{Simplification of Transactions by leverage blockchain technologies and smart contracts}} \\ \vspace{15 pt}}
+		{\LARGE \textbf{{Simplification of Transactions by Leveraging Blockchain Technologies and Smart Contracts}} \\ \vspace{15 pt}}
 		
 		{\Large David Li \hfill Computer Engineering \hfill  V00818631 }
 		%{\Large BC Ministry of Transportation and Infrastructure \\} 
@@ -158,14 +160,15 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 %modify this for markdown file
 \begin{table}[ht]
 \centering
-%\renewcommand\arraystretch{1.4}\arrayrulecolor{blue}
+\renewcommand\arraystretch{1.4}\arrayrulecolor{blue}
 %\captionsetup{singlelinecheck=false, labelfont=sc, labelsep=quad}
 \caption{Timeline of Cryptocurrency}%\vskip -1.5ex
 % lwarp table, and print edition (uncomment stuff below for good copy)
-\begin{tabular}{l l }%
+%\begin{tabular}{l l }%
 % Good copy for print edition
-%\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
-%\toprule
+\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
+\toprule
+%\hrule
 %\addlinespace[1.5ex]
 2008 & Bitcoin White Paper \\
 2009 & Bitcoin Genesis Block\\

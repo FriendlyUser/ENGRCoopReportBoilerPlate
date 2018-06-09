@@ -16,7 +16,7 @@
 \usepackage{caption}
 \usepackage[backend=bibtex]{biblatex}% Sort by citation order
 
-\addbibresource{references.bib,bibliography.bib}
+\addbibresource{references.bib}
 
 
 %\newcommand{\email}[1]{\texttt{\href{mailto:#1}{#1}}}
@@ -74,6 +74,54 @@
 \makeatletter
 \g@addto@macro{\UrlBreaks}{\UrlOrds}
 \makeatother
+
+% Fancy example listings from https://tex.stackexchange.com/questions/212943/fancy-example-environment
+\usepackage{chngcntr}
+\usepackage[tikz]{mdframed}
+
+
+\definecolor{greentitle}{RGB}{61,170,61}
+\definecolor{greentitleback}{RGB}{216,233,213}
+
+\newcounter{mdexample}
+\counterwithin{mdexample}{section}
+
+\newenvironment{myexample}[1]
+  {\stepcounter{mdexample}\begin{mdframed}[
+    frametitle=#1,
+    frametitlefont=\normalfont,
+    topline=false,
+    bottomline=false,
+    rightline=false,
+    linecolor=greentitleback,
+    linewidth=2pt,
+    singleextra={
+      \node[
+        overlay,
+        outer sep=0pt,
+        anchor=north east,
+        text width=2.5cm,
+        minimum height=4ex,
+        fill=greentitleback,
+        font=\color{greentitle}\sffamily\scshape
+      ] at (O|-P) {example~\themdexample};
+      },
+    firstextra={
+      \node[
+        overlay,
+        outer sep=0pt,
+        anchor=north east,
+        text width=2.5cm,
+        minimum height=4ex,
+        fill=greentitleback,
+        font=\color{greentitle}\sffamily\scshape
+      ] at (O|-P) {example~\themdexample};
+      }
+    ]
+  }
+  {\end{mdframed}}
+\newcommand\Solution{\par\textbf{\textsf{Solution}}\par\medskip}
+
 
 \usepackage{hyperref}
 

@@ -84,6 +84,44 @@
 
 \chapter{Proposed approach}
 \chapter{Engineering Analysis}
+
+\section{Security of private keys}
+A ethereum key, which is randomly selected 256 digits \cite{ethereumWhitePaper:Online}, is very difficult to hack. The calculation below illustrate the impracticalities of brute force hacking for a 256 bit ethereum key.
+
+%For example
+
+%\begin{myexample}{Factorise $x^2-2x+1$}
+%ANIME OUT
+% \Solution
+%\end{myexample}
+%\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,listing side text,
+%  title=Side by side,fonttitle=\bfseries]
+%This is a \LaTeX\ example:
+%\begin{equation}
+%\sum\limits_{i=1}^n i = \frac{n(n+1)}{2}.
+%\end{equation}
+%\end{tcolorbox}
+
+% Redo with quantum computing calculations.
+% https://en.wikipedia.org/wiki/Margolus%E2%80%93Levitin_theorem
+
+
+Assuming that a 1 exaflop ($10^{18}$ calculations per second) 15 megawatts supercomputer \cite{Service617} is used, electricity costs are 0.1326 per kWH \cite{BCHydroRates}. In order to hack a 256 bit key by brute force $2^{256}$ decryptions are required. Powering the machine costs \$ 1.989 million excluding maintenance and hardware costs. It can perform
+
+\[
+10^{18} calc/s \times \frac{3.154 \times 10^7 s}{1 year} = 3.154 \times 10^{25} calc/year
+\]
+\[
+2^{256} = 1.1569 \times 10^{77} calculations
+\]
+
+So in order to brute force hack a private key in a year 
+\[
+Number of machines = \frac{1.1569 \times 10^{77}}{3.154 \times 10^25}= 3.66804 \times 10^{51}
+\]
+or $3.66804 \times 10^{51}$ years for a single supercomputer. This would cost $1.989 \times 10^6 \times =3.66804 \times 10^{51}=7.2957 \times 10^{57}$
+ 
+ % add section for high end gaming computer
 \chapter{Discussion}
 
 \begin{appendices}
