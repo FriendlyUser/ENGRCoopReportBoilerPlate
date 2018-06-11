@@ -33,8 +33,7 @@ engineering-analysis-II:
 pages:
   stage: publish
   dependencies:
-    - engineering-analysis-II
-    - projectBackground
+    - auxReports
   script:
     - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/ public/
     - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/ public/
