@@ -1,7 +1,7 @@
 # use docker image with latex preinstalled
 # since there is no official latex image, use https://github.com/blang/latex-docker
-# possible alternative: https://github.com/natlownes/docker-latex
-image: blang/latex:ctanfull
+# possible alternative: https://github.com/natlownes/docker-latex, consider making it only for this branch ENGR 446
+# Use dirhtml to generate html file needed
 #    - mainReport
 stages:
     - auxReports
@@ -9,6 +9,7 @@ stages:
 
     
 projectBackground:
+  image: blang/latex:ctanfull
   stage: auxReports
   script:
     - cd /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I
@@ -36,8 +37,9 @@ pages:
     - engineering-analysis-II
     - projectBackground
   script:
-    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/ public/
-    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/ public/
+    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/*.pdf public/
+    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/*.pdf public/
+    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/index.html public/
   artifacts:
     paths:
       - public
