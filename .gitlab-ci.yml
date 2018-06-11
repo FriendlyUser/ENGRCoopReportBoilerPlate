@@ -38,6 +38,7 @@ pages:
     - engineering-analysis-II
     - projectBackground
   script:
+    - mkdir public/engineering-analysis-II public/project-background-I
     - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/ public/engineering-analysis-II
     - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/ public/project-background-I/
     - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/index.html public/
