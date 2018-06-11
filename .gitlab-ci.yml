@@ -38,8 +38,8 @@ pages:
     - engineering-analysis-II
     - projectBackground
   script:
-    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/*.pdf public/
-    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/*.pdf public/
+    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/ public/
+    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/ public/
     - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/index.html public/
   artifacts:
     paths:
