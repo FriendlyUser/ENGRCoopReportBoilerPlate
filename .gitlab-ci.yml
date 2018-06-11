@@ -21,6 +21,7 @@ projectBackground:
       - "/builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/*.pdf"
 
 engineering-analysis-II:
+  image: blang/latex:ctanfull
   stage: auxReports
   script:
     - cd /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II
