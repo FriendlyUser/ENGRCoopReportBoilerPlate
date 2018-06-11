@@ -33,7 +33,8 @@ engineering-analysis-II:
 pages:
   stage: publish
   dependencies:
-    - auxReports
+    - engineering-analysis-II
+    - projectBackground
   script:
     - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/ public/
     - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/ public/
@@ -41,5 +42,3 @@ pages:
     paths:
       - public
     expire_in: 30 days
-  only: 
-    - master
