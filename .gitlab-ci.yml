@@ -6,6 +6,7 @@ image: blang/latex:ctanfull
 stages:
     - auxReports
     - mainReport
+    - publish
     
 projectBackground:
   stage: auxReports
@@ -28,3 +29,18 @@ engineering-analysis-II:
   artifacts:
     paths:
       - "/builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/*.pdf"
+      
+ pages:
+  stage: publish
+  dependencies:
+    - projectBackground
+    - engineering-analysis-II
+  script:
+    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/ public/
+    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/ public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - master
