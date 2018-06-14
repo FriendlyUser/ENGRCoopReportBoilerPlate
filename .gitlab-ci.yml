@@ -16,9 +16,11 @@ projectBackground:
     - pdflatex "engr446milestone1".tex 
     - bibtex "engr446milestone1"
     - pdflatex "engr446milestone1".tex
+    - cd ../../
+    - mv Auxillary-Reports/project-background-I project-background-I
   artifacts:
     paths:
-      - "/builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/*.pdf"
+      - project-background-I/*.pdf
 
 engineering-analysis-II:
   image: blang/latex:ctanfull
@@ -28,9 +30,11 @@ engineering-analysis-II:
     - pdflatex "engr446milestone2".tex 
     - bibtex "engr446milestone2"
     - pdflatex "engr446milestone2".tex
+    - cd ../../
+    - mv Auxillary-Reports/engineering-analysis-II engineering-analysis-II
   artifacts:
     paths:
-      - "/builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/*.pdf"
+      - engineering-analysis-II/*.pdf
       
 pages:
   stage: publish
@@ -38,9 +42,9 @@ pages:
     - engineering-analysis-II
     - projectBackground
   script:
-    - mkdir public/engineering-analysis-II public/project-background-I
-    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/engineering-analysis-II/ public/engineering-analysis-II
-    - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/project-background-I/ public/project-background-I/
+    - mkdir public
+    - mv engineering-analysis-II public
+    - mv project-background-I public
     - mv /builds/studentdavidli/ENGRCoopReportTemplate/Auxillary-Reports/index.html public/
   artifacts:
     paths:
