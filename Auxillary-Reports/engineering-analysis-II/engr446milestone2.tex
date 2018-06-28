@@ -120,7 +120,7 @@ Currently, centralized IT systems are vulnerable to "malicious attacks, software
 \label{fig:DApp}
 \end{figure}
 Usage on blockchain technologies is actively being explored in medical research \cite{pmid28357041} more transparency, real-estate and supply chains.
-Despite, the obvious advantages of decentralized and blockchain technologies,  a lack of resources for unpopular materials may result in prolonged downloads. An equivalent anecdote is a inadequately seeded torrent results in intolerable download speeds. 
+Despite, the obvious advantages of decentralized and blockchain technologies,  a lack of resources for unpopular materials may result in prolonged downloads. An equivalent anecdote is a inadequately seeded torrent results in intolerable download speeds.  Whereas a traditional database only checks, writes and stores data once, a decentralized blockchain system require thousands of operations to write and store data, therefore the costs of maintaining a blockchain are substantial higher and only justifiable with increased utility/security.
 
  \section{Security of Smart Contracts}
  
@@ -158,15 +158,24 @@ A ethereum key, which is randomly selected 256 digits \cite{ethereumWhitePaper:O
  % https://en.wikipedia.org/wiki/Margolus%E2%80%93Levitin_theorem
  
  \subsection{Cheaper and Faster Transactions}
- Typically, transactional costs are be categorized broadly as: (add citation)
- 
+ Typically, transactional costs are be categorized broadly as: \cite{RePEc:ucp:jlawec:v:22:y:1979:i:1:p:141-62}
+ % @ARTICLE{RePEc:ucp:jlawec:v:22:y:1979:i:1:p:141-62,
+% title = {The Problem of Externality},
+% author = {Dahlman, Carl J},
+% year = {1979},
+% journal = {Journal of Law and Economics},
+% volume = {22},
+% number = {1},
+% pages = {141-62},
+% url = {https://EconPapers.repec.org/RePEc:ucp:jlawec:v:22:y:1979:i:1:p:141-62}
+% }
  \begin{itemize}
  \item Search and information costs (determining what is the suitable goods that is available on the market)
  \item Bargaining costs (costs to come to acceptable agreement)
  \item policing and enforcement costs (making sure other party sticks to term of contract)
  \end{itemize} 
  
- Usage of smart contracts practically eliminate policing and enforcements costs as transactions are dictated by code, bargaining costs are reduced since the middlemen are removed, and reliable, immutable information on current and previous transactions are publicly displayed on the blockchain.   
+ Usage of smart contracts practically eliminate policing and enforcements costs as transactions are dictated by code, bargaining costs are reduced since the middlemen are removed, and reliable, immutable information on current and previous transactions are publicly displayed on the blockchain. Deploying a smart contract is inexpensive, however any changes in source code require the contract redeployment.
  
  \begin{figure}[ht]
    	\centering 
@@ -175,10 +184,28 @@ A ethereum key, which is randomly selected 256 digits \cite{ethereumWhitePaper:O
    	\label{smartContract}
    	\end{figure}
    	
-As specified in http://www.homes.com/blog/2016/03/how-long-does-the-home-buying-process-take/, the process of purchasing a home can take up to a month, however by using smart contracts, friction between parties will be reduced, the transactions are more transparent and occur much quicker.
+As specified in \cite{buyingHome:Online}, the process of purchasing a home can take up to a month, however by using smart contracts, friction between parties will be reduced, the transactions are more transparent and occur much quicker.  Writing data to the blockchain is slower than a traditional database, however usage of side-chains (separate blockchain that enables fast transactions without clogging up the main network) can greatly reduce transaction completion time \cite{sideChains:Online}. For instance, inserting information info a database is an order of magnitude in milliseconds, but writing to the blockchain requires a order of magnitude in seconds. 
+
+%Writing information to the blockchain is significantly slower than a traditional database, however, with side chains 
+%A traditional centralized database only needs to be written to once. A blockchain needs to be written to thousands of times. A traditional centralized database needs to only checks the data once. A blockchain needs to check the data thousands of times. A traditional centralized database needs to transmit the data for storage only once. A blockchain needs to transmit the data thousands of times.
+
+%The costs of maintaining a blockchain are orders of magnitude higher and the cost needs to be justified by utility.
 \chapter{Discussion}
 
 
+Decentralized systems are inherently more reliable, resilient against brute force attacks, and are more transparent. Even though immutable and irreversible transactions are advantageous, criminals leverage cryptocurrencies for illegal transfer of funds. This implies the ability to undo fraudulent or criminal activity is extremely important, but reversible transactions is an anti-pattern. For example EOS, a centralized blockchain platform, was criticized for freezing accounts without due process and community backing. \cite{EOS:Online}. In addition, centralized systems require users to trust vendors and oftentimes personal data usage lacks transparency. Currently, research into blockchain technologies are actively researched that can disrupt existing industries including finance, real-estate and supply chains. \hfill \break
+% 
+
+
+
+Smart contracts are useful because that cannot be changed by the parties involved in the transactions, yet, in some cases such as criminal activity, the ability to reverse transactions or freeze accounts is extremely desirable.
+Deployment of a smart contract is inexpensive, however, development and maintenance costs for blockchain applications can be costly. This implies that transaction expenses decrease significantly, but running a blockchain node, ensuring high quality code for smart contracts is challenging and expensive. Decentralized applications are transparent because information is available in the publicly ledger and parties participating in a transaction cannot alter it. Overcomplicated code and bugs in smart contracts are severely detrimental because of malicious transactions by scammers or hackers. \hfill \break
+
+
+As shown in Figure \ref{smartContract}, smart contract reduce complexity of transactions allowing buyers to directly interact with sellers. This illustrates how useful smart contracts are, but lack of legislation for blockchain technologies, consortiums unwilling to adopt decentralized applications (may prefer private blockchains), and ability for hackers to exploit bugs suggest transactions governed by code is decades away. Solutions to existing problems in blockchain technologies such as latency, immutable transactions and widespread acceptance by consortiums are addressed through innovations such as sidechains, centralized blockchain platforms like EOS and private blockchains infrastructure. \hfill \break
+
+
+Overall, blockchain technologies allow for users to have a unique digital presence, securely transfer ownership of assets and avoid key shortcomings of centralized IT systems.
 \printbibliography
 
 \begin{appendices}
