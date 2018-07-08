@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Name: David Li Student Number: V00818631 Year Fourth Year Student Discipline: Computer Engineering Email: lidavid@uvic.ca" />
+  <meta name="author" content="David Li V00818631 Computer Engineering" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#proposed-approach">Proposed approach</a><ul>
+<li><a href="#project-plan">Project Plan</a></li>
+</ul></li>
+<li><a href="#engineering-analysis">Engineering Analysis</a><ul>
+<li><a href="#advantages-and-disadvantages-of-decentralization">Advantages and Disadvantages of Decentralization </a></li>
+<li><a href="#security-of-smart-contracts">Security of Smart Contracts</a><ul>
+<li><a href="#brute-force-cracking-of-private-keys">Brute force cracking of private keys</a></li>
+<li><a href="#considerations-for-quantum-computing">Considerations for Quantum computing</a></li>
+<li><a href="#cheaper-and-faster-transactions">Cheaper and Faster Transactions</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#discussion">Discussion</a></li>
+<li><a href="#project-background">Project Background</a><ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#objective">Objective</a><ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#aims">Aims</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul></li>
+<li><a href="#potential-solutions">Potential Solutions</a></li>
+<li><a href="#initial-assessment">Initial Assessment</a></li>
+<li><a href="#references-for-appendix">References for Appendix</a></li>
+</ul></li>
+</ul>
+</div>
+<p>at (current page.center) <span><img src="bchainCOol.png" alt="image" /></span>;</p>
+<p><span> </span> <span>University of Victoria<br />
+</span> <span>Faculty of Engineering<br />
+</span> <span>ENGR 446: Milestone Report II: Engineering Analysis<br />
+</span></p>
+<hr />
+<p><br />
+</p>
+<p><span>David Li Computer Engineering V00818631 </span></p>
+<p><span><br />
+</span> <span>In partial fulfillment of the academic requirements of this academic course</span></p>
+<h1 id="proposed-approach">Proposed approach</h1>
+<p>Leveraging the largest public blockchains with smart contracts, grants enough computation power for quick transactions, while keeping transparency as a high priority. Reliability of decentralized applications is significant provided users are incentivized to support the shared network.</p>
+<div class="figure">
+<embed src="ms-II/DappVApp.pdf" />
+<p class="caption">Decentralized and centralized topology<span data-label="toplogy"></span></p>
+</div>
+<p>Comparing the process of purchasing a home with and without smart contracts will illustrate its simplicity and efficiency. Since the cost of transactions (gas) on ethereum is relatively low <span class="citation">[1]</span> and replicating software costs practically nothing, development is the foremost financial burden. Furthermore, cutting out the middlemen in this process (lawyers and real-estate agents) greatly reduces the financial burden while increasing transaction speed and transparency.</p>
+<h2 id="project-plan">Project Plan</h2>
+<div class="figure">
+<embed src="ms-II/smartDiagramProjectPlan.pdf" />
+<p class="caption">Smart Diagram for proposed approach<span data-label="toplogy"></span></p>
+</div>
+<p>Creating decentralized applications is challenge because technologies are nascent, undergoing evolution and tools are in infancy.</p>
+<h1 id="engineering-analysis">Engineering Analysis</h1>
+<h2 id="advantages-and-disadvantages-of-decentralization">Advantages and Disadvantages of Decentralization </h2>
+<p>Currently, centralized IT systems are vulnerable to “malicious attacks, software and hardware faults, human mistakes (e.g., software and hardware misconfigurations”) <span class="citation">[2]</span>. Decentralized systems have no single point of failure, improved security and are more transparent, however, efficient code is more important in smart contracts. As illustrated in [fig:DApp] a blockchain-server architecture model allows for developers to implement decentralized applications with smart contracts while maintaining the flexibility and simplicity of retrieving and sending information.</p>
+<div class="figure">
+<embed src="ms-II/blockchainInSimpleApp.pdf" />
+<p class="caption">An example of server-blockchain architecture in a DAPP.<span data-label="fig:DApp"></span></p>
+</div>
+<p>Usage on blockchain technologies is actively being explored in medical research <span class="citation">[3]</span> more transparency, real-estate and supply chains. Despite, the obvious advantages of decentralized and blockchain technologies, a lack of resources for unpopular materials may result in prolonged downloads. An equivalent anecdote is a inadequately seeded torrent results in intolerable download speeds. Whereas a traditional database only checks, writes and stores data once, a decentralized blockchain system require thousands of operations to write and store data, therefore the costs of maintaining a blockchain are substantial higher and only justifiable with increased utility/security <span class="citation">[4]</span>.</p>
+<h2 id="security-of-smart-contracts">Security of Smart Contracts</h2>
+<p>Blockchain transactions are secure because that are immutable and decentralized. However, exploiting bugs in smart contracts are financially devastating <span class="citation">[5]</span> as fraudulent transactions cannot be reverted. Disconnects between software developers and security experts has resulted in 3 out of 4 “applications produced by software vendors fail to meet OWASP Top 10 standards” <span class="citation">[6]</span>. Although blockchain technologies increase underlying security and reliability, exploiting poorly coded and insecure smart contracts remains a major risk, and releasing open-source code allows hackers exploit flaws in the codebase before corrective processes are applied.</p>
+<h3 id="brute-force-cracking-of-private-keys">Brute force cracking of private keys</h3>
+<p>A ethereum key, which is randomly selected 256 digits <span class="citation">[1]</span>, is very difficult to hack. A simple calculation illustrates the impracticalities of brute forcing for a 256 bit key. Assuming that a 1 exaflop (<span class="math inline">10<sup>18</sup></span> calculations per second) 15 megawatts supercomputer <span class="citation">[7]</span> is used, electricity costs are 0.1326 per kWH <span class="citation">[8]</span>. <br /><span class="math display">$$\begin{aligned}
+&amp; 2^{256} = 1.1569 \times 10^{77} \text{decryptions} \\
+&amp; 10^{18} \frac{\text{decryptions}}{\text{second}} \times \frac{3.154 \times 10^7 second}{1 year} = 3.154 \times 10^{25} \frac{\text{decryptions}}{year} \\
+&amp; \text{Number of machines} = \frac{1.1569 \times 10^{77} }{3.154 \times 10^{25} } \text{years}= 3.66804 \times 10^{51} years
+$$</span><br /></p>
+<div class="figure">
+<img src="matlab/epicPic.png" alt="Difficulty of brute forcing a 256-bit key" />
+<p class="caption">Difficulty of brute forcing a 256-bit key<span data-label="security:fig2"></span></p>
+</div>
+<h3 id="considerations-for-quantum-computing">Considerations for Quantum computing</h3>
+<p>As shown in [security:fig2], if powerful quantum (1 peta teraflops) computers become commonplace existing 128 bit (<span class="math inline">2<sup>7</sup></span>) are easily hacked and 256 bit (<span class="math inline">2<sup>8</sup></span>) are insecure. According to the the Margolus–Levitin theorem processing power of computer can reach <span class="math inline">6 × 10<sup>33</sup></span> operations per second per joule. This indicates that existing 128 bit keys and even 256 bit keys are unsecure in a quantum computing age.</p>
+<h3 id="cheaper-and-faster-transactions">Cheaper and Faster Transactions</h3>
+<p>Typically, transactional costs are be categorized broadly as: <span class="citation">[9]</span></p>
+<ul>
+<li><p>Search and information costs (determining what is the suitable goods that is available on the market)</p></li>
+<li><p>Bargaining costs (costs to come to acceptable agreement)</p></li>
+<li><p>policing and enforcement costs (making sure other party sticks to term of contract)</p></li>
+</ul>
+<p>Usage of smart contracts practically eliminate policing and enforcements costs as transactions are dictated by code, bargaining costs are reduced since the middlemen are removed, and reliable, immutable information on current and previous transactions are publicly displayed on the blockchain. Deploying a smart contract is inexpensive, however any changes in source code require the contract redeployment.</p>
+<div class="figure">
+<embed src="ms-II/simplifyingPurchasingAHome.pdf" />
+<p class="caption">Flow Chart illustrating how smart contracts can simplify buying a home<span data-label="smartContract"></span></p>
+</div>
+<p>As specified in <span class="citation">[10]</span>, the process of purchasing a home can take up to a month, however by using smart contracts, friction between parties will be reduced, the transactions are more transparent and occur much quicker. Writing data to the blockchain is slower than a traditional database, however usage of side-chains (separate blockchain that enables fast transactions without clogging up the main network) can greatly reduce transaction completion time <span class="citation">[11]</span>. For instance, inserting information info a database is an order of magnitude in milliseconds, but writing to the blockchain requires a order of magnitude in seconds.</p>
+<h1 id="discussion">Discussion</h1>
+<p>Decentralized systems are inherently more reliable, resilient against brute force attacks, and are more transparent. Even though immutable and irreversible transactions are advantageous, criminals leverage cryptocurrencies for illegal transfer of funds. This implies the ability to undo fraudulent or criminal activity is extremely important, but reversible transactions is an anti-pattern. For example EOS, a centralized blockchain platform, was criticized for freezing accounts without due process and community backing. <span class="citation">[12]</span>. In addition, centralized systems require users to trust vendors and oftentimes personal data usage lacks transparency. Currently, research into blockchain technologies are actively researched that can disrupt existing industries including finance, real-estate and supply chains.</p>
+<p>Smart contracts are useful because that cannot be changed by the parties involved in the transactions, yet, in some cases such as criminal activity, the ability to reverse transactions or freeze accounts is extremely desirable. Deployment of a smart contract is inexpensive, however, development and maintenance costs for blockchain applications can be costly. This implies that transaction expenses decrease significantly, but running a blockchain node, ensuring high quality code for smart contracts is challenging and expensive. Decentralized applications are transparent because information is available in the publicly ledger and parties participating in a transaction cannot alter it. Overcomplicated code and bugs in smart contracts are severely detrimental because of malicious transactions by scammers or hackers.</p>
+<p>As shown in Figure [smartContract], smart contract reduce complexity of transactions allowing buyers to directly interact with sellers. This illustrates how useful smart contracts are, but lack of legislation for blockchain technologies, consortiums unwilling to adopt decentralized applications (may prefer private blockchains), and ability for hackers to exploit bugs suggest transactions governed by code is decades away. Solutions to existing problems in blockchain technologies such as latency, immutable transactions and widespread acceptance by consortiums are addressed through innovations such as sidechains, centralized blockchain platforms like EOS and private blockchains infrastructure.</p>
+<p>Overall, blockchain technologies allow for users to have a unique digital presence, securely transfer ownership of assets and avoid key shortcomings of centralized IT systems.</p>
+<h1 id="project-background">Project Background</h1>
+<h2 id="background">Background</h2>
+<p>In 2008 bitcoin white paper [1] described a way to solve the double spending problem without a centralized body using blockchain. Although, the value of bitcoin (BTC) has grown exponentially, high computational and energy consumption in mining and slow performance [2]. Released in July 30, 2015, Ethereum, an open-source platform based on blockchain technology, distinguishes itself from bitcoin through faster transactions, unlimited processing capability for <span>smart contract</span>, and its network is optimized to support Decentralized Applications [3].</p>
+<p><span>@r &lt; !<span><span>-0.5ptwidth 1pt</span></span> &gt;p<span>5cm</span></span> 2008 &amp; Bitcoin White Paper<br />
+2009 &amp; Bitcoin Genesis Block<br />
+2013 &amp; 1 BTC = $ 31 USD<br />
+2013 &amp; Ethereum White Paper<br />
+2015 &amp; Ethereum Genesis Block<br />
+2015 &amp; HyperLedger starts<br />
+2017 &amp; Over 1000 different cryptocurrencies<br />
+2018 &amp; AWS Blockchain Templates<br />
+</p>
+<p>Blockchain technology is revolutionizing the internet by establishing trust in shared data. [3]. Additionally, transactions recorded on the blockchain are practically impossible to remove or change. A decentralized application, or DApp are deployed on peer to peer networks such as Ethereum or on the cloud.</p>
+<p>Traditional legal contracts are written to represent the contracting parties. In a smart contract, self-executing source code is used to automatic transactions that are publicly available on the blockchain [3].</p>
+<div class="figure">
+<embed src="smartContractsExp.pdf" />
+<p class="caption">Illustrating how a smart contract works<span data-label="fig:smartContracts"></span></p>
+</div>
+<h2 id="objective">Objective</h2>
+<p>The prominence of cryptocurrency and decentralized applications suggests usage of smart contracts will experience explosive growth.</p>
+<h3 id="problem">Problem</h3>
+<p>Currently commonplace transactions require days to process and for parties verify correctness. For example to purchase houses, a plethora of steps are required, one must interactive with lawyers, real-estate agents, home inspector, buy insurance and shop for a mortgage.</p>
+<h3 id="purpose">Purpose</h3>
+<p>Leveraging existing blockchain technologies can automatic the majority of steps and cut out the middlemen, resulting in buyers conversing directing with sellers.</p>
+<h3 id="aims">Aims</h3>
+<p>The aims of this project are to develop a decentralized blockchain system that:</p>
+<ol>
+<li><p>Reduce cost of transactions by at least 50% from removing middlemen.</p></li>
+<li><p>Improve transparency in software systems through augmented accessibility and understandability.</p></li>
+<li><p>Has increased reliability and more secure than traditional systems.</p></li>
+</ol>
+<h3 id="limitations">Limitations</h3>
+<p>The regulatory uncertainty and impact of future regulations on blockchain technologies such as smart contracts will not be investigated. In addition, criminal usage of cryptocurrencies to avoid taxation and legal repercussions are beyond the scope of this report.</p>
+<h2 id="potential-solutions">Potential Solutions</h2>
+<ul>
+<li><p><strong>Public blockchains</strong> are large distributed networks that are run through a native token such as bitcoin or ether. Anyone can participate and the community maintains its open-source code. The two largest public blockchains are Ethereum and Bitcoin. They are open for anyone to participate at any level and have open-source code that their community maintains.</p></li>
+<li><p><strong>Permissioned blockchains</strong> define role based access control for individuals in the network and uses native tokens. HyperLedger Composer, an open-source framework for permissioned blockchains, is used for smart contracts and for blockchain application development [4]. One use case is an accounting system that calculates payment, while hiding that information from unrelated organizations.</p>
+<div class="figure">
+<img src="composer-arch.png" alt="Architecture of Hyperledger composer" />
+<p class="caption">Architecture of Hyperledger composer</p>
+</div></li>
+<li><p><strong>Private blockchains</strong> membership is tightly controlled and lacks a native token. Useful for consortiums with trusted associates and exchanging confidential information, however, less powerful because it is supported by limited private resources. Large organizations such as governments will likely use these extensively.</p></li>
+</ul>
+<h2 id="initial-assessment">Initial Assessment</h2>
+<p>Determining which platform is best for smart contracts should be done using a weighted decision matrix, based on the particular application. For internal processes such as supply chains, a private blockchain makes sense (data cannot be changed) and cryptographic auditing with known identities (public keys). For a trustless system that verifies every transaction, using a public blockchain is essential. In comparison, role-based access control is feasible by using a permissioned blockchain. Despite the slow speed of the public blockchain, innovations such as side chains enable quick transactions and are used in decentralized game development [5]. A permissioned blockchain allows role based access control which is essential in business applications. One example is to prevent unrelated parties from viewing other’s data. Furthermore, smart contracts allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. This allows validation of complex transactions swiftly while maintaining transparency.</p>
+<p><span>D E A B C </span> &amp; &amp;<br />
+&amp; &amp; &amp; &amp;<br />
+speed and latency &amp; 5 &amp; 7 &amp; 7 &amp; 6<br />
+scalability &amp; 5 &amp; 9 8 &amp; 7 &amp; 4<br />
+security and immutablity &amp; 3 &amp; 7 &amp; 8.5 &amp; 9<br />
+storage capacity &amp; 4 &amp; 9 &amp; 9 &amp; 6<br />
+transparency &amp; 3 &amp; 9 &amp; 7 &amp; 5<br />
+&amp; 21 &amp; 41.6 &amp; 38.5 &amp; 30</p>
+<p>A decentralized system (peer to peer) has many advantages over a conventional centralized network including no single points of failure, cheaper distribution (servers are expensive), faster upload speeds and improved security. In addition, irreversible and immutable transactions are both an advantage and disadvantage. For example, an amateur coder killed the contract that allowed users to transfer Ether for the Parity Ethereum Wallet, rendering 150 to 300 million dollars completely useless [6]. Overall, the public blockchain with access to substantial collective resources is most viable in terms of scalability and transparency, however, institutes may prefer implementing permissioned or private blockchains internally for extended security and privacy.</p>
+<h2 id="references-for-appendix" class="unnumbered">References for Appendix</h2>
+<p><span>[</span>1<span>]</span> “Bitcoin white paper.” <a href="https://bitcoin.org/bitcoin.pdf" class="uri">https://bitcoin.org/bitcoin.pdf</a>.</p>
+<p><span>[</span>2<span>]</span> S. Elnaj, “The problems with bitcoin and the future of blockchain.” <a href="https://www.forbes.com/sites/forbestechcouncil/2018/03/29/the-problems-with-bitcoin-and-the-future-of-blockchain" class="uri">https://www.forbes.com/sites/forbestechcouncil/2018/03/29/the-problems-with-bitcoin-and-the-future-of-blockchain</a>.</p>
+<p><span>[</span>3<span>]</span> “Ethereum white paper.” <a href="https://github.com/ethereum/wiki/wiki/White-Paper" class="uri">https://github.com/ethereum/wiki/wiki/White-Paper</a>.</p>
+<p><span>[</span>4<span>]</span> “Hyperledger composer overview.” <a href="https://www.hyperledger.org/wp-content/uploads/2017/05/Hyperledger-Composer-Overview.pdf" class="uri">https://www.hyperledger.org/wp-content/uploads/2017/05/Hyperledger-Composer-Overview.pdf</a>.</p>
+<p><span>[</span>5<span>]</span> A. B. M. Corallo, “Loom network sdk for developers.” <a href="https://medium.com/loom-network/loom-sdk-for-developers-using-an-indexing-layer-for-lightning-fast-dapp-performance-b17f8ba25a3c" class="uri">https://medium.com/loom-network/loom-sdk-for-developers-using-an-indexing-layer-for-lightning-fast-dapp-performance-b17f8ba25a3c</a>.</p>
+<p><span>[</span>6<span>]</span> T. Maas, “Yes, this kid really just deleted 300 million by messing around with ethereum’s smart contracts.” <a href="https://hackernoon.com/yes-this-kid-really-just-deleted-150-million-dollar-by-messing-around-with-ethereums-smart-2d6bb6750bb9" class="uri">https://hackernoon.com/yes-this-kid-really-just-deleted-150-million-dollar-by-messing-around-with-ethereums-smart-2d6bb6750bb9</a></p>
+<div id="refs" class="references">
+<div id="ref-ethereumWhitePaper:Online">
+<p>[1] “Ethereum white paper.” <a href="https://github.com/ethereum/wiki/wiki/White-Paper" class="uri">https://github.com/ethereum/wiki/wiki/White-Paper</a>. </p>
+</div>
+<div id="ref-5936160">
+<p>[2] P. Smith, D. Hutchison, J. P. G. Sterbenz, M. Schöller, A. Fessi, M. Karaliopoulos, C. Lac, and B. Plattner, “Network resilience: A systematic approach,” <em>IEEE Communications Magazine</em>, vol. 49, no. 7, pp. 88–97, 2011. </p>
+</div>
+<div id="ref-pmid28357041">
+<p>[3] T. Nugent, D. Upton, and M. Cimpoesu, “Improving data transparency in clinical trials using blockchain smart contracts,” <em>F1000Res</em>, vol. 5, p. 2541, 2016. </p>
+</div>
+<div id="ref-EthScale:Online">
+<p>[4] V. Buterin, “Ethereum scalability research and development subsidy programs.” <a href="https://blog.ethereum.org/2018/01/02/ethereum-scalability-research-development-subsidy-programs/
+		" class="uri">https://blog.ethereum.org/2018/01/02/ethereum-scalability-research-development-subsidy-programs/
+		</a>. </p>
+</div>
+<div id="ref-funnyJoke:Online">
+<p>[5] T. Maas, “Yes, this kid really just deleted 300 million by messing around with ethereum’s smart contracts.” <a href="https://hackernoon.com/yes-this-kid-really-just-deleted-150-million-dollar-by-messing-around-with-ethereums-smart-2d6bb6750bb9" class="uri">https://hackernoon.com/yes-this-kid-really-just-deleted-150-million-dollar-by-messing-around-with-ethereums-smart-2d6bb6750bb9</a>. </p>
+</div>
+<div id="ref-veraCode:Report">
+<p>[6] “How Do Vulnerabilities Get Into Software?” </p>
+</div>
+<div id="ref-Service617">
+<p>[7] R. F. Service, “Design for u.s. Exascale computer takes shape,” <em>Science</em>, vol. 359, no. 6376, pp. 617–618, 2018 [Online]. Available: <a href="http://science.sciencemag.org/content/359/6376/617" class="uri">http://science.sciencemag.org/content/359/6376/617</a></p>
+</div>
+<div id="ref-BCHydroRates">
+<p>[8] “Residential rates.” <a href="	https://app.bchydro.com/accounts-billing/rates-energy-use/electricity-rates/residential-rates.html" class="uri">	https://app.bchydro.com/accounts-billing/rates-energy-use/electricity-rates/residential-rates.html</a>. </p>
+</div>
+<div id="ref-RePEc:ucp:jlawec:v:22:y:1979:i:1:p:141-62">
+<p>[9] C. J. Dahlman, “The problem of externality,” <em>Journal of Law and Economics</em>, vol. 22, no. 1, pp. 141–62, 1979 [Online]. Available: <a href="https://EconPapers.repec.org/RePEc:ucp:jlawec:v:22:y:1979:i:1:p:141-62" class="uri">https://EconPapers.repec.org/RePEc:ucp:jlawec:v:22:y:1979:i:1:p:141-62</a></p>
+</div>
+<div id="ref-buyingHome:Online">
+<p>[10] “How long does home buying process take.” <a href="http://www.homes.com/blog/2016/03/how-long-does-the-home-buying-process-take/" class="uri">http://www.homes.com/blog/2016/03/how-long-does-the-home-buying-process-take/</a>. </p>
+</div>
+<div id="ref-sideChains:Online">
+<p>[11] A. B. M. Corallo, “Enabling blockchain innovations with pegged sidechains.” <a href="https://blockstream.com/sidechains.pdf" class="uri">https://blockstream.com/sidechains.pdf</a>. </p>
+</div>
+<div id="ref-EOS:Online">
+<p>[12] “EOS emergency actions.” <a href="https://bitcoinexchangeguide.com/eos-undergoes-emergency-actions-after-block-producers-freeze-accounts-without-community-input/" class="uri">https://bitcoinexchangeguide.com/eos-undergoes-emergency-actions-after-block-producers-freeze-accounts-without-community-input/</a>. </p>
+</div>
+</div>
+</body>
+</html>

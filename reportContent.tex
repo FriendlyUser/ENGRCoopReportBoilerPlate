@@ -111,29 +111,34 @@
 
 \begin{appendices}
 \section{Code Listings}
-\begin{lstlisting}[language=Solidity,caption=Example of Solidity Code]
-pragma solidity 0.4.16;
+	\begin{lstlisting}[language=Solidity,caption=Smart contract in Solidity,label={lst:label}]
+		// pragma is used to specifc version of Solidity
+		pragma solidity ^0.4.16;
+		contract HelloWorld {
+		 uint256 counter = 5; 
+		 //state variable we assigned earlier
+		 address owner = msg.sender; 
+		 //set owner as msg.sender
+		function add() public {  //increases counter by 1
+	  		counter++;
+		 }
+		 function subtract() public { //decreases counter by 1
+		  counter--;
+		 }
+		 function getCounter() public constant returns (uint256) {
+		  return counter;
+		 } 
+		 function kill() public { //self-destruct function, 
+		   if(msg.sender == owner) {
+		    selfdestruct(owner); 
+		   }
+		}
+		// Fallback function
+		function () public payable {
+		
+		 }
+	\end{lstlisting}
 
-contract TestContract {
-    
-	string private myString = "foo";
-	
-	function getString() constant returns (string) {
-	    return myString;
-	}
-	
-	function setString (string _string) {
-	    myString = _string;
-	}
-}
-\end{lstlisting}
-\lstinputlisting[
-language   = C,
-basicstyle = \ttfamily,
-style		= default,
-%frame      = single,
-caption    = {Caesar Cipher for CSC 111},]
-{Code/cipher.c}
 
 \end{appendices}
 \end{document}
