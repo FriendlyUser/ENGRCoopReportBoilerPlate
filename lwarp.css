@@ -785,7 +785,7 @@ img.logoimage{
 }
 
 figure {
-    margin: 3ex auto 3ex auto ;
+    margin: 5ex auto 5ex auto ;
     padding: 1ex 1em 1ex 1em ;
     overflow-x: auto ;
 }
@@ -846,6 +846,27 @@ div.nonfloatcaption {
 figure div.floatrow div.minipage figcaption {
     border: none ;
     background: none ;
+}
+
+/* For packages such as float, rotfloat, and algorithm2e: */
+
+figure.boxed, figure.boxruled {
+    border: 1px solid black ;
+}
+
+figure.ruled {
+    border-top: 1px solid black ;
+    border-bottom: 1px solid black ;
+    border-left: 0px ;
+    border-right: 0px ;
+    border-radius: 0px ;
+    background: none ;
+    box-shadow: none ;
+}
+
+figure.ruled figcaption, figure.boxruled figcaption {
+    border-top: 1px solid silver ;
+    border-bottom: 1px solid silver ;
 }
 
 table {
@@ -1127,7 +1148,32 @@ div.multicols { -webkit-columns: 3 380px ;
     -moz-columns: 3 380px ; columns: 3 380px ; }
 div.multicols p {margin-top: 0ex}
 
-/* Used to support algorithmicx: */
+/* Used for algorithm2e: */
+div.alg2evline{
+    margin-left: 1em ;
+    padding-left: 1em ;
+    border-left: 1px solid black ;
+    border-radius: 0px 0px 0px 1ex ;
+}
+
+div.alg2evsline{
+    margin-left: 1em ;
+    padding-left: 1em ;
+    border-left: 1px solid black ;
+}
+
+div.alg2enoline{
+    margin-left: 1em ;
+    padding-left: 1em ;
+}
+
+span.alg2elinenumber{
+    margin-right: .5em ;
+    font-size: 50% ;
+    color: red ;
+}
+
+/* Used for algorithmicx: */
 span.floatright { float: right ; }
 
 /* Native LaTeX theorems: */
