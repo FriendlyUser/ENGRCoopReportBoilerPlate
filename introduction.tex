@@ -110,13 +110,14 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 	
 	% Consider taking this part out, too detailed for the high level explaination.
 	\paragraph{Public and Private Keys}
-	 \textbf{In a blockchain} system, any key holder can use their private key to sign a piece of data. This results in a signature.  
-	  In a Dapp, this can be used for:
+	 In a \gls{blockchain} system, any key holder can use their private key to sign a piece of data. This results in a signature.  
+	  In a \gls{Dapp}, this can be used for:
 	 \begin{enumerate}
 		\item Recovering the public key (ethereum account address) of the Author.
 		\item Verify if the raw data is identical  using the Author's public key. 
 	\end{enumerate}
 	
+	Blockchain technology has been proposed as a supplement to help consumers prove ownership of assets in digital systems.  Blockchains are fantastic public recordkeeping systems because they also can’t be backdated or changed without a recorded transaction. In theory, blockchains could transform untrustworthy transactions into distributed databases.
 	%In order to sign something, a mathematical function is used to "sign" a piece of document/data. A digital signature of a document/data is a number generated using a private key. The private key has a corresponding public key. 
 	
 	
@@ -138,8 +139,27 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 \subsubsection{Smart Contracts}
 %	\begin{minipage}[h]{0.5\linewidth}
 		Traditional legal contracts are written to represent the contracting parties. In a smart contract, self-executing source code is used to automatic transactions that are publicly available on the blockchain \cite{ethereumWhitePaper:Online}.
-		Furthermore, smart contracts allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. This allows validation of complex transactions swiftly while maintaining transparency. Although the benefits of using smart contracts are obvious, legal enforceability is difficult because "no central administering authority to decide a dispute" exists \cite{keyfindings:Online}. 
-		
+		Furthermore, smart contracts allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman (See Figure \ref{fig:smartcontractcreation}). This allows validation of complex transactions swiftly while maintaining transparency. Although the benefits of using smart contracts are obvious, legal enforceability is difficult because "no central administering authority to decide a dispute" exists \cite{keyfindings:Online}. 
+
+
+\begin{warpprint}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=1\linewidth]{Diagrams/smartContractsExp.pdf}
+		\caption{Illustrating how a smart contract works}
+		\label{fig:smartContracts}
+	\end{figure}
+\end{warpprint}
+
+\begin{warpHTML}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=1\linewidth]{Diagrams/smartContractsExp.svg}
+		\caption{Illustrating how a smart contract works}
+		\label{fig:smartContracts}
+	\end{figure}
+\end{warpHTML}
+
 		In addition, irreversible and immutable transactions are a disadvantage that hackers can exploit. For example, an amateur coder killed the contract that allowed users to transfer Ether for the Parity Ethereum Wallet, rendering 150 to 300 million dollars completely useless \cite{funnyJoke:Online}. Scrutinizing smart contracts and reducing bugs in production code is essential. An example of smart contract is available in Appendix A \ref{lst:label}.
 %	\end{minipage}
 %	\begin{minipage}[h]{0.5\linewidth}
@@ -173,23 +193,6 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 %		\end{lstlisting}
 %	\end{minipage}
 
-	\begin{warpprint}
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[width=1\linewidth]{Diagrams/smartContractsExp.pdf}
-		\caption{Illustrating how a smart contract works}
-		\label{fig:smartContracts}
-	\end{figure}
-	\end{warpprint}
-	
-	\begin{warpHTML}
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[width=1\linewidth]{Diagrams/smartContractsExp.svg}
-		\caption{Illustrating how a smart contract works}
-		\label{fig:smartContracts}
-	\end{figure}
-	\end{warpHTML}
 %	\newpage
 	
 	

@@ -26,34 +26,35 @@
 Determining which platform is best for smart contracts should be done using a weighted decision matrix, based on the particular application. For internal processes such as supply chains, a private blockchain makes sense (data cannot be changed) and cryptographic auditing with known identities (public keys). For a trustless system that verifies every transaction, using a public blockchain is essential. In comparison, role-based access control is feasible by using a permissioned blockchain. \hfill \break
 %\hfill \break 
 
-Despite the slow speed of the public blockchain, innovations such as side chains enable quick transactions and are used in decentralized game development \cite{loomNetwork:Online}. A permissioned blockchain allows role based access control which is essential in business applications. One example is to prevent unrelated parties from viewing other's data. 	Furthermore, smart contracts allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. This allows validation of complex transactions swiftly while maintaining transparency.
-%modify this for markdown file
 
 \begin{table}[H]
-\centering
-\caption{Sample Decision Matrix for designing a blockchain system}
-\arrayrulecolor{white}
-\arrayrulewidth=1pt
-\renewcommand{\arraystretch}{1.5}
-\rowcolors[\hline]{3}{.!50!white}{}
-\begin{tabular}{D E A B C }
-\multicolumn{1}{l}{}      & \multicolumn{1}{c}{Existing Systems}    & \multicolumn{3}{c}{BlockChain Systems}                                                                                    \\
-\multicolumn{1}{c}{Criteria}                 & \multicolumn{1}{c}{Centralized} & \multicolumn{1}{c}{Public} & \multicolumn{1}{c}{Permissioned} & \multicolumn{1}{c}{Private} \\
-speed and latency         &    5                                     &      7                                 &         7                                    &                  6                     \\
-scalability         &        5                                &     9  8                                &          7                                &                         4               \\
-security and immutablity  &     3                                    &                        7               &    8.5                                         &                   9                     \\
-storage capacity          &        4                                 &            9                           &                         9                    &         6                               \\
-transparency              &   3                                      &                         9              &    7                                            &               5                         \\
-\multicolumn{1}{c}{Total} &    21                                     &               41.6                        &    38.5                                         &          30                             
-\end{tabular}
+	\centering
+	\caption{Sample Decision Matrix for designing a blockchain system}
+	\arrayrulecolor{white}
+	\arrayrulewidth=1pt
+	\renewcommand{\arraystretch}{1.5}
+	\rowcolors[\hline]{3}{.!50!white}{}
+	\begin{tabular}{D E A B C }
+		\multicolumn{1}{l}{}      & \multicolumn{1}{c}{Existing Systems}    & \multicolumn{3}{c}{BlockChain Systems}                                                                                    \\
+		\multicolumn{1}{c}{Criteria}                 & \multicolumn{1}{c}{Centralized} & \multicolumn{1}{c}{Public} & \multicolumn{1}{c}{Permissioned} & \multicolumn{1}{c}{Private} \\
+		speed and latency         &    5                                     &      7                                 &         7                                    &                  6                     \\
+		scalability         &        5                                &     9  8                                &          7                                &                         4               \\
+		security and immutablity  &     3                                    &                        7               &    8.5                                         &                   9                     \\
+		storage capacity          &        4                                 &            9                           &                         9                    &         6                               \\
+		transparency              &   3                                      &                         9              &    7                                            &               5                         \\
+		\multicolumn{1}{c}{Total} &    21                                     &               41.6                        &    38.5                                         &          30                             
+	\end{tabular}
 \end{table}
+
+Despite the slow speed of the public blockchain, innovations such as side chains enable quick transactions and are used in decentralized game development \cite{loomNetwork:Online}. A permissioned blockchain allows role based access control which is essential in business applications. One example is to prevent unrelated parties from viewing other's data. 	Furthermore, smart contracts allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. This allows validation of complex transactions swiftly while maintaining transparency. Usage private and permissioned blockchain cannot be ruled out, but generally, a public blockchain is advantagous.
+%modify this for markdown file
 
 
 \subsection{Engineering Analysis}
 %\chapter{Discussion}
  \subsubsection{Security of Smart Contracts}
  
- Blockchain transactions are secure because that are immutable and decentralized. However, exploiting bugs in smart contracts are financially devastating \cite{funnyJoke:Online} as fraudulent transactions cannot be reverted. Disconnects between software developers and security experts has resulted in 3 out of 4 "applications produced by software vendors fail to meet OWASP Top 10 standards" \cite{veraCode:Report}. Although blockchain technologies increase underlying security and reliability, exploiting poorly coded and insecure smart contracts remains a major risk, and releasing open-source code allows hackers exploit flaws in the codebase before corrective processes are applied.  
+ Blockchain transactions are secure because that are immutable and decentralized. However, exploiting bugs in smart contracts are financially devastating \cite{funnyJoke:Online} as fraudulent transactions cannot be reverted. Disconnects between software developers and security experts has resulted software vulnerabilities which are the root cause of computer security issues \cite{Liu:2012:SVD:2475183.2476546}. Although blockchain technologies increase underlying security and reliability, exploiting poorly coded and insecure smart contracts remains a major risk, and releasing open-source code allows hackers exploit flaws in the codebase before corrective processes are applied.  
 
 
 
@@ -90,6 +91,27 @@ where off-chain events are computationally verifiable. Just like not all contrac
 obligations can be represented in code, not all off-chain events can be captured as
 computer-readable data or measured with objective criteria. 
 
+
+\subsubsection{Transparent and cheaper transactions}
+As in the analog world, the negotiation of the
+content and the clauses remains. Still, the involved parties need to agree on the contracts and
+the modalities considering the potentials of a decentralized execution infrastructure.
+Since the contract is represented as software code, the implementation effort (see Figure \ref{fig:smartcontractcreation})
+must not be neglected.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Images/smartContractCreation}
+	\caption{Lifecycle of a smart creation \cite{Sillaber2017}}
+	\label{fig:smartcontractcreation}
+\end{figure}
+
+ From an organizational point of the view, the question arises, which
+persons have the required skills to implement
+a smart contract, i.e., translation into machine readable code. In addition, the machine readable
+code, i.e., programming language, needs to be powerful enough to express the required norms
+with all necessary conditions.
+
+
 \subsubsection{Performance of Smart Contracts}
 Statistically, every computer program coding error ("bugs"). It is practically impossible to ensure perfect performance of a smart contract. Immutable, self-executing smart contracts may protect  
 the transaction from unexpected human interactions but introduce the risk of
@@ -102,10 +124,19 @@ that such direct coding of smart contracts would force lawyers to be more precis
 structured in describing the rights and obligations of the parties \cite{stepWolf}. Since most lawyers are unlikely to become programmers and vice-verse, converting existing legal documents into smart contracts is undesirable. In order to create smart contracts, obligations must be reported in a  detailed manner and provide objective criteria for execution.
 
 
-\subsubsection{Transparency and Speed of Blockchain Transactions}
+\subsubsection{Drawbacks of Blockchain Transactions}
 
 	
-Disadvantages of blockchain data storage include difficult retrieving relevant information (without an abstraction layer, the entire blockchain or a single transaction is returned), users will experience latency before transactions are validated, 	\footnote{For bitcoin, it takes 10 minutes before blocks of transactions are validated (mining process)} and writing to the blockchain is relatively expensive compared to traditional systems. Smart contracts are useful because they cannot be changed by the parties involved in the transactions, yet, in some cases such as criminal activity, the ability to reverse transactions or freeze accounts is extremely desirable. For example EOS, a centralized blockchain platform, was criticized for freezing accounts without due process and community backing. \cite{EOS:Online}. %In addition, centralized systems require users to trust vendors and oftentimes personal data usage lacks transparency.
+Disadvantages of blockchain data storage include difficult retrieving relevant information (without an abstraction layer, the entire blockchain or a single transaction is returned), users will experience latency before transactions are validated, 	\footnote{For bitcoin, it takes 10 minutes before blocks of transactions are validated (mining process)} and writing to the blockchain is relatively expensive compared to traditional systems. Smart contracts are useful because they cannot be changed by the parties involved in the transactions, yet, in some cases such as criminal activity, the ability to reverse transactions or freeze accounts is extremely desirable. For example EOS, a centralized blockchain platform, was criticized for freezing accounts without due process and community backing. \cite{EOS:Online}.
+
+% Rewrite here.
+The desirable characteristics such as integrity and immutability of data, e.g., transactions and
+smart contracts, require an active mining pool. Miners need to invest energy and resources,
+i.e. computational power, to participate in the consensus process and to prevent the corruption
+of blocks. This investment has to be incentivized to prevent miners from not participating.
+
+\newpage
+ %In addition, centralized systems require users to trust vendors and oftentimes personal data usage lacks transparency.
 %In this sense, smart
 %contracts could in fact reduce ambiguity because must be capable of a single
 %interpretation. Given that most lawyers are unlikely to become programmers (just as
