@@ -7,15 +7,16 @@
 \begin{minipage}[h]{0.45\linewidth}
 %Print version of table
 \begin{warpprint}
-\begin{table}[H]{}
+\begin{table}[H]
+\centering
 \renewcommand\arraystretch{1.4}\arrayrulecolor{blue}
 \captionsetup{singlelinecheck=false, labelfont=sc, labelsep=quad}
 \caption{Timeline of Cryptocurrency}%\vskip -1.5ex
 % lwarp table, and print edition (uncomment stuff below for good copy)
-\begin{tabular}{c p{5cm}}%
+%\begin{tabular}{l l }%
 % Good copy for print edition
-%\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
-%\toprule
+\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
+\toprule
 %\addlinespace[1.5ex]
 2008 & Bitcoin White Paper \\
 2009 & Bitcoin Genesis Block\\
@@ -35,10 +36,10 @@
 %\captionsetup{singlelinecheck=false, labelfont=sc, labelsep=quad}
 \caption{Timeline of Cryptocurrency}%\vskip -1.5ex
 % lwarp table, and print edition (uncomment stuff below for good copy)
-\begin{tabular}{c p{5cm}}%
+%\begin{tabular}{c p{5cm}}%
 % Good copy for print edition
-%\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
-%\toprule
+\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
+\toprule
 %\addlinespace[1.5ex]
 2008 & Bitcoin White Paper \\
 2009 & Bitcoin Genesis Block\\
@@ -92,12 +93,12 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 	\end{figure}
 	\end{warpHTML}
 	
-	A decentralized application, or DApp are deployed on peer to peer networks such as Ethereum or on the cloud \footnotemark. A decentralized system (peer to peer) has many advantages over a conventional centralized network including no single points of failure, cheaper distribution (servers are expensive), faster upload speeds. 
-	\footnotetext[1]{Amazon recently started offering blockchain templates on AWS. %\cite{ethereumWhitePaper:Online}
+	A decentralized application, or \gls{DApp} are deployed on peer to peer networks such as \gls{Ethereum} or on the cloud \footnotemark. A decentralized system (peer to peer) has many advantages over a conventional centralized network including no single points of failure, cheaper distribution (servers are expensive), faster upload speeds. 
+	\footnotetext[1]{Amazon recently started offering blockchain templates on Amazon Web Services (AWS). %\cite{ethereumWhitePaper:Online}
 	}
 	
 	
-	Despite, the obvious advantages of decentralized and blockchain technologies,  a lack of resources for unpopular materials may result in prolonged downloads. An equivalent anecdote is a inadequately seeded torrent results in intolerable download speeds.  Whereas a traditional database only checks, writes and stores data once, a decentralized blockchain system require thousands of operations to write and store data, therefore the costs of maintaining a blockchain are substantial higher and only justifiable with increased utility/security \cite{EthScale:Online}. 
+	Despite, the obvious advantages of decentralized and \gls{blockchain} technologies,  a lack of resources for unpopular materials may result in prolonged downloads. An equivalent anecdote is a inadequately seeded torrent results in intolerable download speeds.  Whereas a traditional database only checks, writes and stores data once, a decentralized blockchain system require thousands of operations to write and store data, therefore the costs of maintaining a \gls{blockchain} are substantial higher and only justifiable with increased utility/security \cite{EthScale:Online}. 
 	%\paragraph{Types of Blockchains}
 	%\begin{itemize}
 	%\item[---]  \textbf{Public blockchains} are large distributed networks that are run through a native token such as bitcoin or ether. Anyone can participate and the community maintains its open-source code. The two largest public blockchains are Ethereum and Bitcoin.%They’re open for anyone to participate at any level and have open-source code that their community maintains.
@@ -111,13 +112,13 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 	% Consider taking this part out, too detailed for the high level explaination.
 	\paragraph{Public and Private Keys}
 	 In a \gls{blockchain} system, any key holder can use their private key to sign a piece of data. This results in a signature.  
-	  In a \gls{Dapp}, this can be used for:
+	  In a \gls{DApp}, this can be used for:
 	 \begin{enumerate}
 		\item Recovering the public key (ethereum account address) of the Author.
 		\item Verify if the raw data is identical  using the Author's public key. 
 	\end{enumerate}
 	
-	Blockchain technology has been proposed as a supplement to help consumers prove ownership of assets in digital systems.  Blockchains are fantastic public recordkeeping systems because they also can’t be backdated or changed without a recorded transaction. In theory, blockchains could transform untrustworthy transactions into distributed databases.
+	Blockchain technology has been proposed as a supplement to help consumers prove ownership of assets in digital systems.  Blockchains are fantastic public recordkeeping systems because they also can’t be backdated or changed without a recorded transaction. In theory, \glspl{blockchain} could transform untrustworthy transactions into distributed databases.
 	%In order to sign something, a mathematical function is used to "sign" a piece of document/data. A digital signature of a document/data is a number generated using a private key. The private key has a corresponding public key. 
 	
 	
@@ -139,7 +140,7 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 \subsubsection{Smart Contracts}
 %	\begin{minipage}[h]{0.5\linewidth}
 		Traditional legal contracts are written to represent the contracting parties. In a smart contract, self-executing source code is used to automatic transactions that are publicly available on the blockchain \cite{ethereumWhitePaper:Online}.
-		Furthermore, smart contracts allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman (See Figure \ref{fig:smartcontractcreation}). This allows validation of complex transactions swiftly while maintaining transparency. Although the benefits of using smart contracts are obvious, legal enforceability is difficult because "no central administering authority to decide a dispute" exists \cite{keyfindings:Online}. 
+		Furthermore, \glspl{smart contract} allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman (See Figure \ref{fig:smartcontractcreation}). This allows validation of complex transactions swiftly while maintaining transparency. Although the benefits of using smart contracts are obvious, legal enforceability is difficult because "no central administering authority to decide a dispute" exists \cite{keyfindings:Online}. 
 
 
 \begin{warpprint}
@@ -160,12 +161,12 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 	\end{figure}
 \end{warpHTML}
 
-		In addition, irreversible and immutable transactions are a disadvantage that hackers can exploit. For example, an amateur coder killed the contract that allowed users to transfer Ether for the Parity Ethereum Wallet, rendering 150 to 300 million dollars completely useless \cite{funnyJoke:Online}. Scrutinizing smart contracts and reducing bugs in production code is essential. An example of smart contract is available in Appendix A \ref{lst:label}.
+		In addition, irreversible and immutable transactions are a disadvantage that hackers can exploit. For example, an amateur coder killed the contract that allowed users to transfer Ether for the Parity \gls{Ethereum} Wallet, rendering 150 to 300 million dollars completely useless \cite{funnyJoke:Online}. Scrutinizing smart contracts and reducing bugs in production code is essential. An example of smart contract is available in Appendix A \ref{lst:label}.
 		
 		% Rewrite here.
-		The desirable propertiies of a blockchain such as integrity and immutability of data, e.g., transactions and
+		The desirable properties of a \gls{blockchain} such as integrity and immutability of data, e.g., transactions and
 		smart contracts, require an active mining pool. In a proof of work consensus (POW) mechanism,  miners need to invest energy and resources,
-		i.e. computational power, to participate in the consensus process and prevent tampering blocks. The investment must incentivize miners to verify transactions and/or run nodes.%This investment has to be incentivized to prevent miners from not participating.
+		i.e. computational power, to participate in the consensus process and prevent tampering blocks. Additionally, miners are incentivized to run nodes that verify transactions through bitcoin or ether. %The investment must incentive miners to verify transactions and/or run nodes.%This investment has to be incentivized to prevent miners from not participating.
 %	\end{minipage}
 %	\begin{minipage}[h]{0.5\linewidth}
 %		\begin{lstlisting}[language=Solidity,caption=Smart contract in Solidity]
@@ -206,7 +207,7 @@ In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to s
 	%Despite the slow speed of the public blockchain, innovations such as \gls{side chains} enable quick transactions and are used in blockchain game development \cite{loomNetwork:Online}. % 
 
 \subsubsection{Advantages and Disadvantages of Decentralization }
-Currently, centralized IT systems are vulnerable to "malicious attacks, software and hardware faults, human mistakes (e.g., software and hardware misconfigurations") \cite{5936160}. Decentralized systems have no single point of failure, improved security and are more transparent, however, efficient code is more important in smart contracts. As illustrated in Figure \ref*{fig:DApp} a blockchain-server architecture model allows for developers to implement decentralized applications with smart contracts while maintaining the flexibility and simplicity of retrieving and sending information.	
+Currently, centralized IT systems are vulnerable to "malicious attacks, software and hardware faults, human mistakes (e.g., software and hardware misconfigurations") \cite{5936160}. Decentralized systems have no single point of failure, improved security and are more transparent, however, efficient code is more important in smart contracts. As illustrated in Figure \ref*{fig:DApp} a \gls{blockchain}-server architecture model allows for developers to implement decentralized applications with smart contracts while maintaining the flexibility and simplicity of retrieving and sending information.	
 
 \subsection{Objective}
 The prominence of cryptocurrency and decentralized applications suggests usage of smart contracts will experience explosive growth.
@@ -217,7 +218,7 @@ Currently commonplace transactions require days to process and for parties verif
 
 \subsubsection{Purpose}
 Leveraging existing blockchain technologies can automatic the majority of steps and cut out the middlemen, resulting in buyers conversing directing with sellers.
-% Although smart contracts have immense potential to simplify transactions, issues such as limiting access to information, latency when updating (takes 10 minutes to write info to bitcoin blockchain), and immutability of translations (cannot undo transfer of assets) must be addressed.
+Although smart contracts have immense potential to simplify transactions, issues such as limiting access to information, latency when updating (takes 10 minutes to write info to bitcoin blockchain), and immutability of translations (cannot undo fraudulent transfer of assets) must be addressed.
 % See https://www.cs.auckland.ac.nz/research/groups/ssg/homepages/yu-cheng/ytu001_PhDThesis.pdf
 % https://researchspace.auckland.ac.nz/handle/2292/22092
 \subsection{Aims}
@@ -232,7 +233,7 @@ The aims of this project are to illustrate how a decentralized blockchain system
 \end{enumerate}
 \subsubsection{Limitations}
 
-The regulatory uncertainty and impact of future regulations on blockchain technologies such as smart contracts will not be investigated. In addition, criminal usage of cryptocurrencies to avoid taxation and legal repercussions are beyond the scope of this report. In addition the impacts of quantum computing altering the validity of modern cryptography algorithms will not be investigated.
+The regulatory uncertainty and impact of future regulations on \gls{blockchain} technologies such as \glspl{smart contract} will not be investigated. In addition, criminal usage of cryptocurrencies to avoid taxation and legal repercussions are beyond the scope of this report. In addition the impacts of quantum computing altering the validity of modern cryptography algorithms will not be investigated.
 %The performance of the linear generator in extreme storm events will not be investigated as this
 %cannot be accurately modeled using Airy linear wave theory. This project will be based on
 %numerical simulations; no physical model will be tested to validate the results.

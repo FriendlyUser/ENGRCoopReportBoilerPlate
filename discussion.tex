@@ -23,7 +23,7 @@
 
 % https://ethereum.stackexchange.com/questions/3/what-is-meant-by-the-term-gas
 
-Determining which platform is best for smart contracts should be done using a weighted decision matrix, based on the particular application. For internal processes such as supply chains, a private blockchain makes sense (data cannot be changed) and cryptographic auditing with known identities (public keys). For a trustless system that verifies every transaction, using a public blockchain is essential. In comparison, role-based access control is feasible by using a permissioned blockchain. \hfill \break
+Determining which platform is best for smart contracts should be done using a weighted decision matrix, based on the particular application. For internal processes such as supply chains, a private \gls{blockchain} is sensible (data cannot be changed) and cryptographic auditing with known identities (public keys). For a trustless system that verifies every transaction, using a public blockchain is essential. In comparison, role-based access control is feasible by using a permissioned blockchain. \hfill \break
 %\hfill \break 
 
 
@@ -46,7 +46,7 @@ Determining which platform is best for smart contracts should be done using a we
 	\end{tabular}
 \end{table}
 
-Despite the slow speed of the public blockchain, innovations such as side chains enable quick transactions and are used in decentralized game development \cite{loomNetwork:Online}. A permissioned blockchain allows role based access control which is essential in business applications. One example is to prevent unrelated parties from viewing other's data. 	Furthermore, smart contracts allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. This allows validation of complex transactions swiftly while maintaining transparency. Usage private and permissioned blockchain cannot be ruled out, but generally, a public blockchain is advantagous.
+Despite the slow speed of the public \gls{blockchain}, innovations such as side chains enable quick transactions and are used in decentralized game development \cite{loomNetwork:Online}. A permissioned \gls{blockchain} allows role based access control which is essential in business applications. One example is to prevent unrelated parties from viewing other's data. 	Furthermore, smart contracts allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. This allows validation of complex transactions swiftly while maintaining transparency. Usage private and permissioned blockchain cannot be ruled out, but generally, a public blockchain is advantageous.
 %modify this for markdown file
 
 
@@ -54,12 +54,12 @@ Despite the slow speed of the public blockchain, innovations such as side chains
 %\chapter{Discussion}
  \subsubsection{Security of Smart Contracts}
  
- Blockchain transactions are secure because that are immutable and decentralized. However, exploiting bugs in smart contracts are financially devastating \cite{funnyJoke:Online} as fraudulent transactions cannot be reverted. Disconnects between software developers and security experts has resulted software vulnerabilities which are the root cause of computer security issues \cite{Liu:2012:SVD:2475183.2476546}. Although blockchain technologies increase underlying security and reliability, exploiting poorly coded and insecure smart contracts remains a major risk, and releasing open-source code allows hackers exploit flaws in the codebase before corrective processes are applied.  
+ Blockchain transactions are secure because that are immutable and decentralized. However, exploiting bugs in smart contracts are financially devastating \cite{funnyJoke:Online} as fraudulent transactions cannot be reverted. Disconnects between software developers and security experts has resulted software vulnerabilities which are the root cause of computer security issues \cite{Liu:2012:SVD:2475183.2476546}. Although \gls{blockchain} technologies increase underlying security and reliability, exploiting poorly coded and insecure \gls{smart contract} remains a major risk, and releasing open-source code allows hackers exploit flaws in the codebase before corrective processes are applied.  
 
 
 
 \subsubsection{Brute force cracking of private keys}
-A ethereum key, which is randomly selected 256 digits \cite{ethereumWhitePaper:Online}, is very difficult to hack. A simple calculation illustrates the impracticalities of brute forcing for a 256 bit key. Assuming that a 1 exaflop ($10^{18}$ calculations per second) 15 megawatts supercomputer \cite{Service617} is used, electricity costs are 0.1326 per kWH \cite{BCHydroRates}. % In order to hack a 256 bit key by brute force $2^{256}$ decryptions are required. Powering the machine costs \$ 1.989 million excluding maintenance and hardware costs. It can perform
+A \gls{Ethereum} key, which is randomly selected 256 digits \cite{ethereumWhitePaper:Online}, is very difficult to hack. A simple calculation illustrates the impracticalities of brute forcing for a 256 bit key. Assuming that a 1 exaflop ($10^{18}$ calculations per second) 15 megawatts supercomputer \cite{Service617} is used, electricity costs are 0.1326 per kWH \cite{BCHydroRates}. % In order to hack a 256 bit key by brute force $2^{256}$ decryptions are required. Powering the machine costs \$ 1.989 million excluding maintenance and hardware costs. It can perform
 \vspace*{-0.1cm}
 \begin{align}
 & \text{Possible number of private keys:} = 2^{256} = 1.1569 \times 10^{77} \text{decryptions} \\
@@ -77,14 +77,13 @@ A ethereum key, which is randomly selected 256 digits \cite{ethereumWhitePaper:O
 
 The plots in Figure \ref{security:fig2} illustrate how brute forcing hacking is economical unfeasable, unless computational power grows exponentially.
 
-Scalability is the biggest issue facing blockchain technology, because storage is expensive, and public blockchains are trustless, every transaction is verified \cite{EthScale:Online}. 
+Scalability is the biggest issue facing \gls{blockchain} technology, because storage is expensive, and public blockchains are trustless, every transaction is verified \cite{EthScale:Online}. 
 
 \subsubsection{Enforcability of Smart Contracts}
 
 
-
 If contractual fulfillment are delegated to code, it becomes paramount to
-ensure that such code contains no errors.  Oftentimes smart contracts run on top of a blockchain, so the code of the smart contract would be neither incorruptible nor secure. When self-enforcement guarantees performance and subsequent human intervention is disallowed, modification of a  smart contract is impossible, logically, its
+ensure that such code contains no errors.  Oftentimes \glspl{smart contract} run on top of a \gls{blockchain}, so the code of the smart contract would be neither incorruptible nor secure. When self-enforcement guarantees performance and subsequent human intervention is disallowed, modification of a  smart contract is impossible, logically, its
 code must be perfect. 
 
 Lastly, it must be acknowledged that self-enforcement may be limited to transactions
@@ -108,27 +107,28 @@ must not be neglected.
 
  From an organizational point of the view, the question arises, which
 persons have the required skills to implement
-a smart contract, i.e., translation into machine readable code. In addition, the machine readable
+a \gls{smart contract}, i.e., translation into machine readable code. In addition, the machine readable
 code, i.e., programming language, needs to be powerful enough to express the required norms
 with all necessary conditions.
 
 
 \subsubsection{Performance of Smart Contracts}
-Statistically, every computer program coding error ("bugs"). It is practically impossible to ensure perfect performance of a smart contract. Immutable, self-executing smart contracts may protect  
+Statistically, every computer program coding error ("bugs"). It is practically impossible to ensure perfect performance of a \gls{smart contract}. Immutable, self-executing smart contracts may protect  
 the transaction from unexpected human interactions but introduce the risk of
 performance being affected by coding errors. Given that the smart contract may execute incorrectly due to a coding error, the practical difficulty of writing bug-free code, alleviating and reducing risk from vulnerabilities is essential.
 
 
 % Rewrite heavily 
 Technical writings suggest
-that such direct coding of smart contracts would force lawyers to be more precise and
-structured in describing the rights and obligations of the parties \cite{stepWolf}. Since most lawyers are unlikely to become programmers and vice-verse, converting existing legal documents into smart contracts is undesirable. In order to create smart contracts, obligations must be reported in a  detailed manner and provide objective criteria for execution.
+that such direct coding of \glspl{smart contract} would force lawyers to be more precise and
+structured in describing the rights and obligations of the parties \cite{stepWolf}. \Glspl{smart
+contract} could reduce ambiguity because it must be capable of a single interpretation by a code complier. Since most lawyers are unlikely to become programmers and vice-verse, converting existing legal documents into \glspl{smart contract} is undesirable. In order to create \glspl{smart contract}, obligations must be reported in a  detailed manner and provide objective criteria for execution.
 
 
 \subsubsection{Drawbacks of Blockchain Transactions}
 
 	
-Disadvantages of blockchain data storage include difficult retrieving relevant information (without an abstraction layer, the entire blockchain or a single transaction is returned), users will experience latency before transactions are validated, 	\footnote{For bitcoin, it takes 10 minutes before blocks of transactions are validated (mining process)} and writing to the blockchain is relatively expensive compared to traditional systems. Smart contracts are useful because they cannot be changed by the parties involved in the transactions, yet, in some cases such as criminal activity, the ability to reverse transactions or freeze accounts is extremely desirable. For example EOS, a centralized blockchain platform, was criticized for freezing accounts without due process and community backing. \cite{EOS:Online}.
+Disadvantages of \gls{blockchain} data storage include difficult retrieving relevant information (without an abstraction layer, the entire \gls{blockchain} or a single transaction is returned), users will experience latency before transactions are validated, 	\footnote{For bitcoin, it takes 10 minutes before blocks of transactions are validated (mining process)} and writing to the blockchain is relatively expensive compared to traditional systems. \Glspl{smart contract} are useful because they cannot be changed by the parties involved in the transactions, yet, in some cases such as criminal activity, the ability to reverse transactions or freeze accounts is extremely desirable. For example EOS, a centralized \gls{blockchain} platform, was criticized for freezing accounts without due process and community backing. \cite{EOS:Online}.
 
 
 
@@ -136,7 +136,8 @@ Disadvantages of blockchain data storage include difficult retrieving relevant i
  %In addition, centralized systems require users to trust vendors and oftentimes personal data usage lacks transparency.
 %In this sense, smart
 %contracts could in fact reduce ambiguity because must be capable of a single
-%interpretation. Given that most lawyers are unlikely to become programmers (just as
+%interpretation.
+% Given that most lawyers are unlikely to become programmers (just as
 %most programmers are unlikely to become skilled drafters), it is suggested that even if
 %smart contracts cannot be coded directly, contracts could be drafted with encoding in
 %mind. To this end, the contracting parties (and their lawyers) could reorient the
