@@ -7,12 +7,109 @@
 \input{formatting.tex}
 \input{glossaries.tex}
 
+\makeglossaries
+%\newcommand{\onlineCite}{[Online] Available}
+\begin{filecontents*}{ENGR003.bib}
+@Misc{sharepoint:Online,
+	howpublished = { \onlineCite \url{https://support.office.com/en-us/article/What-is-SharePoint-97b915e6-651b-43b2-827d-fb25777f446f}},
+	title = {What is SharePoint? - Office Support},
+	note = {Accessed December 11, 2016},
+}
+@Misc{issueDefinition:Online,
+	howpublished = { \onlineCite \url{https://confluence.atlassian.com/jira064/what-is-an-issue-720416138.html}},
+	title = {What is an Issue},
+	note = {Accessed December 11, 2016},
+}
+
+@Misc{PermissionsOverview:Online,
+	howpublished = { \onlineCite \url{https://confluence.atlassian.com/jirasoftwarecloud/permissions-overview-764478244.html}},
+	title = {Permissions overview },
+	note = {Accessed December 13, 2016},
+}
+@Misc{NASA:Online,
+	howpublished = { \onlineCite \url{http://summit.atlassian.com/archives/2010/presentations/collaboration-and-projects/confluence-wiki-at-nasa.jsp}},
+	title = {Confluence at NASA: Where No Wiki Has Gone Before },
+	note = {Accessed December 13, 2016},
+}
+@Misc{issues:Online,
+	howpublished = { \onlineCite \url{https://confluence.atlassian.com/jirakb/crashes-and-performance-issues-troubleshooting-203394749.html}},
+	title = {Crashes and Performance Issues Troubleshooting},
+	note = {Accessed December 15, 2016},
+}
+@Misc{JAC:Online,
+	howpublished = { \onlineCite \url{https://confluence.atlassian.com/doc/integrating-jira-and-confluence-2825.html}},
+	title = {Integrating JIRA and Confluence},
+	note = {Accessed December 17, 2016},
+}
+@Misc{confluence:Online,
+	howpublished = { \onlineCite \url{https://confluence.atlassian.com/doc/integrating-jira-and-confluence-2825.html}},
+	title = {Advanced and Special Uses of Confluence},
+	note = {Accessed December 17, 2016},
+}
+
+@misc{bitcoinWhitePaper:Online,
+	howpublished = { \onlineCite \url{https://bitcoin.org/bitcoin.pdf}},
+	title = {Bitcoin White Paper},
+	note = {Accessed April 25, 2018},
+}
+
+@misc{bitCoinProblems:Online,
+	howpublished = { \onlineCite \url{https://www.forbes.com/sites/forbestechcouncil/2018/03/29/the-problems-with-bitcoin-and-the-future-of-blockchain}},
+	author = {Saeed Elnaj},
+	title = {The Problems With Bitcoin And The Future Of Blockchain
+	},
+	note = {Accessed May 06, 2018},
+}
+@misc{ethereumWhitePaper:Online,
+	howpublished = { \onlineCite \url{https://github.com/ethereum/wiki/wiki/White-Paper}},
+	title = {Ethereum White Paper},
+	note = {Accessed April 25, 2018},
+}
+
+@misc{hyperledgerComposer:Online,
+	howpublished = { \onlineCite \url{https://www.hyperledger.org/wp-content/uploads/2017/05/Hyperledger-Composer-Overview.pdf}},
+	title = {Hyperledger Composer Overview},
+	note = {Accessed May 27, 2018},
+} 
+
+
+// Finish off smart Contracts session with this reference
+@misc{funnyJoke:Online,
+	title = {Yes, this kid really just deleted 300 MILLION by messing around with Ethereum’s smart contracts.},
+	author = {Thijs Maas},
+	howpublished = {\onlineCite \url{https://hackernoon.com/yes-this-kid-really-just-deleted-150-million-dollar-by-messing-around-with-ethereums-smart-2d6bb6750bb9}},
+	note = {Accessed May 29, 2018},
+}
+
+@Article{Sillaber2017,
+author="Sillaber, Christian
+and Waltl, Bernhard",
+title="Life Cycle of Smart Contracts in Blockchain Ecosystems",
+journal="Datenschutz und Datensicherheit - DuD",
+year="2017",
+month="Aug",
+day="01",
+volume="41",
+number="8",
+pages="497--500",
+abstract="This paper discusses the life cycle of decentralized smart contracts, i.e. digital and executable representations of rights and obligations in a multi-party environment. The life cycle relies on blockchain technology, i.e. a distributed digital ledger, to ensure proper implementation and integrity of the smart contracts. The life cycle consists of four subsequent phases: Creation, freezing, execution, and finalization. For each phase actors and technological services are identified and explained in detail. With the life cycle at hand, risks and limitations of smart contracts and the underlying blockchain technology are briefly discussed.",
+issn="1862-2607",
+doi="10.1007/s11623-017-0819-7",
+url="https://doi.org/10.1007/s11623-017-0819-7"
+}	
+\end{filecontents*}
+\addbibresource{ENGR003.bib}
+
 
 \linespread{1.25}
 
 % Reason: the standard line skip means a factor of 1.2 (such as font height 10pt, base line skip 12pt). Multiply with \linespread, so you get 1.25*1.2 = 1.5, so one-half.
 
 \renewcommand{\printTitle}{Determining Potential Uses of JIRA and Confluence}
+
+\newcommand{\foo}{\color{blue}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
+
+\usepackage{algorithm,algpseudocode}% http://ctan.org/pkg/{algorithms,algorithmicx}
 
 \begin{document}
 %% Use roman numercals page numbering for front matter, letter of transmittal, and table of contents.
@@ -41,8 +138,8 @@
 \phantomsection
 \listoftables					  %List of Tables
 
-\clearpage
-\lstlistoflistings				  %List of Code listings
+%\clearpage
+%\lstlistoflistings				  %List of Code listings
 %\addcontentsline{toc}{section}{{Listings}}	% ADD HEADING TO TOC
 \endgroup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,9 +172,228 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Inserting Main Content %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{introduction.tex}
-\input{discussion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}  
+\begin{minipage}[h]{0.45\linewidth}
+%Print version of table
+\begin{warpprint}
+\begin{table}[H]
+\centering
+\renewcommand\arraystretch{1.4}\arrayrulecolor{blue}
+\captionsetup{singlelinecheck=false, labelfont=sc, labelsep=quad}
+\caption{Timeline of Cryptocurrency}%\vskip -1.5ex
+% lwarp table, and print edition (uncomment stuff below for good copy)
+%\begin{tabular}{l l }%
+% Good copy for print edition
+\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
+\toprule
+%\addlinespace[1.5ex]
+2008 & Bitcoin White Paper \\
+2009 & Bitcoin Genesis Block\\
+2013 & 1 BTC = \$ 31 USD\\
+2013 & \gls{Ethereum} White Paper \\
+2015 & \gls{Ethereum} Genesis Block\\
+2015 & \gls{HyperLedger} starts \\
+2017 & Over 1000 different cryptocurrencies \\
+2018 & AWS Blockchain Templates \\
+\end{tabular}
+\end{table}
+\end{warpprint}
+% HTML VERSION OF TABLE
+\begin{warpHTML}
+\begin{table}[H]
+\renewcommand\arraystretch{1.4}\arrayrulecolor{blue}
+%\captionsetup{singlelinecheck=false, labelfont=sc, labelsep=quad}
+\caption{Timeline of Cryptocurrency}%\vskip -1.5ex
+% lwarp table, and print edition (uncomment stuff below for good copy)
+%\begin{tabular}{c p{5cm}}%
+% Good copy for print edition
+\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
+\toprule
+%\addlinespace[1.5ex]
+2008 & Bitcoin White Paper \\
+2009 & Bitcoin Genesis Block\\
+2013 & 1 BTC = \$ 31 USD\\
+2013 & \gls{Ethereum} White Paper \\
+2015 & \gls{Ethereum} Genesis Block\\
+2015 & \gls{HyperLedger} starts \\
+2017 & Over 1000 different cryptocurrencies \\
+2018 & AWS Blockchain Templates \\
+\end{tabular}
+\end{table}
+\end{warpHTML}
+\end{minipage}%
+\begin{minipage}[h]{0.55\linewidth}
+In 2008 bitcoin white paper \cite{bitcoinWhitePaper:Online} described a way to solve the double spending problem without a centralized body using \gls{blockchain}. Although, the value of bitcoin (BTC) has grown exponentially, high computational and energy consumption in mining and slow performance \cite{bitCoinProblems:Online}.  Released in July 30, 2015, Ethereum, an open-source platform based on blockchain technology, distinguishes itself from bitcoin through faster transactions, unlimited processing capability for \glspl{smart contract}, and its network is optimized to support \gls{DApp} \cite{ethereumWhitePaper:Online}.
+\end{minipage}%
+
+\subsection{Harvest Rewards Program}
+
+The prevalence of music streaming platforms has been great for its ability to expose listeners to new music in an easy and accessible way, but the shift from physical music sales to digital streaming has created tension and confusion in the music industry. Artists may receive compensation based on total listens from streaming services, but there are many stories which outline how little profit artists actually receive from these royalties. This is an issue even for massively successful artists, let alone emerging or independent artists. As traditional record sales decrease, artists will become increasingly reliant on revenue from streaming platforms. The current model cannot meet this demand and so a new method of compensation and exchange must be developed to allow the music industry and economy to have continued growth while not leaving behind the artists and creators that drive the industry.
+
+\paragraph{Goal of System} 
+
+The Membran Entertainment Canada Rewards Program harnesses the Ethereum blockchain to provide a tool that music businesses can use as an additional incentive for their artists and clients. The goal is not to fix the royalty system, but to instead add a new method by which artists can be compensated for plays of their music. In theory, this program can create a new exchange economy where musicians and artists can reinvest the value of streaming plays into their product and brand. 
+
+Any participating music businesses could implement this program. They will be able to issue digital tokens to their roster of artists using their own measurements, but the recommended method would be 1 Token for 1 Play. This can be done in addition to or instead of traditional streaming royalty payments, at the discretion of the music business. Tokens will be distributed on a regular basis (monthly, quarterly, etc.) to the participating artists.
+
+
+\subsection{Smart Contracts}
+%	\begin{minipage}[h]{0.5\linewidth}
+		Traditional legal contracts are written to represent the contracting parties. In a smart contract, self-executing source code is used to automatic transactions that are publicly available on the blockchain \cite{ethereumWhitePaper:Online}.
+		Furthermore, \glspl{smart contract} allow buyers and sellers exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. This allows validation of complex transactions swiftly while maintaining transparency. Although the benefits of using smart contracts are obvious, legal enforceability is difficult because "no central administering authority to decide a dispute" exists \cite{keyfindings:Online}. 
+
+
+\begin{warpprint}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=1\linewidth]{smartContractsExp.pdf}
+		\caption{Illustrating how a smart contract works}
+		\label{fig:smartContracts}
+	\end{figure}
+\end{warpprint}
+
+\begin{warpHTML}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=1\linewidth]{smartContractsExp.svg}
+		\caption{Illustrating how a smart contract works}
+		\label{fig:smartContracts}
+	\end{figure}
+\end{warpHTML}
+
+		In addition, irreversible and immutable transactions are a disadvantage that hackers can exploit. For example, an amateur coder killed the contract that allowed users to transfer Ether for the Parity \gls{Ethereum} Wallet, rendering 150 to 300 million dollars completely useless \cite{funnyJoke:Online}. Scrutinizing smart contracts and reducing bugs in production code is essential. An example of smart contract is available in Appendix A% \ref{lst:label}.
+		
+		% Rewrite here.
+		The desirable properties of a \gls{blockchain} such as integrity and immutability of data, e.g., transactions and
+		smart contracts, require an active mining pool. In a proof of work consensus (POW) mechanism,  miners need to invest energy and resources,
+		i.e. computational power, to participate in the consensus process and prevent tampering blocks. Additionally, miners are incentivized to run nodes that verify transactions through bitcoin or ether. %The investment must incentive miners to verify transactions and/or run nodes.%This investment has to be incentivized to prevent miners from not participating.
+	
+\subsection{Representation of Digital Assets on the Blockchain}
+
+\paragraph{ERC20 Token Standard}
+
+The ERC20 token standard allows any tokens on Ethereum to be re-used by other applications: from wallets to decentralized exchanges. This is the most commonly used token on the Ethereum network at the moment.
+
+
+\paragraph{ERC721 Token Standard}
+
+Non-fungible tokens
+The following standard allows for the implementation of a standard API for NFTs within smart contracts. This standard provides basic functionality to track and transfer NFTs.
+
+We considered use cases of NFTs being owned and transacted by individuals as well as consignment to third party brokers/wallets/auctioneers ("operators"). NFTs can represent ownership over digital or physical assets. We considered a diverse universe of assets, and we know you will dream up many more:
+
+Physical property — houses, unique artwork
+Virtual collectables — unique pictures of kittens, collectable cards
+"Negative value" assets — loans, burdens and other responsibilities
+
+\paragraph{Other Smart Contracts}
+Other contracts in the Harvest system, such as the storefront contract allow creation of reward tokens (ERC721s), however, since deploying ERC721s is gas intensive, a separate reward deployer contract is used and transfers ownership to the storefront. As shown in Figure xxx this averages out the deployment costs among other contracts.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{Images/harvestArchitecture}
+\caption{Architecture for smart contracts and front-end for harvest application}
+\label{fig:harvestarchitecture}
+\end{figure}
+
+ Although determining the digital value of assets is challenging, the ability for a users to trade assets between themselves is essential for a decentralized marketplace. Implementation of a exchanger contract to buy/sell rewards and currencies are outside the scope of a proof of concept application.
+%Participating music businesses will create a catalogue of valuable, real world offerings for the return of tokens from artists to the music business. Examples of products in this catalogue may include: studio recording sessions, record pressing, touring related costs, merchandise, and other goods and services. Music businesses will be encouraged to leverage existing business relationships to populate the catalogue of offerings. A music business offering this service may directly purchase rewards supply from vendors or work out rewards discounts that will be attractive to artists. 
+
+%Music businesses who implement this tool will be differentiated from other distributors and rights managers. By adding an additional compensation and value to the way they compensate artists for plays, they will be able to create more loyalty and become even more attractive to potential artists. Every artist will benefit from the participation of previous artists as the economy of the MEC Rewards Program token grows. 
+
+
+%	\end{minipage}
+%%% New discussion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% DISCUSSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Discussion}
+ 	The tools used in the harvest application are, a firefox/chrome plugin, metamask for connecting to the ethereum blockchain and testnets, the most popular framework for smart contract development truffle, and drizzle, which manages contract state.
+		\subsection{Decentralized Applications}
+		
+		% Talk about drizzle metamask and truffle
+		
+		Decentralized systems are inherently more reliable, currently face scalability issues, and are trustless systems \cite{bitcoinWhitePaper:Online,ethereumWhitePaper:Online}. Fulfillment of smart contracts is limited due to off-chain information, logistical challenges in obtaining impartial or truthful inputs from stakeholders, and verification of transaction completion involving real-world assets. This suggests effectiveness of smart contracts is currently limited to digital assets rather than for physical assets.  In addition, translating legal-binding contracts to code is challenging because the majority of programmers lack a legal background.
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{DappVApp}
+		\caption{Decentralized structure vs Centralized Structure}
+		\label{fig:dappvapp}
+		\end{figure}
+		
+		Despite shortcomings that involve transactional steps that are computational impossible to verify (package is delivered), performance of smart contracts is superior as transactions are tamper-proof.
+		Additionally, reduction of ambiguity from usage of smart contracts is highly probable because only one interpretation is possible. Coding errors or bugs exist in every non-trivial application, therefore transactions through smart contracts intrinsically carry some risk. This implies protocols and prior real-world agreements are necessary to migrate risk when executing smart contracts. Furthermore, increased precision and detail for transactional inputs and outputs required for creating smart contracts would benefit all parties. 
+		
+% \subsection{Functionality of Harvest}
+
+ % Talk about token trading, creating new ERC721s
+ 	
+ \subsection{Trading digital currency for rewards}
+ \begin{algorithm}[ht]
+   \caption{My first algorithm}\label{alg:algorithm1}
+   \begin{algorithmic}[1]
+     \Require
+       \Statex If there are multiple lines here, line's number will be wrong.
+       \Statex This error doesn't happen in package \verb|algorithmic|.
+     \Ensure
+       \Statex If I write \verb|\\| here, line's number will be wrong too.
+     \Statex
+     \If{$i = 1 \to n$} \Comment{This line's number should be 1}
+       \State ${\textit{HU}}_{i} \gets {\textit{NGU}}_{i} + {HU}_{i}$ \Comment{Comment}
+     \EndIf
+   \end{algorithmic}
+ \end{algorithm}
+ 
+ 
+ % Creating new rewards in storefront 
+ 
+ 
+  \begin{algorithm}[ht]
+    \caption{Reward Creation}\label{alg:algorithm2}
+    \begin{algorithmic}[1]
+      \Require
+        \Statex If there are multiple lines here, line's number will be wrong.
+        \Statex This error doesn't happen in package \verb|algorithmic|.
+      \Ensure
+        \Statex If I write \verb|\\| here, line's number will be wrong too.
+      \Statex
+      \If{$i = 1 \to n$} \Comment{This line's number should be 1}
+        \State ${\textit{HU}}_{i} \gets {\textit{NGU}}_{i} + {HU}_{i}$ \Comment{Comment}
+      \EndIf
+    \end{algorithmic}
+  \end{algorithm}
+ % Convert sequence diagram to state diagram showing how contracts are updated.
+ % Include sequence diagram, or updated sequence diagram
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{StateDiagramENGR003}
+\caption{State Diagram when a User wants to trade tokens}
+\label{fig:statediagramengr003}
+\end{figure}
+ \subsection{Optimization of smart contracts}
+ 
+ \paragraph{Limitations of Smart Contracts}
+ % 24kb limit of data, 32 kb limit per transaction.
+%\input{discussion.tex}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{smartContractCreation}
+\caption{Lifecycle of Smart Contract Creation \cite{Sillaber2017}}
+\label{fig:smartcontractcreation}
+\end{figure}
+
+As shown in figure \ref{fig:smartcontractcreation} multiple parties are required to create comprenhensive smart contract, input from legal professions and negotiations are required.
+
+\newpage 
 \input{conclusion.tex}
+\newpage
 \input{recommendations.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% END Main Content %%%%%%%%%%%%%%%%%%%
@@ -90,20 +406,55 @@
 
 % nocite prints all references even if they were not used
 % \nocite{*}
+\newpage 
  \printbibliography
  
 \linespread{1}
 
+\newpage 
 \begin{appendices}
-\section{Code Listings}
-\lstinputlisting[
-language   = C,
-basicstyle = \ttfamily,
-style		= default,
-%frame      = single,
-caption    = {Caesar Cipher for CSC 111},]
-{Code/cipher.c}
+\section{Token Standards}
+%\lstinputlisting[
+%language   = C,
+%basicstyle = \ttfamily,
+%style		= default,
+%%frame      = single,
+%caption    = {Caesar Cipher for CSC 111},]
+%{Code/cipher.c}
+\begin{lstlisting}[language=Solidity,caption=ERC20 Token Standard Interface]
+pragma solidity ^0.4.20;
+contract ERC20Interface {
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+    function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
+    function transfer(address to, uint tokens) public returns (bool success);
+    function approve(address spender, uint tokens) public returns (bool success);
+    function transferFrom(address from, address to, uint tokens) public returns (bool success);
 
+    event Transfer(address indexed from, address indexed to, uint tokens);
+    event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Solidity, caption=ERC721 Token Standard Interface]
+pragma solidity ^0.4.20;
+
+contract ERC721 {
+    event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);
+    event Approval(address indexed _owner, address indexed _approved, uint256 indexed _tokenId);
+    event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved);
+    function balanceOf(address _owner) external view returns (uint256);
+    function ownerOf(uint256 _tokenId) external view returns (address);
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;
+    function transferFrom(address _from, address _to, uint256 _tokenId) external payable;
+    function approve(address _approved, uint256 _tokenId) external payable;
+    function setApprovalForAll(address _operator, bool _approved) external;
+    function getApproved(uint256 _tokenId) external view returns (address);
+    function isApprovedForAll(address _owner, address _operator) external view returns (bool);
+}
+
+\end{lstlisting}
 \end{appendices}
 \end{document}
 

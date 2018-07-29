@@ -57,7 +57,7 @@ span.indexsubsubitem {margin-left: 4em}
 
 div.hidden, span.hidden { display: none ; }
 
-kbd {
+kbd, span.texttt {
     font-family: "DejaVu Mono", "Bitstream Vera Mono", "Lucida Console",
         "Nimbus Mono L", "Liberation Mono", "FreeMono", "Andale Mono",
         "Courier New", monospace;
@@ -66,22 +66,24 @@ kbd {
 
 pre { padding: 3pt ; }
 
-span.strong { font-weight: bold; }
+span.strong, span.textbf, div.strong, div.textbf { font-weight: bold; }
 
-span.textmd { font-weight: normal; }
+span.textit, div.textit { font-style: italic; }
 
-span.textsc { font-variant: small-caps; }
+span.textmd, div.textmd { font-weight: normal; }
 
-span.textsl { font-style: oblique; }
+span.textsc, div.textsc { font-variant: small-caps; }
 
-span.textup { font-variant: normal; }
+span.textsl, div.textsl { font-style: oblique; }
 
-span.textrm {
+span.textup, div.textup { font-variant: normal; }
+
+span.textrm, div.textrm {
     font-family: "DejaVu Serif", "Bitstream Vera Serif",
     "Lucida Bright", Georgia, serif;
 }
 
-span.textsf {
+span.textsf, div.textsf {
      font-family: "DejaVu Sans", "Bitstream Vera Sans",
         Geneva, Verdana, sans-serif ;
 }
@@ -90,12 +92,12 @@ span.textcircled { border: 1px solid black ; border-radius: 1ex ; }
 
 span.underline {
     text-decoration: underline ;
-    text-decoration-skip ;
+    text-decoration-skip: auto ;
 }
 
 span.overline {
     text-decoration: overline ;
-    text-decoration-skip ;
+    text-decoration-skip: auto ;
 }
 
 /* for diagbox */
@@ -229,18 +231,18 @@ span.lettrinetext { font-variant: small-caps ; }
 /* ulem and soul packages: */
 span.uline {
     text-decoration: underline ;
-    text-decoration-skip ;
+    text-decoration-skip: auto ;
 }
 
 span.uuline {
     text-decoration: underline ;
-    text-decoration-skip ;
+    text-decoration-skip: auto ;
     text-decoration-style: double ;
 }
 
 span.uwave {
     text-decoration: underline ;
-    text-decoration-skip ;
+    text-decoration-skip: auto ;
     text-decoration-style: wavy ;
 }
 
@@ -254,13 +256,13 @@ span.xout {
 
 span.dashuline {
     text-decoration: underline ;
-    text-decoration-skip ;
+    text-decoration-skip: auto ;
     text-decoration-style: dashed ;
 }
 
 span.dotuline {
     text-decoration: underline ;
-    text-decoration-skip ;
+    text-decoration-skip: auto ;
     text-decoration-style: dotted ;
 }
 
@@ -360,8 +362,7 @@ div.titlepage {
 
 .footnotes {
     font-size: .85em ;
-    margin: 3ex 1em 0ex 1em ;
-    padding-bottom: 1ex ;
+    margin: 3ex 2em 0ex 2em ;
     border-top: 1px solid silver ;
 }
 
@@ -403,7 +404,7 @@ div.marginparblock br
     { margin-bottom: 2ex ; }
 
 section.textbody div.footnotes{
-    margin: 3ex 0em 0ex 0em ;
+    margin: 3ex 2em 0ex 2em ;
     border-bottom: 2px solid silver ;
 }
 
@@ -784,7 +785,7 @@ img.logoimage{
 }
 
 figure {
-    margin: 3ex auto 3ex auto ;
+    margin: 5ex auto 5ex auto ;
     padding: 1ex 1em 1ex 1em ;
     overflow-x: auto ;
 }
@@ -847,6 +848,27 @@ figure div.floatrow div.minipage figcaption {
     background: none ;
 }
 
+/* For packages such as float, rotfloat, and algorithm2e: */
+
+figure.boxed, figure.boxruled {
+    border: 1px solid black ;
+}
+
+figure.ruled {
+    border-top: 1px solid black ;
+    border-bottom: 1px solid black ;
+    border-left: 0px ;
+    border-right: 0px ;
+    border-radius: 0px ;
+    background: none ;
+    box-shadow: none ;
+}
+
+figure.ruled figcaption, figure.boxruled figcaption {
+    border-top: 1px solid silver ;
+    border-bottom: 1px solid silver ;
+}
+
 table {
     margin: 1ex auto 1ex auto ;
     border-collapse: separate ;
@@ -875,7 +897,14 @@ table td.tdM { text-align: center ; vertical-align: middle ; }
 table td.tdB { text-align: center ; vertical-align: top ; }
 
 table td.tvertbarl { border-left: 1px solid black }
+table td.tvertbarldouble { border-left: 4px double black }
 table td.tvertbarr { border-right: 1px solid black }
+table td.tvertbarrdouble { border-right: 4px double black }
+
+table td.tvertbarldash { border-left: 1px dashed black }
+table td.tvertbarldoubledash { border-left: 2px dashed black }
+table td.tvertbarrdash { border-right: 1px dashed black }
+table td.tvertbarrdoubledash { border-right: 2px dashed black }
 
 /* for cmidrules: */
 table td.tdrule {
@@ -1119,7 +1148,32 @@ div.multicols { -webkit-columns: 3 380px ;
     -moz-columns: 3 380px ; columns: 3 380px ; }
 div.multicols p {margin-top: 0ex}
 
-/* Used to support algorithmicx: */
+/* Used for algorithm2e: */
+div.alg2evline{
+    margin-left: 1em ;
+    padding-left: 1em ;
+    border-left: 1px solid black ;
+    border-radius: 0px 0px 0px 1ex ;
+}
+
+div.alg2evsline{
+    margin-left: 1em ;
+    padding-left: 1em ;
+    border-left: 1px solid black ;
+}
+
+div.alg2enoline{
+    margin-left: 1em ;
+    padding-left: 1em ;
+}
+
+span.alg2elinenumber{
+    margin-right: .5em ;
+    font-size: 50% ;
+    color: red ;
+}
+
+/* Used for algorithmicx: */
 span.floatright { float: right ; }
 
 /* Native LaTeX theorems: */
