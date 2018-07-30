@@ -5,8 +5,26 @@
 \graphicspath{{Images/}} % Specifies the directory where pictures are stored
 
 \input{formatting.tex}
-\input{glossaries.tex}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
 
+\definecolor{otherColour}{HTML}{F7ADBC}
+\definecolor{mainnet}{HTML}{29B6AF}
+\definecolor{kovan}{HTML}{7057ff}
+\definecolor{ropsten}{HTML}{FF4A8D}
+\definecolor{rinkeby}{HTML}{F6C343}
+
+\tcbset{tab1/.style={fonttitle=\bfseries\large,fontupper=\normalsize\sffamily,
+		colback=yellow!10!white,colframe=ropsten!75!black,colbacktitle=rinkeby!40!kovan,
+		coltitle=black,center title,freelance,frame code={
+			\foreach \n in {north east,north west,south east,south west}
+			{\path [fill=red!75!black] (interior.\n) circle (3mm); };},}}
+
+\tcbset{tab2/.style={enhanced,fonttitle=\bfseries,fontupper=\normalsize\sffamily,
+		colback=rinkeby!5,colframe=kovan,colbacktitle=ropsten!10,
+		coltitle=mainnet!5!black,center title}}
+		
+\input{glossaries.tex}
+% Add Gas limit and gas, explain that gas limit is varies depending on what the miners decide on. Reference the crazy fluencance in ropsten testnet.
 \makeglossaries
 %\newcommand{\onlineCite}{[Online] Available}
 \begin{filecontents*}{ENGR003.bib}
@@ -276,22 +294,17 @@ Any participating music businesses could implement this program. They will be ab
 
 \paragraph{ERC20 Token Standard}
 
-The ERC20 token standard allows any tokens on Ethereum to be re-used by other applications: from wallets to decentralized exchanges. This is the most commonly used token on the Ethereum network at the moment.
+The ERC20 token standard allows any tokens on Ethereum to be re-used by other applications: from wallets to decentralized exchanges. This is the most commonly used token on the Ethereum network at the moment. This is used as a digital currency.
 
 
 \paragraph{ERC721 Token Standard}
 
-Non-fungible tokens
-The following standard allows for the implementation of a standard API for NFTs within smart contracts. This standard provides basic functionality to track and transfer NFTs.
-
-We considered use cases of NFTs being owned and transacted by individuals as well as consignment to third party brokers/wallets/auctioneers ("operators"). NFTs can represent ownership over digital or physical assets. We considered a diverse universe of assets, and we know you will dream up many more:
-
-Physical property — houses, unique artwork
-Virtual collectables — unique pictures of kittens, collectable cards
-"Negative value" assets — loans, burdens and other responsibilities
+Non-fungible tokens are often used to represent scarality on the \gls{Ethereum} network.
+The following standard (See Appendix A) allows for the implementation of a standard API for NFTs within smart contracts. This standard provides basic functionality to track and transfer NFTs.
+NFTs can represent ownership over digital or physical assets. As seen in cryptozombies, this can also contain "dna".
 
 \paragraph{Other Smart Contracts}
-Other contracts in the Harvest system, such as the storefront contract allow creation of reward tokens (ERC721s), however, since deploying ERC721s is gas intensive, a separate reward deployer contract is used and transfers ownership to the storefront. As shown in Figure xxx this averages out the deployment costs among other contracts.
+Other contracts in the Harvest system, such as the storefront contract allow creation of reward tokens (ERC721s), however, since deploying ERC721s is gas intensive, a separate reward deployer contract is instantiated and transfers ownership to the storefront. As shown in Figure \ref*{fig:gascost} better distributes the gas cost of deploying contracts. Additionally, the reward and storefront contract are ownable (owned by the contract creator).
 
 \begin{figure}[H]
 \centering
@@ -335,66 +348,191 @@ Other contracts in the Harvest system, such as the storefront contract allow cre
  % Talk about token trading, creating new ERC721s
  	
  \subsection{Trading digital currency for rewards}
+ 
+ Artists will receive their tokens to a wallet where they can store and save or spend their tokens. Artists will be able to browse through the music business catalogue of goods and purchase items or services using their tokens. 
+ 
+ What separates this project from a traditional rewards program (for example Airmiles or Aeroplan) would be the ability for artists (or any other token holder) to exchange tokens between each other easily using the Ethereum blockchain. Much of the work taking place in the music industry is conducted in exchange or in kind. The MEC Rewards Program could allow for artists to pass a value back and forth in exchange for tokens. The emergence of blockchain technology allows for these kinds of interactions to be transparent, trackable and scalable. 
+ 
+ 
  \begin{algorithm}[ht]
-   \caption{My first algorithm}\label{alg:algorithm1}
+   \caption{Trading ERC20 tokens for ERC721 Rewards}\label{alg:tradingTokens}
+   \hspace*{\algorithmicindent} \textbf{Input} uint256 \_ERC20Num, HarvestToken ERC20, RewardToken ERC721 \\
+   \hspace*{\algorithmicindent} \textbf{Output} Number of ERC721 rewards returned
    \begin{algorithmic}[1]
      \Require
-       \Statex If there are multiple lines here, line's number will be wrong.
-       \Statex This error doesn't happen in package \verb|algorithmic|.
-     \Ensure
-       \Statex If I write \verb|\\| here, line's number will be wrong too.
+       \Statex More than one ERC721 must be traded.
+       \Statex Transaction sender has \_ERC20Num number of ERC20 tokens.
+       \Statex Make sure enough ERC721s are available (not owned by others).
+       \Statex Permission to spend \_ERC20Num number of ERC20 tokens.
+       %\Statex 
+%     \Ensure
+%       \Statex If I write \verb|\\| here, line's number will be wrong too.
      \Statex
-     \If{$i = 1 \to n$} \Comment{This line's number should be 1}
-       \State ${\textit{HU}}_{i} \gets {\textit{NGU}}_{i} + {HU}_{i}$ \Comment{Comment}
-     \EndIf
+     %\Comment{The number of distributed tokens is a global variable.}
+     \State rate$ \gets ERC721.getRate()$ \Comment{gets rate of ERC20 to ERC721}
+     \State  $ numOf721s \gets $ \_ERC20Num / rate
+     \State ERC20.transferFrom(msg.sender,owner,\_ERC20Num) \Comment{owner is global variable}
+     \State $ i \gets $ distributed\_token721 \Comment{Number of distributed 721 tokens is a global variable.}	
+     \Repeat
+	     \State ERC721.transferFrom(owner,msg.sender,i)
+     \Until{$i>i+numOf721s$}
+     \State distributed\_token721 = i
+     
+     \Return $numOf721s$
+   
+%     \If{$i = 1 \to n$} \Comment{This line's number should be 1}
+%       \State ${\textit{HU}}_{i} \gets {\textit{NGU}}_{i} + {HU}_{i}$ \Comment{Comment}
+%     \EndIf
    \end{algorithmic}
  \end{algorithm}
  
- 
+ Receiving rewards in Harvest requires an artist to approve the StoreFront contract to spend their ERC20 tokens with the expectation that a digital representation of a reward (ERC721) will be received. This requires the specific reward which could be recording time, or studio time to exist. In addition, only the owner of StoreFront can create new rewards and different kinds of rewards. Furthermore, in order for redemption to occur, real-world verification is necessary, then the result are recorded on the \gls{blockchain}. Since
+   
  % Creating new rewards in storefront 
  
  
+   Assuming that ERC721 tokens will never be burned (destroyed), creating new tokens is simple. Since every ERC721 token has a unique id in its contract, incrementing the token id based on total supply of ERC721 is efficient.
   \begin{algorithm}[ht]
-    \caption{Reward Creation}\label{alg:algorithm2}
+    \caption{Reward Creation Algorithm}\label{alg:algorithm2}
+    \hspace*{\algorithmicindent} \textbf{Input}  RewardToken ERC721, uint256 numTokens \\
+    \hspace*{\algorithmicindent} \textbf{Output} Returns true if new tokens are minted.
+    
     \begin{algorithmic}[1]
       \Require
-        \Statex If there are multiple lines here, line's number will be wrong.
-        \Statex This error doesn't happen in package \verb|algorithmic|.
-      \Ensure
-        \Statex If I write \verb|\\| here, line's number will be wrong too.
-      \Statex
-      \If{$i = 1 \to n$} \Comment{This line's number should be 1}
-        \State ${\textit{HU}}_{i} \gets {\textit{NGU}}_{i} + {HU}_{i}$ \Comment{Comment}
-      \EndIf
+        \Statex Make sure the 721 reward token is registered (not counterfeit).
+        \Statex Only the owner of a storefront can create rewards.
+
+      \State $newTokenId=ERC721.totalSupply()$
+      \Repeat
+      	 \State ERC721.mint(address(this),i) \Comment{Reward are owned by storefront.}
+      \Until{$i=newTokenId>i+numTokens$}
+           \State distributed\_token721 = i
+           
+      \Return True
     \end{algorithmic}
   \end{algorithm}
+
+\subsection{Rendering Unique Rewards}
+
+Since each ERC721 token has a unique token identifier, they can be displayed as digital collectives such as etheremon and cryptozombies.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{cryptozombies}
+\caption{Adjusting the appearance of the zombie by changing DNA values}
+\label{fig:cryptozombies}
+\end{figure}
+As described in the popular solidity tutorial cryptozombies, a zombie's appearance will be based on its "Zombie DNA". Zombie DNA is simple — it's a 16-digit integer, like:
+% Break up into all parts for cryptzombies, if I am not lazy
+\[
+\underbrace{83}_{\text{head}} \qquad  \underbrace{56}_{\text{eyes}} \qquad \underbrace{281049284737}_{\text{Other parts}}
+\]
+
+
+Just like real DNA, different parts of this number will map to different traits. The first 2 digits map to the zombie's head type, the second 2 digits to the zombie's eyes, etc.
+
+
+  
  % Convert sequence diagram to state diagram showing how contracts are updated.
  % Include sequence diagram, or updated sequence diagram
-\begin{figure}
-\centering
-\includegraphics[width=1\linewidth]{StateDiagramENGR003}
-\caption{State Diagram when a User wants to trade tokens}
-\label{fig:statediagramengr003}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=1\linewidth]{StateDiagramENGR003}
+%\caption{State Diagram when a User wants to trade tokens}
+%\label{fig:statediagramengr003}
+%\end{figure}
  \subsection{Optimization of smart contracts}
  
- \paragraph{Limitations of Smart Contracts}
+ On the \gls{Ethereum} network uses pay for transactions using \gls{gas}, this highly encourages programmers to create efficient \glspl{smart contract} that minimize costs to users while adhering to restrictive limitations for developing smart contracts. Currently, on Ethereum transactions sizes are limited to 32 kb, and \glspl{smart contract} cannot be larger than 24 kb.
+ 
+ % Cite Ethereum Yellow paper
+ %Efficiency in solidity 
+  \begin{table}[H] 	\begin{tcolorbox}[tab2, tabularx={X||r|Y},title=Cost of Common Operations]
+  		 Operation   &      Gas     &      Description \\\hline\hline
+  		 ADD/SUB     &      3 &             Arithmetic  
+  		  operation \\\hline
+  		
+  		 MUL/DIV      &     5 &            Arithmetic operation\\\hline
+  		
+  		 ADDMOD/MULMOD  &   8 &             Arithmetic operation \\ \hline 
+  		  AND/OR/XOR     &   3    &  Bitwise logic operation \\ \hline 
+  		  
+  		   LT/GT/SLT/SGT/EQ & 3 &             Comparison operation \\ \hline
+  		   
+  		    POP       &        2        &     Stack operation \\ \hline 
+  		     PUSH/DUP/SWAP  &    3 &             Stack operation \\ \hline 
+  		      MLOAD/MSTORE  &    3     &        Memory operation\\ \hline 
+  		     JUMP      &        8 &            Unconditional jump \\ \hline 
+  		     JUMPI        &     10       &     Conditional jump \\ \hline
+  		     SLOAD       &      200 &          Storage operation\\ \hline 
+  		     SSTORE      &      5,000/20,000 &  Storage operation \\ \hline 
+  		     BALANCE     &      400    &       Get balance of an account \\ \hline
+  CREATE       &     32,000   &     Create a new account using CREATE
+  		 \\\hline\hline
+  
+   CALL         &     25,000  &      Create a new account using CALL
+  	\end{tcolorbox}
+  	\caption{Cost of common operations in the Ethereum Virtual Machine }
+  	\label{table:gas}
+  \end{table}
+  
+  In addition, the gas limit for deploying smart contracts varies based on consensus with the miners, for example, on July 27, 2018, the gas limit for ropsten was 4.7 million units, but two days later on July 29, 2018 it reached 9.4 million units. Raising the gas limit is possible through increasing the amount of computation power available in the network, this may result because developers want to test large smart contracts. 
+  
+  % Find citation again later
+  
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{Images/gasCost}
+\caption{Optimization of Harvest Contracts and Gas Limits for Ethereum networks}
+\label{fig:gascost}
+\end{figure}
+As shown in Figure \ref{fig:gascost} the original smart contracts were inefficient, reducing expensive operations (see Table \ref{table:gas}) such as storage and contract creation for factory contracts (deploying ERC721s) allows deployment on a testnet with for a relative low limit of 4.7 million units.
+
+Previously, the Registry contract allowed creation and tracking of storefront contracts which in turn could create rewards, this resulted in a very costly Registry contract \ref{fig:gascost}.
+In Solidity, creating smaller contracts with specific functionality is highly encouraged, for example having a reward deployer contract that only produces a new ERC721 contract and transfers ownership is highly efficient.
+%Add Citation https://docs.google.com/spreadsheets/d/1n6mRqkBz3iWcOlRem_mO09GtSKEKrAsfO7Frgx18pNU/edit#gid=0
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+
+ \subsection{Limitations of Smart Contracts}
  % 24kb limit of data, 32 kb limit per transaction.
 %\input{discussion.tex}
+Continued research into \gls{blockchain} technologies is necessary as innovations mitigate scalability issues, widespread adoption of cryptocurrency and technologies evolutions address the shortcomings of blockchain. In trustless systems tampering or modification of transactional history is extremely difficult. This suggests that smart contracts can greatly improve transactions, however, issues including scalability, reversing fraudulent activity and reduction of contract deployment hinder mass adoption.
 
-\begin{figure}
+All computer programs have bugs, by limiting complexity of smart contracts,  using reliable standards highly audited packages, and using software security analyze tools risk can be greatly reduced. 
+\begin{figure}[H]
 \centering
 \includegraphics[width=1\linewidth]{smartContractCreation}
 \caption{Lifecycle of Smart Contract Creation \cite{Sillaber2017}}
 \label{fig:smartcontractcreation}
 \end{figure}
 
-As shown in figure \ref{fig:smartcontractcreation} multiple parties are required to create comprenhensive smart contract, input from legal professions and negotiations are required.
+As shown in figure \ref{fig:smartcontractcreation} multiple parties are required to create comprehensive smart contract, input from legal professions and negotiations are required.
+% Talk about the variable limits and how they are somtimes raised for smart contract testing.
+
+% https://ropsten.etherscan.io/block/3734489
+
+% https://ropsten.etherscan.io/block/3721380
 
 \newpage 
-\input{conclusion.tex}
+%\input{conclusion.tex}
+\section{Conclusion}
+	
+
+	
+   Blockchain technology is disrupting many industries. The economy of the music industry has yet to recover from the last disruption, the proliferation of digital music first through mp3s and now streaming platforms. The MEC Rewards Program aims to use new technology (the blockchain and decentralized apps) to bring transparency and innovation to the compensation of artists in the new digital economy, while creating a valuable business proposition for industry.
 \newpage
-\input{recommendations.tex}
+%\input{recommendations.tex}
+\section{Recommendations}
+	
+	Provided a deterministic set of inputs and outputs, with computational verifiable conditions, using smart contracts is beneficial. Increasing awareness about \gls{blockchain} technologies, so that the average person understands the limitations of smart contracts and suitable applications is a key aspect in increasing adoption and widespread acceptance of \gls{blockchain} technologies.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% END Main Content %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -821,3 +959,11 @@ caption    = {Sample SQL Query},]
 	\end{center}
 	\caption{Table Title}
 \end{table}
+
+
+Use one of the nice tables.
+
+
+% See https://docs.google.com/spreadsheets/d/1n6mRqkBz3iWcOlRem_mO09GtSKEKrAsfO7Frgx18pNU/edit#gid=0
+
+% See https://cryptozombies.io/en/lesson/1/chapter/1

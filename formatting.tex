@@ -2,8 +2,12 @@
 \usepackage[margin=2.54 cm]{geometry} % Set dimensions for page layout
 \usepackage{kpfonts}	    % Fonts used in the title page
 \usepackage{eso-pic}        % Background pictures in the title page
-\usepackage{tcolorbox}		% Fancy Math equations	
+\usepackage[many]{tcolorbox}		% Fancy Math equations	
 \usepackage{tabularx}		% Tabulars with adjustable-width columns
+
+%\usepackage{makecell,tabularx}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
 \tcbuselibrary{skins} 	% used with tcolorbox 
 \usepackage{transparent}	% Create transparent background images
 \usepackage{lipsum}  % Garbage text
