@@ -114,6 +114,14 @@ abstract="This paper discusses the life cycle of decentralized smart contracts, 
 issn="1862-2607",
 doi="10.1007/s11623-017-0819-7",
 url="https://doi.org/10.1007/s11623-017-0819-7"
+}
+
+@misc{cryptozombies,
+ author = {Loom Network},
+ title = {Cryptozombies Solidity Tutorial},
+ url = {https://cryptozombies.io/},
+ lastchecked = {12.08.2018},
+ originalyear = {1.05.2017}
 }	
 \end{filecontents*}
 \addbibresource{ENGR003.bib}
@@ -168,9 +176,11 @@ url="https://doi.org/10.1007/s11623-017-0819-7"
 %%%%%%%%%%%%%% SUMMARY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
 
 \input{summary.tex}
  
+\newpage
  % Uncomment to enable double spacing %
  % \doublespacing
 
@@ -256,7 +266,8 @@ The prevalence of music streaming platforms has been great for its ability to ex
 
 The Membran Entertainment Canada Rewards Program harnesses the Ethereum blockchain to provide a tool that music businesses can use as an additional incentive for their artists and clients. The goal is not to fix the royalty system, but to instead add a new method by which artists can be compensated for plays of their music. In theory, this program can create a new exchange economy where musicians and artists can reinvest the value of streaming plays into their product and brand. 
 
-Any participating music businesses could implement this program. They will be able to issue digital tokens to their roster of artists using their own measurements, but the recommended method would be 1 Token for 1 Play. This can be done in addition to or instead of traditional streaming royalty payments, at the discretion of the music business. Tokens will be distributed on a regular basis (monthly, quarterly, etc.) to the participating artists.
+Any participating music businesses could implement this program. They will be able to issue digital tokens to their roster of artists using their own measurements, but the recommended method would be 1 Token for 1 Play. This can be done in addition to or instead of traditional streaming royalty payments, at the discretion of the music business. Tokens will be distributed on a regular basis (monthly, quarterly, etc.) to the participating artists. 
+Digital assets such as Ether, and tokens are stored in an Ethereum wallet such as metamask.
 
 
 \subsection{Smart Contracts}
@@ -283,19 +294,18 @@ Any participating music businesses could implement this program. They will be ab
 	\end{figure}
 \end{warpHTML}
 
-		In addition, irreversible and immutable transactions are a disadvantage that hackers can exploit. For example, an amateur coder killed the contract that allowed users to transfer Ether for the Parity \gls{Ethereum} Wallet, rendering 150 to 300 million dollars completely useless \cite{funnyJoke:Online}. Scrutinizing smart contracts and reducing bugs in production code is essential. An example of smart contract is available in Appendix A% \ref{lst:label}.
+		In addition, irreversible and immutable transactions are a disadvantage that hackers can exploit. For example, an amateur coder killed the contract that allowed users to transfer Ether for the Parity \gls{Ethereum} Wallet, rendering 150 to 300 million dollars completely useless \cite{funnyJoke:Online}. Scrutinizing smart contracts and reducing bugs in production code is essential. The most common token standards, ERC20 and ERC721 interfaces outline how tokens work on Ethereum (See Appendix A).%An example of smart contract is available in Appendix A% \ref{lst:label}.
 		
 		% Rewrite here.
 		The desirable properties of a \gls{blockchain} such as integrity and immutability of data, e.g., transactions and
-		smart contracts, require an active mining pool. In a proof of work consensus (POW) mechanism,  miners need to invest energy and resources,
-		i.e. computational power, to participate in the consensus process and prevent tampering blocks. Additionally, miners are incentivized to run nodes that verify transactions through bitcoin or ether. %The investment must incentive miners to verify transactions and/or run nodes.%This investment has to be incentivized to prevent miners from not participating.
+		smart contracts, require an active mining pool. In a proof of work (POW) consensus  mechanism,  miners need to invest energy and resources,
+		i.e. computational power, to participate in the consensus process and prevent tampering blocks. Additionally, miners are incentivized to run nodes that verify transactions. % through bitcoin or ether. %The investment must incentive miners to verify transactions and/or run nodes.%This investment has to be incentivized to prevent miners from not participating.
 	
 \subsection{Representation of Digital Assets on the Blockchain}
 
 \paragraph{ERC20 Token Standard}
 
-The ERC20 token standard allows any tokens on Ethereum to be re-used by other applications: from wallets to decentralized exchanges. This is the most commonly used token on the Ethereum network at the moment. This is used as a digital currency.
-
+The ERC20 token standard allows any tokens on Ethereum to be re-used by other applications: from wallets to decentralized exchanges. This is the most commonly used token on the Ethereum network at the moment.
 
 \paragraph{ERC721 Token Standard}
 
@@ -304,11 +314,11 @@ The following standard (See Appendix A) allows for the implementation of a stand
 NFTs can represent ownership over digital or physical assets. As seen in cryptozombies, this can also contain "dna".
 
 \paragraph{Other Smart Contracts}
-Other contracts in the Harvest system, such as the storefront contract allow creation of reward tokens (ERC721s), however, since deploying ERC721s is gas intensive, a separate reward deployer contract is instantiated and transfers ownership to the storefront. As shown in Figure \ref*{fig:gascost} better distributes the gas cost of deploying contracts. Additionally, the reward and storefront contract are ownable (owned by the contract creator).
+Other contracts in the Harvest system, such as the storefront contract allow creation of reward tokens (ERC721s), however, since deploying ERC721s is gas intensive, a separate reward deployer contract is instantiated and transfers ownership to the storefront. As shown in Figure \ref*{fig:gascost} better distributes the gas cost of deploying contracts. Additionally, the reward and storefront contract contain the ownable property (owned by the contract creator).
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\linewidth]{Images/harvestArchitecture}
+\includegraphics[width=1\linewidth]{Images/harvestArchitectureGood}
 \caption{Architecture for smart contracts and front-end for harvest application}
 \label{fig:harvestarchitecture}
 \end{figure}
@@ -386,7 +396,7 @@ Other contracts in the Harvest system, such as the storefront contract allow cre
    \end{algorithmic}
  \end{algorithm}
  
- Receiving rewards in Harvest requires an artist to approve the StoreFront contract to spend their ERC20 tokens with the expectation that a digital representation of a reward (ERC721) will be received. This requires the specific reward which could be recording time, or studio time to exist. In addition, only the owner of StoreFront can create new rewards and different kinds of rewards. Furthermore, in order for redemption to occur, real-world verification is necessary, then the result are recorded on the \gls{blockchain}. Since
+ Receiving rewards in Harvest requires an artist to approve the StoreFront contract to spend their ERC20 tokens with the expectation that a digital representation of a reward (ERC721) will be received. This requires the specific reward which could be recording time, or studio time to exist. In addition, only the owner of StoreFront can create new rewards and different kinds of rewards. Furthermore, in order for redemption to occur, real-world verification is necessary, then the result are recorded on the \gls{blockchain}. Since transactions cannot reversed adding thoughtful assert statements (reverse changes caused by ongoing transaction) is essential.
    
  % Creating new rewards in storefront 
  
@@ -412,9 +422,10 @@ Other contracts in the Harvest system, such as the storefront contract allow cre
     \end{algorithmic}
   \end{algorithm}
 
-\subsection{Rendering Unique Rewards}
+\subsection{Rendering Rewards}
 
-Since each ERC721 token has a unique token identifier, they can be displayed as digital collectives such as etheremon and cryptozombies.
+\subsubsection{Mapping unique info to components}
+
 
 
 \begin{figure}[H]
@@ -423,17 +434,44 @@ Since each ERC721 token has a unique token identifier, they can be displayed as 
 \caption{Adjusting the appearance of the zombie by changing DNA values}
 \label{fig:cryptozombies}
 \end{figure}
-As described in the popular solidity tutorial cryptozombies, a zombie's appearance will be based on its "Zombie DNA". Zombie DNA is simple — it's a 16-digit integer, like:
+
+Although ERC20 tokens are used as a to represent currency, representation of rewards can be done using ERC721. Since each ERC721 token has a unique token identifier, they can be displayed as digital collectables such as etheremon and cryptozombies \cite{cryptozombies} with their "dna" mapping to specific components.
+
+
+As described in the popular solidity tutorial cryptozombies \cite{cryptozombies}, a zombie's appearance will be based on its "Zombie DNA". Zombie DNA is simple — it's a 16-digit integer, like:
 % Break up into all parts for cryptzombies, if I am not lazy
 \[
 \underbrace{83}_{\text{head}} \qquad  \underbrace{56}_{\text{eyes}} \qquad \underbrace{281049284737}_{\text{Other parts}}
 \]
 
 
-Just like real DNA, different parts of this number will map to different traits. The first 2 digits map to the zombie's head type, the second 2 digits to the zombie's eyes, etc.
+Just like real DNA, different parts of this number will map to different traits. The first 2 digits map to the zombie's head type, the second 2 digits to the zombie's eyes, etc. One approach for rendering unique tokens in harvest, is to specific the type of reward which maps to an icon, and the colour values for the icon.
+
+\[
+\underbrace{83}_{\text{type}} \qquad  \underbrace{99}_{\text{red}} \qquad \underbrace{23}_{\text{blue}} \qquad \underbrace{13}_{\text{green}} \qquad 
+\]
+
+%\begin{figure}
+%\centering
+
+%\caption{Icons that could be used}
+%\end{figure}
+Despite simplicity of using predefined icons, distinguishing between different rewards is not guaranteed.
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.7\linewidth]{blackIcons}
+%\caption{Example Icons that represent rewards}
+%\label{fig:blackicons}
+%\end{figure}
+
+\subsubsection{Using Decentralized Storage (IPFS)}
 
 
-  
+Allowing storefront owners to upload their own images that represents their reward is desirable. Although decentralized storage such as IPFS or Swarm is not required for image and text storage as the smart contract at minimum, could contain a url, but having immutable, permanent links is beneficial. 
+% cite eth-plot
+ Large amounts of data can be addressed with IPFS, and the immutable, permanent IPFS links can be placed into a blockchain transaction. This timestamps and secures the content, without having to put the data on the chain itself.
+
+Information to access the image (immutable and permanent IPFS links) is included inside a blockchain transaction. This secures the content without having to store the data on the chain which is quite expensive.   
  % Convert sequence diagram to state diagram showing how contracts are updated.
  % Include sequence diagram, or updated sequence diagram
 %\begin{figure}
@@ -444,7 +482,7 @@ Just like real DNA, different parts of this number will map to different traits.
 %\end{figure}
  \subsection{Optimization of smart contracts}
  
- On the \gls{Ethereum} network uses pay for transactions using \gls{gas}, this highly encourages programmers to create efficient \glspl{smart contract} that minimize costs to users while adhering to restrictive limitations for developing smart contracts. Currently, on Ethereum transactions sizes are limited to 32 kb, and \glspl{smart contract} cannot be larger than 24 kb.
+ On the \gls{Ethereum} network uses pay for transactions using \gls{gas}, this highly encourages programmers to create efficient \glspl{smart contract} that minimize costs to users while adhering to restrictive limitations for developing smart contracts. Performing calculations off-chain and verification in \glspl{smart contract} is highly desirable because writing to the blockchain is expensive. Balancing security, efficiency and simplicity is challenging, but extremely important as transactions cannot be reverted, and source code is publicly available. Currently, on Ethereum transactions sizes are limited to 32 kb, and \glspl{smart contract} cannot be larger than 24 kb.
  
  % Cite Ethereum Yellow paper
  %Efficiency in solidity 
@@ -478,6 +516,10 @@ Just like real DNA, different parts of this number will map to different traits.
   \end{table}
   
   In addition, the gas limit for deploying smart contracts varies based on consensus with the miners, for example, on July 27, 2018, the gas limit for ropsten was 4.7 million units, but two days later on July 29, 2018 it reached 9.4 million units. Raising the gas limit is possible through increasing the amount of computation power available in the network, this may result because developers want to test large smart contracts. 
+  % Dump etherscan blocks citation here\
+  
+  Oftentimes, in smart contract development, extending and customizing an existing contract (ERC20 and ERC721) is beneficial.
+  Although some smart contracts may be deceitful small, inheritance and factory contract creation functionality can easily reach the gas limits set by the miners. 
   
   % Find citation again later
   
@@ -514,7 +556,7 @@ All computer programs have bugs, by limiting complexity of smart contracts,  usi
 \label{fig:smartcontractcreation}
 \end{figure}
 
-As shown in figure \ref{fig:smartcontractcreation} multiple parties are required to create comprehensive smart contract, input from legal professions and negotiations are required.
+As shown in figure \ref{fig:smartcontractcreation} multiple parties are required to create comprehensive smart contract, input from legal professions and negotiations are required. Additionally, unlikely other forms of software, iterative releases of \glspl{smart contract} is inefficient.
 % Talk about the variable limits and how they are somtimes raised for smart contract testing.
 
 % https://ropsten.etherscan.io/block/3734489
@@ -527,12 +569,22 @@ As shown in figure \ref{fig:smartcontractcreation} multiple parties are required
 	
 
 	
-   Blockchain technology is disrupting many industries. The economy of the music industry has yet to recover from the last disruption, the proliferation of digital music first through mp3s and now streaming platforms. The MEC Rewards Program aims to use new technology (the blockchain and decentralized apps) to bring transparency and innovation to the compensation of artists in the new digital economy, while creating a valuable business proposition for industry.
+   Blockchain technology is disrupting many industries. The economy of the music industry has yet to recover from the last disruption, the proliferation of digital music first through mp3s and now streaming platforms. The Ethereum network provides key standards such as ERC20 and ERC721 to represent digital currency and scarcity in the blockchain. Understanding ownership and nuances of Solidity is key to creation of bug-free and efficient smart contracts. As shown in Figure \ref{fig:gascost} shifting specific functionality such as factory contracts is essential to meeting the gas limits.
+   
+   
+   Artists may receive compensation based on total listens from streaming services, but there are many stories which outline how little profit artists actually receive from these royalties. This is an issue even for massively successful artists, let alone emerging or independent artists. The MEC Rewards Program aims to use new technology (the blockchain and decentralized apps) to bring transparency and innovation to the compensation of artists in the new digital economy, while creating a valuable business proposition for industry. Representation of digital rewards could involve storing an image online and including that url inside of a smart contract. Overall, blockchain is an effective platform for a decentralized marketplace.
 \newpage
 %\input{recommendations.tex}
 \section{Recommendations}
 	
+	Additionally, storage and contract creation is expensive, so optimization of smart contracts is essential. Furthermore, usage of \glspl{smart contract} completely automated transactions are limited to computational verifiable events, otherwise users could falsify input data. As adoption of blockchain technology grows, and scalability of the Ethereum network increases, decentralized applications will become a viable alternative.
+	
+	
+	Artists will receive their tokens to a wallet where they can store and save or spend their tokens. Artists will be able to browse through the music business’ catalogue of goods and 'purchase' items or services using their tokens. By adding an additional compensation and value to the way they compensate artists for plays, they will be able to create more loyalty and become even more attractive to potential artists.
+	
 	Provided a deterministic set of inputs and outputs, with computational verifiable conditions, using smart contracts is beneficial. Increasing awareness about \gls{blockchain} technologies, so that the average person understands the limitations of smart contracts and suitable applications is a key aspect in increasing adoption and widespread acceptance of \gls{blockchain} technologies.
+	
+	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% END Main Content %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
