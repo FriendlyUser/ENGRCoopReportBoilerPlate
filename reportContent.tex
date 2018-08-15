@@ -127,10 +127,11 @@ url="https://doi.org/10.1007/s11623-017-0819-7"
 \addbibresource{ENGR003.bib}
 
 
-\linespread{1.25}
+%\linespread{1.25}
 
 % Reason: the standard line skip means a factor of 1.2 (such as font height 10pt, base line skip 12pt). Multiply with \linespread, so you get 1.25*1.2 = 1.5, so one-half.
 
+\linespread{1.25}
 \renewcommand{\printTitle}{Determining Potential Uses of JIRA and Confluence}
 
 \newcommand{\foo}{\color{blue}\makebox[0pt]{\textbullet}\hskip-0.5pt\vrule width 1pt\hspace{\labelsep}}
@@ -467,7 +468,7 @@ Despite simplicity of using predefined icons, distinguishing between different r
 \subsubsection{Using Decentralized Storage (IPFS)}
 
 
-Allowing storefront owners to upload their own images that represents their reward is desirable. Although decentralized storage such as IPFS or Swarm is not required for image and text storage as the smart contract at minimum, could contain a url, but having immutable, permanent links is beneficial. 
+Allowing storefront owners to upload their own images that represents their reward is desirable. Decentralized storage such as IPFS is optional as the smart contract at minimum, could contain a link to the desired resource (image or text file), but having immutable, permanent links is beneficial. 
 % cite eth-plot
  Large amounts of data can be addressed with IPFS, and the immutable, permanent IPFS links can be placed into a blockchain transaction. This timestamps and secures the content, without having to put the data on the chain itself.
 
